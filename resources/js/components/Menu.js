@@ -14,6 +14,8 @@ import { useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
+import { Auth } from 'aws-amplify';
+
 
 const appPages = [
 	{
@@ -48,7 +50,7 @@ const appPages = [
 	}
 ];
 
-const Menu = () => {
+const Menu = (props) => {
 	const location = useLocation();
 
 	return (
@@ -56,11 +58,16 @@ const Menu = () => {
 			<IonContent>
 				<IonList id="inbox-list">
 					<IonListHeader>Heine Product Manager</IonListHeader>
-					<IonNote>hi@ionicframework.com</IonNote>
+					<IonNote>{props.user}</IonNote>
 					{appPages.map((appPage, index) => {
 						return (
 							<IonMenuToggle key={index} autoHide={false}>
-								<IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+								<IonItem
+									className={location.pathname === appPage.url ? 'selected' : ''}
+									routerLink={appPage.url} routerDirection="none"
+									lines="none"
+									detail={false}
+								>
 									<IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
 									<IonLabel>{appPage.title}</IonLabel>
 								</IonItem>

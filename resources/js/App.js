@@ -23,8 +23,7 @@ import '@ionic/react/css/typography.css';
 
 /* Theme variables */
 import './theme/variables.css';
-
-import Amplify from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { AmplifyConfig } from "./AmplifyConfig.json";
 
@@ -35,10 +34,10 @@ const App = () => {
 	return (
 		<IonApp>
 			<IonReactRouter>
-				<IonSplitPane contentId="main">
-					<Menu />
+				<IonSplitPane when="xxl" contentId="main">
+					<Menu user={Auth.user == null ? null : Auth.user.attributes.email} />
 					<IonRouterOutlet id="main">
-						<Route path="/*" component={Page} />
+						<Route state={Auth.user == null ? null : Auth.user.attributes.email} path="/" component={Page} />
 					</IonRouterOutlet >
 				</IonSplitPane >
 			</IonReactRouter >
