@@ -1,0 +1,14 @@
+.notification {
+	font-size: 12px;
+
+	&__definition{
+		font-weight: 700;
+		flex: 0 35%;
+		color: $blue;
+	}
+	&__values{
+		flex: 0 65%;
+		font-size: 10px;
+		letter-spacing: 1.1px;
+	}
+}

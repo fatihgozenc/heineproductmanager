@@ -1,0 +1,36 @@
+.content {
+	@media (min-width: 1280px) {
+		max-width: 80vw;
+		align-self: center;
+		margin: 0 auto;	
+	}
+	&--page{
+		margin-bottom: 10rem;
+	}
+}
+
+.logo{
+	height: 40px;
+	width: 80px;
+}
+
+.inputcontainer {
+	width: 80vw;
+	// text-align: center;
+	&__wrapper{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	&__item {
+		margin: 1rem 1rem 0 0;
+		flex: 0 30% !important;
+		&--label {
+			// color: $blue !important;
+			// font-weight: 700;
+		}
+		&--button {
+			margin: 1rem 0 2rem 0;
+		}
+	}
+}

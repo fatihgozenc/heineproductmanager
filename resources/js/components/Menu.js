@@ -12,10 +12,8 @@ import {
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
-import './Menu.css';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
-
 
 const appPages = [
 	{
@@ -54,12 +52,12 @@ const Menu = (props) => {
 	const location = useLocation();
 
 	return (
-		<IonMenu contentId="main" type="overlay">
+		<IonMenu contentId="main" side="end" type="overlay">
 			<IonContent>
 				<IonList id="inbox-list">
-					<IonListHeader>Heine Product Manager</IonListHeader>
+					<IonListHeader>Welcome</IonListHeader>
 					<IonNote>{props.user}</IonNote>
-					{appPages.map((appPage, index) => {
+					{/* {appPages.map((appPage, index) => {
 						return (
 							<IonMenuToggle key={index} autoHide={false}>
 								<IonItem
@@ -73,8 +71,9 @@ const Menu = (props) => {
 								</IonItem>
 							</IonMenuToggle>
 						);
-					})}
-					<AmplifySignOut buttonText="Abmelden" />
+					})} */}
+					{/* <AmplifySignOut buttonText="Abmelden" /> */}
+					<AmplifySignOut />
 				</IonList>
 			</IonContent>
 		</IonMenu>
