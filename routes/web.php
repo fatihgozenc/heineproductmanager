@@ -7,5 +7,5 @@ Route::get('/', function () {
 });
 
 Route::get('/products/{email}', 'ProductsController@index');
-Route::put('/products/{email}/{product_id}/update', 'ProductsController@update');
+Route::put('/products/{id}/update', 'ProductsController@update');
 Route::get('/import', 'ProductsController@importCsv');

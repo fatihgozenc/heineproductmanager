@@ -65,25 +65,30 @@ const Page = (props) => {
 
 	const UserTableExpanded = ({ data }) => {
 
+		console.log(data)
+
 		const [formData, setFormData] = React.useState(
-			data.empty_values.split(", ").reduce((acc, cur) => ({ ...acc, [cur]: "" }), {})
+			data.empty_values.split(", ").reduce((acc, cur) => ({ ...acc, [cur]: data[cur] }), {})
 		);
 
-		React.useEffect(() => {
-			console.log(formData)
-		}, [formData])
+		const [status, setStatus] = React.useState("")
 
 		const updateItem = (e) => {
-			e.preventDefault()
+			e.preventDefault();
+			let userEmail = Auth.user.attributes.email;
 			console.log(formData)
-			// let itemID = e.currentTarget.attributes['item-id'].value;
-			// let userEmail = Auth.user.attributes.email;
-
-			// axios.put(`/products/${userEmail}/${itemID}/update`, {
-			// 	data: {
-
-			// 	}
-			// })
+			axios.put(`/products/${data.id}/update`, { formData })
+				.then(res => {
+					console.log(res)
+					const fieldsLeftEmpty = Object.values(formData).filter(item => item == "").length;
+					fieldsLeftEmpty == 0
+						? (
+							setStatus(`${res.data}`)
+						) : (
+							setStatus(`${res.data} There are ${fieldsLeftEmpty} empty fields, please fill them.`)
+						)
+				})
+				.catch(err => console.log(err))
 		}
 
 		return (
@@ -95,13 +100,18 @@ const Page = (props) => {
 								<IonLabel className="inputcontainer__item--label"
 									position="stacked">{value.replace(/_/g, ' ').toUpperCase()}</IonLabel>
 								<IonInput
+									// value={data[`${value}`] ? data[`${value}`] : formData[`${value}`]}
 									value={formData[`${value}`]}
 									onIonChange={e => setFormData({ ...formData, [value]: e.detail.value })}
 								></IonInput>
 							</IonItem>
 						))}
 					</div>
-					<IonButton type="submit" className="inputcontainer__item--button">SUBMIT</IonButton>
+					<div>
+						<IonButton type="submit"
+							className="inputcontainer__item--button">SUBMIT</IonButton>
+						<span className="inputcontainer__message">{status}</span>
+					</div>
 				</form>
 			</>
 		)

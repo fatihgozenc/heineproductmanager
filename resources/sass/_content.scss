@@ -22,6 +22,10 @@
 		flex-wrap: wrap;
 		align-items: center;
 	}
+
+	&__message {
+		padding: 0 2rem;
+	}
 	&__item {
 		margin: 1rem 1rem 0 0;
 		flex: 0 30% !important;

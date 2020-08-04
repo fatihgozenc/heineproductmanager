@@ -43,10 +43,15 @@ class ProductsController extends Controller
 	}
 
 	// Update the specified resource in storage.
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		dump(request()->all());
-		// $product = Product::find($id);
+		$product = Product::find($id);
+		$data = $request->formData;
+		foreach($data as $key => $value){
+			$product->$key = $value;
+		};
+		$product->save();
+		return "Product successfully updated.";
 	}
 
 	// Remove the specified resource from storage.
