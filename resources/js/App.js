@@ -5,21 +5,18 @@ import { Route } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import Menu from './components/Menu';
 import Page from './pages/Page';
-/* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
 
-/* Theme variables */
-import Amplify, { Auth } from 'aws-amplify';
+import Auth from '@aws-amplify/auth';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { AmplifyConfig } from "./AmplifyConfig.json";
 import { StateProvider } from './context/StateContext'
 
-Amplify.configure(AmplifyConfig);
+Auth.configure(AmplifyConfig);
 
 const App = () => {
 

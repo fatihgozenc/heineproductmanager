@@ -41,6 +41,7 @@
 		"sass-loader": "^8.0.0"
 	},
 	"dependencies": {
+		"@aws-amplify/auth": "^3.3.4",
 		"@aws-amplify/ui-react": "^0.2.12",
 		"aws-amplify": "^3.0.21",
 		"react-data-table-component": "^6.9.8",
