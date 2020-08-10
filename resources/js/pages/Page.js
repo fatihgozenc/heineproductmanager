@@ -1,27 +1,26 @@
 import React from 'react';
 import {
 	IonButtons,
-	IonList,
-	IonItem,
-	IonLabel,
-	IonInput,
 	IonContent,
 	IonHeader,
 	IonMenuButton,
 	IonPage,
 	IonIcon,
+	IonButton,
 	IonTitle,
 	IonToolbar,
-	IonButton,
-	IonImg
+	IonImg,
+	IonText
 } from '@ionic/react';
+import { checkmarkDoneOutline } from 'ionicons/icons';
 import { Auth } from 'aws-amplify';
-import DataTable from 'react-data-table-component';
-import userTableColumns from '../utils/userTableColumns';
-import userTableStyles from '../utils/userTableStyles';
-import Logo from '../../assets/logo.jpg'
+import Logo from '../../assets/logo-white.png'
+import Table from '../components/Table'
+import { StateContext } from '../context/StateContext'
 
 const Page = (props) => {
+
+	const state = React.useContext(StateContext)
 
 	const [userTable, setUserTable] = React.useState([]);
 	const [userTableEmptyValues, setUserTableEmptyValues] = React.useState([]);
@@ -32,155 +31,51 @@ const Page = (props) => {
 			.then(res => {
 				// SET ALL ROWS OF USER
 				setUserTable(res.data);
-				setUserTableEmptyValues(res.data.map((row, i) => {
-					return {
-						productNumber: row.artikelnummer_heine,
-						product_id: row.product_id,
-						emptyFields: row.empty_values.split(',')
-					};
-				}))
-
-				// setUserTableEmptyValues()
-
-				// FILTERING OF EMPTY COLUMNS
-				// const itemsNeedAttention = res.map((row, i) => {
-				// 	const itemNeedsAttention = {
-				// 		productNumber: "",
-				// 		emptyFields: []
-				// 	};
-				// 	for (const [key, value] of Object.entries(row)) {
-				// 		if (value == 0) { // IF VALUE IS 0 OR ""
-				// 			itemNeedsAttention.productNumber = row.artikelnummer_heine
-				// 			itemNeedsAttention.emptyFields.push(key)
-				// 		}
-				// 	}
-				// 	return itemNeedsAttention
-				// })
-				// setUserTableEmptyValues(itemsNeedAttention)
+				let sampleData = res.data[0]
+				state.setCompanyName(sampleData.hauptlieferant)
+				state.setClientNumber(sampleData.lieferantennummer)
 			})
 			.catch(err => console.log(err))
 	}, [])
 
-
-
-	const UserTableExpanded = ({ data }) => {
-
-		console.log(data)
-
-		const [formData, setFormData] = React.useState(
-			data.empty_values.split(", ").reduce((acc, cur) => ({ ...acc, [cur]: data[cur] }), {})
-		);
-
-		const [status, setStatus] = React.useState("")
-
-		const updateItem = (e) => {
-			e.preventDefault();
-			let userEmail = Auth.user.attributes.email;
-			console.log(formData)
-			axios.put(`/products/${data.id}/update`, { formData })
-				.then(res => {
-					console.log(res)
-					const fieldsLeftEmpty = Object.values(formData).filter(item => item == "").length;
-					fieldsLeftEmpty == 0
-						? (
-							setStatus(`${res.data}`)
-						) : (
-							setStatus(`${res.data} There are ${fieldsLeftEmpty} empty fields, please fill them.`)
-						)
-				})
-				.catch(err => console.log(err))
-		}
-
-		return (
-			<>
-				<form itemID={data.product_id} onSubmit={updateItem} className="inputcontainer">
-					<div className="inputcontainer__wrapper">
-						{data.empty_values.split(", ").map((value, i) => (
-							<IonItem className="inputcontainer__item" key={i}>
-								<IonLabel className="inputcontainer__item--label"
-									position="stacked">{value.replace(/_/g, ' ').toUpperCase()}</IonLabel>
-								<IonInput
-									// value={data[`${value}`] ? data[`${value}`] : formData[`${value}`]}
-									value={formData[`${value}`]}
-									onIonChange={e => setFormData({ ...formData, [value]: e.detail.value })}
-								></IonInput>
-							</IonItem>
-						))}
-					</div>
-					<div>
-						<IonButton type="submit"
-							className="inputcontainer__item--button">SUBMIT</IonButton>
-						<span className="inputcontainer__message">{status}</span>
-					</div>
-				</form>
-			</>
-		)
-	}
-
-	const toggleListItem = (e) => {
-		const toggler = document.querySelector(`[data-testid=expander-button-${e.currentTarget.id}]`);
-		toggler.click();
-	}
-
 	return (
 		<IonPage>
-			<IonHeader>
-				<IonToolbar className="content">
-					{/* <IonTitle>Heine Product Manager</IonTitle> */}
+			<IonHeader className="topbar">
+				<IonToolbar className="content" color="primary" >
 					<IonImg className="logo" src={Logo} />
 					<IonButtons slot="end">
-						<IonTitle>Product Manager</IonTitle>
+						<IonTitle>Produktmanager</IonTitle>
 						<IonMenuButton />
 					</IonButtons>
 				</IonToolbar>
 			</IonHeader>
-
 			<IonContent className="content content--page">
-				{
-					userTableEmptyValues.length > 0 &&
-					<IonList>
-						<header className="sc-fzqNJr kwRiGp rdt_TableHeader">
-							<h2 className="sc-fzoyAV jqBTNs">Notifications</h2>
-						</header>
-						{
-							userTableEmptyValues.map((item, i) => (
-								<IonItem
-									className="notification"
-									id={item.product_id}
-									onClick={toggleListItem}
-									detail key={i}
-									button>
-									<span className="notification__definition">
-										{`Product ${item.productNumber} has empty values:`}
-									</span>
-									<span className="notification__values">
-										{`${item.emptyFields.map(field => ` ${field.replace(/_/g, ' ').toUpperCase()}`)}`}
-									</span>
-									{/* <span>FILL</span> */}
-								</IonItem>
-							))
-						}
-					</IonList>
-				}
+				<div className="content__instructions">
+					<IonTitle color="primary">Anleitung</IonTitle>
+					<IonText className="content__instructions__text">
+						Welcome to Heine Produktmanager. You can edit and update the required/missing fields of your products in Heine Database via this app.
+						<br />You can scroll ↔ horizontally to see all fields in the table.
+						<br />Products which have missing values are indicated with
+						<span>
+							<svg className={`table__indicator table__indicator--red`} height="8" width="8" viewBox="0 0 8 8" >
+								<circle fill="#ff0055" cx="4" cy="4" r="4" />
+							</svg>
+						</span>
+						You should press <span><IonButton size="small" fill="outline">Edit</IonButton></span> to activate editing of the related product.
+						<br />After you finish editing, you should press   <span><IonIcon size="large" color="primary" icon={checkmarkDoneOutline} /></span>   to update your item. If there are no missing fields left, indicator of the completed product will be
+						<span>
+							<svg className={`table__indicator table__indicator--green`} height="8" width="8" viewBox="0 0 8 8" >
+								<circle fill="#ff0055" cx="4" cy="4" r="4" />
+							</svg>
+						</span>
+					</IonText>
+				</div>
+				<div className="content__servermessage">{state.serverResponse}</div>
+				<IonTitle color="primary">Produkte</IonTitle>
 				{
 					userTable.length > 0 &&
-					<DataTable
-						title="Produkte"
-						expandableRows
-						striped={true}
-						customStyles={userTableStyles}
-						keyField="product_id"
-						expandableRowsComponent={<UserTableExpanded />}
-						// columns={[editButton, ...userTableColumns]}
-						columns={userTableColumns}
-						data={userTable}
-						pagination={true}
-						highlightOnHover
-						pointerOnHover
-						expandOnRowClicked
-					/>
+					<Table content={userTable} />
 				}
-
 			</IonContent>
 		</IonPage>
 	);

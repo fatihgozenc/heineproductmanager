@@ -1,11 +1,26 @@
 .content {
-	@media (min-width: 1280px) {
-		max-width: 80vw;
+	@media (min-width: 960px) {
+		max-width: 90vw;
 		align-self: center;
 		margin: 0 auto;	
 	}
 	&--page{
 		margin-bottom: 10rem;
+	}
+	&__servermessage{
+		padding: 2rem 0;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+	&__instructions{
+		padding: 3rem 0 1rem 0;
+		// display: flex;
+		&__text{
+			display: block;
+			padding: 20px;
+			line-height: 3;
+		}
 	}
 }
 
@@ -15,7 +30,7 @@
 }
 
 .inputcontainer {
-	width: 80vw;
+	width: 90vw;
 	// text-align: center;
 	&__wrapper{
 		display: flex;

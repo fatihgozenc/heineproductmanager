@@ -6,74 +6,42 @@ import {
 	IonList,
 	IonListHeader,
 	IonMenu,
-	IonMenuToggle,
-	IonNote,
 } from '@ionic/react';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+	mailOutline,
+	personCircleOutline,
+	atCircleOutline
+} from 'ionicons/icons';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
-import { Auth } from 'aws-amplify';
-
-const appPages = [
-	{
-		title: 'Inbox',
-		url: '#inbox',
-		iosIcon: mailOutline,
-		mdIcon: mailSharp
-	},
-	{
-		title: 'Outbox',
-		url: '#outbox',
-		iosIcon: paperPlaneOutline,
-		mdIcon: paperPlaneSharp
-	},
-	{
-		title: 'Favorites',
-		url: '#favorites',
-		iosIcon: heartOutline,
-		mdIcon: heartSharp
-	},
-	{
-		title: 'Archived',
-		url: '#archived',
-		iosIcon: archiveOutline,
-		mdIcon: archiveSharp
-	},
-	{
-		title: 'Trash',
-		url: '#trash',
-		iosIcon: trashOutline,
-		mdIcon: trashSharp
-	}
-];
+import { StateContext } from '../context/StateContext'
 
 const Menu = (props) => {
-	const location = useLocation();
+
+	const state = React.useContext(StateContext)
 
 	return (
 		<IonMenu contentId="main" side="end" type="overlay">
 			<IonContent>
 				<IonList id="inbox-list">
-					<IonListHeader>Welcome</IonListHeader>
-					<IonNote>{props.user}</IonNote>
-					{/* {appPages.map((appPage, index) => {
-						return (
-							<IonMenuToggle key={index} autoHide={false}>
-								<IonItem
-									className={location.pathname === appPage.url ? 'selected' : ''}
-									routerLink={appPage.url} routerDirection="none"
-									lines="none"
-									detail={false}
-								>
-									<IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-									<IonLabel>{appPage.title}</IonLabel>
-								</IonItem>
-							</IonMenuToggle>
-						);
-					})} */}
-					{/* <AmplifySignOut buttonText="Abmelden" /> */}
-					<AmplifySignOut />
+					<IonListHeader>Willkommen</IonListHeader>
+
+					<IonItem>
+						<IonIcon color="primary" icon={mailOutline} slot="start" />
+						<IonLabel color="primary">{props.user}</IonLabel>
+					</IonItem>
+
+					<IonItem>
+						<IonIcon color="primary" icon={personCircleOutline} slot="start" />
+						<IonLabel color="primary">{state.companyName}</IonLabel>
+					</IonItem>
+
+					<IonItem>
+						<IonIcon color="primary" icon={atCircleOutline} slot="start" />
+						<IonLabel color="primary">{state.clientNumber}</IonLabel>
+					</IonItem>
+
+					<AmplifySignOut buttonText="Abmelden" />
 				</IonList>
 			</IonContent>
 		</IonMenu>
