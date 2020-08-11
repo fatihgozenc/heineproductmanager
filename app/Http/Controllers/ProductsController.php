@@ -51,7 +51,10 @@ class ProductsController extends Controller
 			$product->$key = $value;
 		};
 		$product->save();
-		return "Product successfully updated.";
+		return [
+			"en" => "Product information has been successfully updated.", 
+			"de" => "Produktinformationen wurden erfolgreich aktualisiert."
+		];
 	}
 
 	// Remove the specified resource from storage.

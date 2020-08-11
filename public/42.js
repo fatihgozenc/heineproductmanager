@@ -1,1 +1,407 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[42],{11:function(t,o,e){"use strict";e.d(o,"a",(function(){return n})),e.d(o,"b",(function(){return a})),e.d(o,"c",(function(){return i})),e.d(o,"d",(function(){return d}));var r=e(0),i=function(t,o){return null!==o.closest(t)},n=function(t){var o;return"string"==typeof t&&t.length>0?((o={"ion-color":!0})["ion-color-"+t]=!0,o):void 0},a=function(t){var o={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return o[t]=!0})),o},s=/^[a-z][a-z0-9+\-.]*:/,d=function(t,o,e,i){return Object(r.__awaiter)(void 0,void 0,void 0,(function(){var n;return Object(r.__generator)(this,(function(r){return null!=t&&"#"!==t[0]&&!s.test(t)&&(n=document.querySelector("ion-router"))?(null!=o&&o.preventDefault(),[2,n.push(t,e,i)]):[2,!1]}))}))}},265:function(t,o,e){"use strict";e.r(o),e.d(o,"ion_toast",(function(){return h}));var r=e(0),i=e(1),n=e(6),a=(e(10),e(8)),s=e(45),d=(e(37),e(16)),l=e(11),c=function(t,o){var e=Object(a.a)(),r=Object(a.a)(),i=t.host||t,n=t.querySelector(".toast-wrapper");switch(r.addElement(n),o){case"top":r.fromTo("transform","translateY(-100%)","translateY(calc(10px + var(--ion-safe-area-top, 0px)))");break;case"middle":var s=Math.floor(i.clientHeight/2-n.clientHeight/2);n.style.top=s+"px",r.fromTo("opacity",.01,1);break;default:r.fromTo("transform","translateY(100%)","translateY(calc(-10px - var(--ion-safe-area-bottom, 0px)))")}return e.addElement(i).easing("cubic-bezier(.155,1.105,.295,1.12)").duration(400).addAnimation(r)},p=function(t,o){var e=Object(a.a)(),r=Object(a.a)(),i=t.host||t,n=t.querySelector(".toast-wrapper");switch(r.addElement(n),o){case"top":r.fromTo("transform","translateY(calc(10px + var(--ion-safe-area-top, 0px)))","translateY(-100%)");break;case"middle":r.fromTo("opacity",.99,0);break;default:r.fromTo("transform","translateY(calc(-10px - var(--ion-safe-area-bottom, 0px)))","translateY(100%)")}return e.addElement(i).easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(r)},u=function(t,o){var e=Object(a.a)(),r=Object(a.a)(),i=t.host||t,n=t.querySelector(".toast-wrapper");switch(r.addElement(n),o){case"top":n.style.top="calc(8px + var(--ion-safe-area-top, 0px))",r.fromTo("opacity",.01,1);break;case"middle":var s=Math.floor(i.clientHeight/2-n.clientHeight/2);n.style.top=s+"px",r.fromTo("opacity",.01,1);break;default:n.style.bottom="calc(8px + var(--ion-safe-area-bottom, 0px))",r.fromTo("opacity",.01,1)}return e.addElement(i).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation(r)},b=function(t){var o=Object(a.a)(),e=Object(a.a)(),r=t.host||t,i=t.querySelector(".toast-wrapper");return e.addElement(i).fromTo("opacity",.99,0),o.addElement(r).easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(e)},h=function(){function t(t){var o=this;Object(i.q)(this,t),this.didPresent=Object(i.i)(this,"ionToastDidPresent",7),this.willPresent=Object(i.i)(this,"ionToastWillPresent",7),this.willDismiss=Object(i.i)(this,"ionToastWillDismiss",7),this.didDismiss=Object(i.i)(this,"ionToastDidDismiss",7),this.presented=!1,this.duration=0,this.keyboardClose=!1,this.position="bottom",this.translucent=!1,this.animated=!0,this.dispatchCancelHandler=function(t){var e=t.detail.role;if(Object(d.j)(e)){var r=o.getButtons().find((function(t){return"cancel"===t.role}));o.callButtonHandler(r)}}}return t.prototype.connectedCallback=function(){Object(d.f)(this.el)},t.prototype.present=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){var t=this;return Object(r.__generator)(this,(function(o){switch(o.label){case 0:return[4,Object(d.e)(this,"toastEnter",c,u,this.position)];case 1:return o.sent(),this.duration>0&&(this.durationTimeout=setTimeout((function(){return t.dismiss(void 0,"timeout")}),this.duration)),[2]}}))}))},t.prototype.dismiss=function(t,o){return this.durationTimeout&&clearTimeout(this.durationTimeout),Object(d.g)(this,t,o,"toastLeave",p,b,this.position)},t.prototype.onDidDismiss=function(){return Object(d.h)(this.el,"ionToastDidDismiss")},t.prototype.onWillDismiss=function(){return Object(d.h)(this.el,"ionToastWillDismiss")},t.prototype.getButtons=function(){return this.buttons?this.buttons.map((function(t){return"string"==typeof t?{text:t}:t})):[]},t.prototype.buttonClick=function(t){return Object(r.__awaiter)(this,void 0,void 0,(function(){var o;return Object(r.__generator)(this,(function(e){switch(e.label){case 0:return o=t.role,Object(d.j)(o)?[2,this.dismiss(void 0,o)]:[4,this.callButtonHandler(t)];case 1:return e.sent()?[2,this.dismiss(void 0,o)]:[2,Promise.resolve()]}}))}))},t.prototype.callButtonHandler=function(t){return Object(r.__awaiter)(this,void 0,void 0,(function(){var o;return Object(r.__generator)(this,(function(e){switch(e.label){case 0:if(!t||!t.handler)return[3,4];e.label=1;case 1:return e.trys.push([1,3,,4]),[4,Object(d.n)(t.handler)];case 2:return!1===e.sent()?[2,!1]:[3,4];case 3:return o=e.sent(),console.error(o),[3,4];case 4:return[2,!0]}}))}))},t.prototype.renderButtons=function(t,o){var e,r=this;if(0!==t.length){var a=Object(n.b)(this),s=((e={"toast-button-group":!0})["toast-button-group-"+o]=!0,e);return Object(i.l)("div",{class:s},t.map((function(t){return Object(i.l)("button",{type:"button",class:g(t),tabIndex:0,onClick:function(){return r.buttonClick(t)},part:"button"},Object(i.l)("div",{class:"toast-button-inner"},t.icon&&Object(i.l)("ion-icon",{icon:t.icon,slot:void 0===t.text?"icon-only":void 0,class:"toast-icon"}),t.text),"md"===a&&Object(i.l)("ion-ripple-effect",{type:void 0!==t.icon&&void 0===t.text?"unbounded":"bounded"}))})))}},t.prototype.render=function(){var t,o,e=this.getButtons(),r=e.filter((function(t){return"start"===t.side})),a=e.filter((function(t){return"start"!==t.side})),d=Object(n.b)(this),c=((t={"toast-wrapper":!0})["toast-"+this.position]=!0,t);return Object(i.l)(i.c,{style:{zIndex:""+(6e4+this.overlayIndex)},class:Object.assign(Object.assign(Object.assign((o={},o[d]=!0,o),Object(l.a)(this.color)),Object(l.b)(this.cssClass)),{"toast-translucent":this.translucent}),tabindex:"-1",onIonToastWillDismiss:this.dispatchCancelHandler},Object(i.l)("div",{class:c},Object(i.l)("div",{class:"toast-container",part:"container"},this.renderButtons(r,"start"),Object(i.l)("div",{class:"toast-content"},void 0!==this.header&&Object(i.l)("div",{class:"toast-header",part:"header"},this.header),void 0!==this.message&&Object(i.l)("div",{class:"toast-message",part:"message",innerHTML:Object(s.a)(this.message)})),this.renderButtons(a,"end"))))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(i.m)(this)},enumerable:!1,configurable:!0}),t}(),g=function(t){var o;return Object.assign(((o={"toast-button":!0,"toast-button-icon-only":void 0!==t.icon&&void 0===t.text})["toast-button-"+t.role]=void 0!==t.role,o["ion-focusable"]=!0,o["ion-activatable"]=!0,o),Object(l.b)(t.cssClass))};h.style={ios:":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:pre-wrap;left:0;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host-context([dir=rtl]){left:unset;right:unset;right:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);left:var(--start);right:var(--end);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow)}[dir=rtl] .toast-wrapper,:host-context([dir=rtl]) .toast-wrapper{left:unset;right:unset;left:var(--end);right:var(--start)}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;pointer-events:auto;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-50, #f2f2f2);--border-radius:14px;--button-color:var(--ion-color-primary, #3880ff);--color:var(--ion-color-step-850, #262626);--max-width:700px;--start:10px;--end:10px;font-size:14px}.toast-wrapper{margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;z-index:10}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-wrapper{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.toast-translucent) .toast-wrapper{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}.toast-wrapper.toast-top{-webkit-transform:translate3d(0,  -100%,  0);transform:translate3d(0,  -100%,  0);top:0}.toast-wrapper.toast-middle{opacity:0.01}.toast-wrapper.toast-bottom{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);bottom:0}.toast-content{padding-left:15px;padding-right:15px;padding-top:15px;padding-bottom:15px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-content{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-header{margin-bottom:2px;font-weight:500}.toast-button{padding-left:15px;padding-right:15px;padding-top:10px;padding-bottom:10px;height:44px;-webkit-transition:background-color, opacity 100ms linear;transition:background-color, opacity 100ms linear;border:0;background-color:transparent;font-family:var(--ion-font-family);font-size:17px;font-weight:500;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-button.ion-activated{opacity:0.4}@media (any-hover: hover){.toast-button:hover{opacity:0.6}}",md:":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:pre-wrap;left:0;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host-context([dir=rtl]){left:unset;right:unset;right:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);left:var(--start);right:var(--end);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow)}[dir=rtl] .toast-wrapper,:host-context([dir=rtl]) .toast-wrapper{left:unset;right:unset;left:var(--end);right:var(--start)}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;pointer-events:auto;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-800, #333333);--border-radius:4px;--box-shadow:0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);--button-color:var(--ion-color-primary, #3880ff);--color:var(--ion-color-step-50, #f2f2f2);--max-width:700px;--start:8px;--end:8px;font-size:14px}.toast-wrapper{margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;opacity:0.01;z-index:10}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-wrapper{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}.toast-content{padding-left:16px;padding-right:16px;padding-top:14px;padding-bottom:14px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-content{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.toast-header{margin-bottom:2px;font-weight:500;line-height:20px}.toast-message{line-height:20px}.toast-button-group-start{margin-left:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-group-start{margin-left:unset;-webkit-margin-start:8px;margin-inline-start:8px}}.toast-button-group-end{margin-right:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-group-end{margin-right:unset;-webkit-margin-end:8px;margin-inline-end:8px}}.toast-button{padding-left:15px;padding-right:15px;padding-top:10px;padding-bottom:10px;position:relative;background-color:transparent;font-family:var(--ion-font-family);font-size:14px;font-weight:500;letter-spacing:0.84px;text-transform:uppercase;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-button-cancel{color:var(--ion-color-step-100, #e6e6e6)}.toast-button-icon-only{border-radius:50%;padding-left:9px;padding-right:9px;padding-top:9px;padding-bottom:9px;width:36px;height:36px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-icon-only{padding-left:unset;padding-right:unset;-webkit-padding-start:9px;padding-inline-start:9px;-webkit-padding-end:9px;padding-inline-end:9px}}@media (any-hover: hover){.toast-button:hover{background-color:rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.08)}.toast-button-cancel:hover{background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.08)}}"}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[42],{
+
+/***/ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-amazon-button_5.entry.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-amazon-button_5.entry.js ***!
+  \***********************************************************************************************/
+/*! exports provided: amplify_amazon_button, amplify_auth0_button, amplify_facebook_button, amplify_google_button, amplify_oauth_button */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_amazon_button", function() { return AmplifyAmazonButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_auth0_button", function() { return AmplifyAuth0Button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_facebook_button", function() { return AmplifyFacebookButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_google_button", function() { return AmplifyGoogleButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_oauth_button", function() { return AmplifyOAuthButton; });
+/* harmony import */ var _index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-a93ff41e.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/index-a93ff41e.js");
+/* harmony import */ var _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @aws-amplify/core */ "./node_modules/@aws-amplify/core/lib-esm/index.js");
+/* harmony import */ var _auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth-types-78df304e.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/auth-types-78df304e.js");
+/* harmony import */ var _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @aws-amplify/auth */ "./node_modules/@aws-amplify/auth/lib-esm/index.js");
+/* harmony import */ var _Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Translations-59947173.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/Translations-59947173.js");
+/* harmony import */ var _constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants-6835ae6a.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/constants-6835ae6a.js");
+/* harmony import */ var _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helpers-e703dacf.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/helpers-e703dacf.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+var logger = new _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["ConsoleLogger"]('amplify-amazon-button');
+var AmplifyAmazonButton = /** @class */ (function () {
+    function class_1(hostRef) {
+        var _this = this;
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Auth state change handler for this component
+         * e.g. SignIn -> 'Create Account' link -> SignUp
+         */
+        this.handleAuthStateChange = _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__["d"];
+        this.federatedSignIn = function (response) {
+            var access_token = response.access_token, expires_in = response.expires_in;
+            if (!access_token) {
+                return;
+            }
+            if (!_aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"] || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn !== 'function' || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser !== 'function') {
+                throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["N"]);
+            }
+            var date = new Date();
+            var expires_at = expires_in * 1000 + date.getTime();
+            window['amazon'].Login.retrieveProfile(function (userInfo) { return __awaiter(_this, void 0, void 0, function () {
+                var user, authenticatedUser;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            if (!userInfo.success) {
+                                return [2 /*return*/, logger.debug('Get user Info failed')];
+                            }
+                            user = {
+                                name: userInfo.profile.Name,
+                                email: userInfo.profile.PrimaryEmail,
+                            };
+                            return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn('amazon', { token: access_token, expires_at: expires_at }, user)];
+                        case 1:
+                            _a.sent();
+                            return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser()];
+                        case 2:
+                            authenticatedUser = _a.sent();
+                            this.handleAuthStateChange(_auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__["A"].SignedIn, authenticatedUser);
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        };
+    }
+    /**
+     * @see https://developer.amazon.com/docs/login-with-amazon/install-sdk-javascript.html
+     */
+    class_1.prototype.signInWithAmazon = function (event) {
+        var _this = this;
+        event.preventDefault();
+        window['amazon'].Login.setClientId(this.clientId);
+        window['amazon'].Login.authorize({ scope: 'profile' }, function (response) {
+            if (response.error) {
+                return logger.debug('Failed to login with amazon: ' + response.error);
+            }
+            try {
+                window.localStorage.setItem(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["i"], JSON.stringify({ provider: 'amazon' }));
+            }
+            catch (e) {
+                logger.debug('Failed to cache auth source into localStorage', e);
+            }
+            _this.federatedSignIn(response);
+        });
+    };
+    class_1.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-in-button", { onClick: function (event) { return _this.signInWithAmazon(event); }, provider: "amazon" }, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("script", { src: "https://assets.loginwithamazon.com/sdk/na/login1.js" }), _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].SIGN_IN_WITH_AMAZON)));
+    };
+    return class_1;
+}());
+var logger$1 = new _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["ConsoleLogger"]('amplify-auth0-button');
+var AmplifyAuth0Button = /** @class */ (function () {
+    function class_2(hostRef) {
+        var _this = this;
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Auth state change handler for this component */
+        this.handleAuthStateChange = _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__["d"];
+        this.handleLoad = function () {
+            // @ts-ignore Property 'auth0' does not exist on type '{}'.
+            var _a = _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].configure({}).oauth, oauth = _a === void 0 ? {} : _a;
+            // @ts-ignore Property 'auth0' does not exist on type '{}'.
+            var _b = _this.config, config = _b === void 0 ? oauth.auth0 : _b;
+            if (!config) {
+                logger$1.debug('Auth0 is not configured');
+                return;
+            }
+            logger$1.debug('auth0 configuration', config);
+            if (!_this._auth0) {
+                _this._auth0 = new window['auth0'].WebAuth(config);
+            }
+            _this._auth0.parseHash(function (err, authResult) {
+                if (err) {
+                    logger$1.debug('Failed to parse the url for Auth0', err);
+                    return;
+                }
+                if (!authResult) {
+                    logger$1.debug('Auth0 found no authResult in hash');
+                    return;
+                }
+                var payload = {
+                    provider: 'auth0',
+                    opts: {
+                        returnTo: config.returnTo,
+                        clientID: config.clientID,
+                        federated: config.federated,
+                    },
+                };
+                try {
+                    localStorage.setItem(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["i"], JSON.stringify(payload));
+                }
+                catch (e) {
+                    logger$1.debug('Failed to cache auth source into localStorage', e);
+                }
+                _this._auth0.client.userInfo(authResult.accessToken, function (err, user) { return __awaiter(_this, void 0, void 0, function () {
+                    var username, email, authenticatedUser;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                username = undefined;
+                                email = undefined;
+                                if (err) {
+                                    logger$1.debug('Failed to get the user info', err);
+                                }
+                                else {
+                                    username = user.name;
+                                    email = user.email;
+                                }
+                                return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn(config.domain, {
+                                        token: authResult.idToken,
+                                        expires_at: authResult.expiresIn * 1000 + new Date().getTime(),
+                                    }, { name: username, email: email })];
+                            case 1:
+                                _a.sent();
+                                return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser()];
+                            case 2:
+                                authenticatedUser = _a.sent();
+                                this.handleAuthStateChange(_auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__["A"].SignedIn, authenticatedUser);
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+            });
+        };
+    }
+    class_2.prototype.signInWithAuth0 = function (event) {
+        event.preventDefault();
+        if (!this._auth0) {
+            throw new Error('the auth0 client is not configured');
+        }
+        this._auth0.authorize();
+    };
+    class_2.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-in-button", { onClick: function (event) { return _this.signInWithAuth0(event); }, provider: "auth0" }, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("script", { onLoad: this.handleLoad, src: "https://cdn.auth0.com/js/auth0/9.11/auth0.min.js" }), _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].SIGN_IN_WITH_AUTH0)));
+    };
+    return class_2;
+}());
+var logger$2 = new _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["ConsoleLogger"]('amplify-facebook-button');
+var AmplifyFacebookButton = /** @class */ (function () {
+    function class_3(hostRef) {
+        var _this = this;
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Auth state change handler for this component
+         * e.g. SignIn -> 'Create Account' link -> SignUp
+         */
+        this.handleAuthStateChange = _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__["d"];
+        this.federatedSignIn = function (authResponse) {
+            var accessToken = authResponse.accessToken, expiresIn = authResponse.expiresIn;
+            if (!accessToken) {
+                return;
+            }
+            if (!_aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"] || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn !== 'function' || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser !== 'function') {
+                throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["N"]);
+            }
+            var date = new Date();
+            var expires_at = expiresIn * 1000 + date.getTime();
+            var fields = 'name,email';
+            window['FB'].api('/me', { fields: fields }, function (response) { return __awaiter(_this, void 0, void 0, function () {
+                var user, authenticatedUser;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            user = {
+                                name: response.name,
+                                email: response.email,
+                            };
+                            return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn('facebook', { token: accessToken, expires_at: expires_at }, user)];
+                        case 1:
+                            _a.sent();
+                            return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser()];
+                        case 2:
+                            authenticatedUser = _a.sent();
+                            this.handleAuthStateChange(_auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__["A"].SignedIn, authenticatedUser);
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        };
+        this.getLoginStatus = function () {
+            window['FB'].getLoginStatus(function (response) {
+                try {
+                    window.localStorage.setItem(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["i"], JSON.stringify({ provider: 'facebook' }));
+                }
+                catch (e) {
+                    logger$2.debug('Failed to cache auth source into localStorage', e);
+                }
+                if (response.status === 'connected') {
+                    return _this.federatedSignIn(response.authResponse);
+                }
+                _this.login();
+            });
+        };
+        this.login = function () {
+            var scope = 'public_profile,email';
+            window['FB'].login(function (response) {
+                if (response && response.authResponse) {
+                    _this.federatedSignIn(response.authResponse);
+                }
+            }, { scope: scope });
+        };
+    }
+    /**
+     * @see https://developers.facebook.com/docs/javascript/reference/FB.init/v5.0
+     */
+    class_3.prototype.signInWithFacebook = function (event) {
+        event.preventDefault();
+        window['FB'].init({
+            appId: this.appId,
+            cookie: true,
+            xfbml: false,
+            version: 'v5.0',
+        });
+        this.getLoginStatus();
+    };
+    class_3.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-in-button", { onClick: function (event) { return _this.signInWithFacebook(event); }, provider: "facebook" }, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("script", { async: true, defer: true, src: "https://connect.facebook.net/en_US/sdk.js" }), _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].SIGN_IN_WITH_FACEBOOK)));
+    };
+    return class_3;
+}());
+var logger$3 = new _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["ConsoleLogger"]('amplify-google-button');
+var AmplifyGoogleButton = /** @class */ (function () {
+    function class_4(hostRef) {
+        var _this = this;
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Auth state change handler for this component
+         * e.g. SignIn -> 'Create Account' link -> SignUp
+         */
+        this.handleAuthStateChange = _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__["d"];
+        this.handleError = function (error) {
+            console.error(error);
+        };
+        /**
+         * @see https://developers.google.com/identity/sign-in/web/build-button#building_a_button_with_a_custom_graphic
+         */
+        this.handleLoad = function () {
+            window['gapi'].load('auth2');
+        };
+        this.handleUser = function (user) { return __awaiter(_this, void 0, void 0, function () {
+            var _a, id_token, expires_at, profile, authenticatedUser;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (!_aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"] || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn !== 'function' || typeof _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser !== 'function') {
+                            throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["N"]);
+                        }
+                        try {
+                            window.localStorage.setItem(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__["i"], JSON.stringify({ provider: 'google' }));
+                        }
+                        catch (e) {
+                            logger$3.debug('Failed to cache auth source into localStorage', e);
+                        }
+                        _a = user.getAuthResponse(), id_token = _a.id_token, expires_at = _a.expires_at;
+                        profile = user.getBasicProfile();
+                        return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn('google', { token: id_token, expires_at: expires_at }, {
+                                email: profile.getEmail(),
+                                name: profile.getName(),
+                                picture: profile.getImageUrl(),
+                            })];
+                    case 1:
+                        _b.sent();
+                        return [4 /*yield*/, _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].currentAuthenticatedUser()];
+                    case 2:
+                        authenticatedUser = _b.sent();
+                        try {
+                            this.handleAuthStateChange(_auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__["A"].SignedIn, authenticatedUser);
+                        }
+                        catch (error) {
+                            this.handleError(error);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+    }
+    class_4.prototype.getAuthInstance = function () {
+        if (window['gapi'] && window['gapi'].auth2) {
+            return (window['gapi'].auth2.getAuthInstance() ||
+                window['gapi'].auth2.init({
+                    client_id: this.clientId,
+                    cookiepolicy: 'single_host_origin',
+                    scope: 'profile email openid',
+                }));
+        }
+        return null;
+    };
+    class_4.prototype.signInWithGoogle = function (event) {
+        event.preventDefault();
+        this.getAuthInstance()
+            .signIn()
+            .then(this.handleUser)
+            .catch(this.handleError);
+    };
+    class_4.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-in-button", { onClick: function (event) { return _this.signInWithGoogle(event); }, provider: "google" }, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("script", { onLoad: this.handleLoad, src: "https://apis.google.com/js/api:client.js" }), _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].SIGN_IN_WITH_GOOGLE)));
+    };
+    return class_4;
+}());
+var AmplifyOAuthButton = /** @class */ (function () {
+    function AmplifyOAuthButton(hostRef) {
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Federated credentials & configuration. */
+        this.config = {};
+    }
+    AmplifyOAuthButton.prototype.signInWithOAuth = function (event) {
+        event.preventDefault();
+        _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__["Auth"].federatedSignIn();
+    };
+    AmplifyOAuthButton.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-in-button", { onClick: function (event) { return _this.signInWithOAuth(event); }, provider: "oauth" }, this.config.label || _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].SIGN_IN_WITH_AWS)));
+    };
+    return AmplifyOAuthButton;
+}());
+
+
+
+/***/ })
+
+}]);

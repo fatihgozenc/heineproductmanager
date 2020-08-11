@@ -1,1 +1,1028 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[34],{11:function(t,e,n){"use strict";n.d(e,"a",(function(){return a})),n.d(e,"b",(function(){return o})),n.d(e,"c",(function(){return i})),n.d(e,"d",(function(){return l}));var r=n(0),i=function(t,e){return null!==e.closest(t)},a=function(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0},o=function(t){var e={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return e[t]=!0})),e},s=/^[a-z][a-z0-9+\-.]*:/,l=function(t,e,n,i){return Object(r.__awaiter)(void 0,void 0,void 0,(function(){var a;return Object(r.__generator)(this,(function(r){return null!=t&&"#"!==t[0]&&!s.test(t)&&(a=document.querySelector("ion-router"))?(null!=e&&e.preventDefault(),[2,a.push(t,n,i)]):[2,!1]}))}))}},250:function(t,e,n){"use strict";n.r(e),n.d(e,"ion_range",(function(){return l}));var r=n(0),i=n(1),a=n(6),o=n(10),s=n(11),l=function(){function t(t){var e=this;Object(i.q)(this,t),this.ionChange=Object(i.i)(this,"ionChange",7),this.ionStyle=Object(i.i)(this,"ionStyle",7),this.ionFocus=Object(i.i)(this,"ionFocus",7),this.ionBlur=Object(i.i)(this,"ionBlur",7),this.noUpdate=!1,this.hasFocus=!1,this.ratioA=0,this.ratioB=0,this.debounce=0,this.name="",this.dualKnobs=!1,this.min=0,this.max=100,this.pin=!1,this.snaps=!1,this.step=1,this.ticks=!0,this.disabled=!1,this.value=0,this.clampBounds=function(t){return Object(o.c)(e.min,t,e.max)},this.ensureValueInBounds=function(t){return e.dualKnobs?{lower:e.clampBounds(t.lower),upper:e.clampBounds(t.upper)}:e.clampBounds(t)},this.handleKeyboard=function(t,n){var r=e.step;r=r>0?r:1,r/=e.max-e.min,n||(r*=-1),"A"===t?e.ratioA=Object(o.c)(0,e.ratioA+r,1):e.ratioB=Object(o.c)(0,e.ratioB+r,1),e.updateValue()},this.onBlur=function(){e.hasFocus&&(e.hasFocus=!1,e.ionBlur.emit(),e.emitStyle())},this.onFocus=function(){e.hasFocus||(e.hasFocus=!0,e.ionFocus.emit(),e.emitStyle())}}return t.prototype.debounceChanged=function(){this.ionChange=Object(o.d)(this.ionChange,this.debounce)},t.prototype.minChanged=function(){this.noUpdate||this.updateRatio()},t.prototype.maxChanged=function(){this.noUpdate||this.updateRatio()},t.prototype.disabledChanged=function(){this.gesture&&this.gesture.enable(!this.disabled),this.emitStyle()},t.prototype.valueChanged=function(t){this.noUpdate||this.updateRatio(),t=this.ensureValueInBounds(t),this.ionChange.emit({value:t})},t.prototype.connectedCallback=function(){this.updateRatio(),this.debounceChanged(),this.disabledChanged()},t.prototype.disconnectedCallback=function(){this.gesture&&(this.gesture.destroy(),this.gesture=void 0)},t.prototype.componentDidLoad=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){var t,e,i=this;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return(t=this.rangeSlider)?(e=this,[4,Promise.resolve().then(n.bind(null,30))]):[3,2];case 1:e.gesture=r.sent().createGesture({el:t,gestureName:"range",gesturePriority:100,threshold:0,onStart:function(t){return i.onStart(t)},onMove:function(t){return i.onMove(t)},onEnd:function(t){return i.onEnd(t)}}),this.gesture.enable(!this.disabled),r.label=2;case 2:return[2]}}))}))},t.prototype.getValue=function(){var t=this.value||0;return this.dualKnobs?"object"==typeof t?t:{lower:0,upper:t}:"object"==typeof t?t.upper:t},t.prototype.emitStyle=function(){this.ionStyle.emit({interactive:!0,"interactive-disabled":this.disabled})},t.prototype.onStart=function(t){var e=this.rect=this.rangeSlider.getBoundingClientRect(),n=t.currentX,r=Object(o.c)(0,(n-e.left)/e.width,1);"rtl"===document.dir&&(r=1-r),this.pressedKnob=!this.dualKnobs||Math.abs(this.ratioA-r)<Math.abs(this.ratioB-r)?"A":"B",this.setFocus(this.pressedKnob),this.update(n)},t.prototype.onMove=function(t){this.update(t.currentX)},t.prototype.onEnd=function(t){this.update(t.currentX),this.pressedKnob=void 0},t.prototype.update=function(t){var e=this.rect,n=Object(o.c)(0,(t-e.left)/e.width,1);"rtl"===document.dir&&(n=1-n),this.snaps&&(n=g(b(n,this.min,this.max,this.step),this.min,this.max)),"A"===this.pressedKnob?this.ratioA=n:this.ratioB=n,this.updateValue()},Object.defineProperty(t.prototype,"valA",{get:function(){return b(this.ratioA,this.min,this.max,this.step)},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"valB",{get:function(){return b(this.ratioB,this.min,this.max,this.step)},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"ratioLower",{get:function(){return this.dualKnobs?Math.min(this.ratioA,this.ratioB):0},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"ratioUpper",{get:function(){return this.dualKnobs?Math.max(this.ratioA,this.ratioB):this.ratioA},enumerable:!1,configurable:!0}),t.prototype.updateRatio=function(){var t=this.getValue(),e=this.min,n=this.max;this.dualKnobs?(this.ratioA=g(t.lower,e,n),this.ratioB=g(t.upper,e,n)):this.ratioA=g(t,e,n)},t.prototype.updateValue=function(){this.noUpdate=!0;var t=this.valA,e=this.valB;this.value=this.dualKnobs?{lower:Math.min(t,e),upper:Math.max(t,e)}:t,this.noUpdate=!1},t.prototype.setFocus=function(t){if(this.el.shadowRoot){var e=this.el.shadowRoot.querySelector("A"===t?".range-knob-a":".range-knob-b");e&&e.focus()}},t.prototype.render=function(){var t,e,n=this,r=this,l=r.min,b=r.max,c=r.step,h=r.el,p=r.handleKeyboard,u=r.pressedKnob,m=r.disabled,f=r.pin,k=r.ratioLower,v=r.ratioUpper,x=Object(a.b)(this),w=100*k+"%",y=100-100*v+"%",z="rtl"===document.dir,j=z?"right":"left",O=z?"left":"right",B=function(t){var e;return(e={})[j]=t[j],e},A=((t={})[j]=w,t[O]=y,t),C=[];if(this.snaps&&this.ticks)for(var K=l;K<=b;K+=c){var S=g(K,l,b),F={ratio:S,active:S>=k&&S<=v};F[j]=100*S+"%",C.push(F)}return Object(o.a)(!0,h,this.name,JSON.stringify(this.getValue()),m),Object(i.l)(i.c,{onFocusin:this.onFocus,onFocusout:this.onBlur,class:Object.assign(Object.assign({},Object(s.a)(this.color)),(e={},e[x]=!0,e["in-item"]=Object(s.c)("ion-item",h),e["range-disabled"]=m,e["range-pressed"]=void 0!==u,e["range-has-pin"]=f,e))},Object(i.l)("slot",{name:"start"}),Object(i.l)("div",{class:"range-slider",ref:function(t){return n.rangeSlider=t}},C.map((function(t){return Object(i.l)("div",{style:B(t),role:"presentation",class:{"range-tick":!0,"range-tick-active":t.active},part:t.active?"tick-active":"tick"})})),Object(i.l)("div",{class:"range-bar",role:"presentation",part:"bar"}),Object(i.l)("div",{class:"range-bar range-bar-active",role:"presentation",style:A,part:"bar-active"}),d(z,{knob:"A",pressed:"A"===u,value:this.valA,ratio:this.ratioA,pin:f,disabled:m,handleKeyboard:p,min:l,max:b}),this.dualKnobs&&d(z,{knob:"B",pressed:"B"===u,value:this.valB,ratio:this.ratioB,pin:f,disabled:m,handleKeyboard:p,min:l,max:b})),Object(i.l)("slot",{name:"end"}))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(i.m)(this)},enumerable:!1,configurable:!0}),Object.defineProperty(t,"watchers",{get:function(){return{debounce:["debounceChanged"],min:["minChanged"],max:["maxChanged"],disabled:["disabledChanged"],value:["valueChanged"]}},enumerable:!1,configurable:!0}),t}(),d=function(t,e){var n,r=e.knob,a=e.value,o=e.ratio,s=e.min,l=e.max,d=e.disabled,b=e.pressed,g=e.pin,c=e.handleKeyboard,h=t?"right":"left";return Object(i.l)("div",{onKeyDown:function(t){var e=t.key;"ArrowLeft"===e||"ArrowDown"===e?(c(r,!1),t.preventDefault(),t.stopPropagation()):"ArrowRight"!==e&&"ArrowUp"!==e||(c(r,!0),t.preventDefault(),t.stopPropagation())},class:{"range-knob-handle":!0,"range-knob-a":"A"===r,"range-knob-b":"B"===r,"range-knob-pressed":b,"range-knob-min":a===s,"range-knob-max":a===l},style:(n={},n[h]=100*o+"%",n),role:"slider",tabindex:d?-1:0,"aria-valuemin":s,"aria-valuemax":l,"aria-disabled":d?"true":null,"aria-valuenow":a},g&&Object(i.l)("div",{class:"range-pin",role:"presentation",part:"pin"},Math.round(a)),Object(i.l)("div",{class:"range-knob",role:"presentation",part:"knob"}))},b=function(t,e,n,r){var i=(n-e)*t;return r>0&&(i=Math.round(i/r)*r+e),Object(o.c)(e,i,n)},g=function(t,e,n){return Object(o.c)(0,(t-e)/(n-e),1)};l.style={ios:":host{--knob-handle-size:calc(var(--knob-size) * 2);display:-ms-flexbox;display:flex;position:relative;-ms-flex:3;flex:3;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.range-disabled){pointer-events:none}::slotted(ion-label){-ms-flex:initial;flex:initial}::slotted(ion-icon[slot]){font-size:24px}.range-slider{position:relative;-ms-flex:1;flex:1;width:100%;height:var(--height);contain:size layout style;cursor:-webkit-grab;cursor:grab;-ms-touch-action:pan-y;touch-action:pan-y}:host(.range-pressed) .range-slider{cursor:-webkit-grabbing;cursor:grabbing}.range-pin{position:absolute;background:var(--ion-color-base);color:var(--ion-color-contrast);text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.range-knob-handle{left:0;top:calc((var(--height) - var(--knob-handle-size)) / 2);margin-left:calc(0px - var(--knob-handle-size) / 2);position:absolute;width:var(--knob-handle-size);height:var(--knob-handle-size);text-align:center}[dir=rtl] .range-knob-handle,:host-context([dir=rtl]) .range-knob-handle{left:unset;right:unset;right:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.range-knob-handle{margin-left:unset;-webkit-margin-start:calc(0px - var(--knob-handle-size) / 2);margin-inline-start:calc(0px - var(--knob-handle-size) / 2)}}[dir=rtl] .range-knob-handle,:host-context([dir=rtl]) .range-knob-handle{left:unset}.range-knob-handle:active,.range-knob-handle:focus{outline:none}.range-bar{border-radius:var(--bar-border-radius);left:0;top:calc((var(--height) - var(--bar-height)) / 2);position:absolute;width:100%;height:var(--bar-height);background:var(--bar-background);pointer-events:none}[dir=rtl] .range-bar,:host-context([dir=rtl]) .range-bar{left:unset;right:unset;right:0}[dir=rtl] .range-bar,:host-context([dir=rtl]) .range-bar{left:unset}.range-knob{border-radius:var(--knob-border-radius);left:calc(50% - var(--knob-size) / 2);top:calc(50% - var(--knob-size) / 2);position:absolute;width:var(--knob-size);height:var(--knob-size);background:var(--knob-background);-webkit-box-shadow:var(--knob-box-shadow);box-shadow:var(--knob-box-shadow);z-index:2;pointer-events:none}[dir=rtl] .range-knob,:host-context([dir=rtl]) .range-knob{left:unset;right:unset;right:calc(50% - var(--knob-size) / 2)}[dir=rtl] .range-knob,:host-context([dir=rtl]) .range-knob{left:unset}:host(.range-pressed) .range-bar-active{will-change:left, right}:host(.in-item){width:100%}:host(.in-item) ::slotted(ion-label){-ms-flex-item-align:center;align-self:center}:host{--knob-border-radius:50%;--knob-background:#ffffff;--knob-box-shadow:0 3px 1px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.13), 0 0 0 1px rgba(0, 0, 0, 0.02);--knob-size:28px;--bar-height:2px;--bar-background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);--bar-background-active:var(--ion-color-primary, #3880ff);--bar-border-radius:0;--height:42px;padding-left:16px;padding-right:16px;padding-top:8px;padding-bottom:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}:host(.ion-color) .range-bar-active,:host(.ion-color) .range-tick-active{background:var(--ion-color-base)}::slotted([slot=start]){margin-left:0;margin-right:16px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}}::slotted([slot=end]){margin-left:16px;margin-right:0;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=end]){margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}}:host(.range-has-pin){padding-top:20px}.range-bar-active{bottom:0;width:auto;background:var(--bar-background-active)}.range-tick{margin-left:-1px;border-radius:0;position:absolute;top:18px;width:2px;height:8px;background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);pointer-events:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.range-tick{margin-left:unset;-webkit-margin-start:-1px;margin-inline-start:-1px}}.range-tick-active{background:var(--bar-background-active)}.range-pin{-webkit-transform:translate3d(0,  28px,  0) scale(0.01);transform:translate3d(0,  28px,  0) scale(0.01);padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;display:inline-block;position:relative;top:-20px;min-width:28px;-webkit-transition:-webkit-transform 120ms ease;transition:-webkit-transform 120ms ease;transition:transform 120ms ease;transition:transform 120ms ease, -webkit-transform 120ms ease;background:transparent;color:var(--ion-text-color, #000);font-size:12px;text-align:center}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.range-pin{padding-left:unset;padding-right:unset;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px}}.range-knob-pressed .range-pin{-webkit-transform:translate3d(0,  0,  0) scale(1);transform:translate3d(0,  0,  0) scale(1)}:host(.range-disabled){opacity:0.5}",md:':host{--knob-handle-size:calc(var(--knob-size) * 2);display:-ms-flexbox;display:flex;position:relative;-ms-flex:3;flex:3;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.range-disabled){pointer-events:none}::slotted(ion-label){-ms-flex:initial;flex:initial}::slotted(ion-icon[slot]){font-size:24px}.range-slider{position:relative;-ms-flex:1;flex:1;width:100%;height:var(--height);contain:size layout style;cursor:-webkit-grab;cursor:grab;-ms-touch-action:pan-y;touch-action:pan-y}:host(.range-pressed) .range-slider{cursor:-webkit-grabbing;cursor:grabbing}.range-pin{position:absolute;background:var(--ion-color-base);color:var(--ion-color-contrast);text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.range-knob-handle{left:0;top:calc((var(--height) - var(--knob-handle-size)) / 2);margin-left:calc(0px - var(--knob-handle-size) / 2);position:absolute;width:var(--knob-handle-size);height:var(--knob-handle-size);text-align:center}[dir=rtl] .range-knob-handle,:host-context([dir=rtl]) .range-knob-handle{left:unset;right:unset;right:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.range-knob-handle{margin-left:unset;-webkit-margin-start:calc(0px - var(--knob-handle-size) / 2);margin-inline-start:calc(0px - var(--knob-handle-size) / 2)}}[dir=rtl] .range-knob-handle,:host-context([dir=rtl]) .range-knob-handle{left:unset}.range-knob-handle:active,.range-knob-handle:focus{outline:none}.range-bar{border-radius:var(--bar-border-radius);left:0;top:calc((var(--height) - var(--bar-height)) / 2);position:absolute;width:100%;height:var(--bar-height);background:var(--bar-background);pointer-events:none}[dir=rtl] .range-bar,:host-context([dir=rtl]) .range-bar{left:unset;right:unset;right:0}[dir=rtl] .range-bar,:host-context([dir=rtl]) .range-bar{left:unset}.range-knob{border-radius:var(--knob-border-radius);left:calc(50% - var(--knob-size) / 2);top:calc(50% - var(--knob-size) / 2);position:absolute;width:var(--knob-size);height:var(--knob-size);background:var(--knob-background);-webkit-box-shadow:var(--knob-box-shadow);box-shadow:var(--knob-box-shadow);z-index:2;pointer-events:none}[dir=rtl] .range-knob,:host-context([dir=rtl]) .range-knob{left:unset;right:unset;right:calc(50% - var(--knob-size) / 2)}[dir=rtl] .range-knob,:host-context([dir=rtl]) .range-knob{left:unset}:host(.range-pressed) .range-bar-active{will-change:left, right}:host(.in-item){width:100%}:host(.in-item) ::slotted(ion-label){-ms-flex-item-align:center;align-self:center}:host{--knob-border-radius:50%;--knob-background:var(--bar-background-active);--knob-box-shadow:none;--knob-size:18px;--bar-height:2px;--bar-background:rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.26);--bar-background-active:var(--ion-color-primary, #3880ff);--bar-border-radius:0;--height:42px;--pin-background:var(--ion-color-primary, #3880ff);--pin-color:var(--ion-color-primary-contrast, #fff);padding-left:14px;padding-right:14px;padding-top:8px;padding-bottom:8px;font-size:12px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:14px;padding-inline-start:14px;-webkit-padding-end:14px;padding-inline-end:14px}}:host(.ion-color) .range-bar{background:rgba(var(--ion-color-base-rgb), 0.26)}:host(.ion-color) .range-bar-active,:host(.ion-color) .range-knob,:host(.ion-color) .range-pin,:host(.ion-color) .range-pin::before,:host(.ion-color) .range-tick{background:var(--ion-color-base);color:var(--ion-color-contrast)}::slotted([slot=start]){margin-left:0;margin-right:14px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:14px;margin-inline-end:14px}}::slotted([slot=end]){margin-left:14px;margin-right:0;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=end]){margin-left:unset;margin-right:unset;-webkit-margin-start:14px;margin-inline-start:14px;-webkit-margin-end:0;margin-inline-end:0}}:host(.range-has-pin){padding-top:28px}.range-bar-active{bottom:0;width:auto;background:var(--bar-background-active)}.range-knob{-webkit-transform:scale(0.67);transform:scale(0.67);-webkit-transition-duration:120ms;transition-duration:120ms;-webkit-transition-property:background-color, border, -webkit-transform;transition-property:background-color, border, -webkit-transform;transition-property:transform, background-color, border;transition-property:transform, background-color, border, -webkit-transform;-webkit-transition-timing-function:ease;transition-timing-function:ease;z-index:2}.range-tick{position:absolute;top:calc((var(--height) - var(--bar-height)) / 2);width:var(--bar-height);height:var(--bar-height);background:var(--bar-background-active);z-index:1;pointer-events:none}.range-tick-active{background:transparent}.range-pin{padding-left:0;padding-right:0;padding-top:8px;padding-bottom:8px;border-radius:50%;-webkit-transform:translate3d(0,  0,  0) scale(0.01);transform:translate3d(0,  0,  0) scale(0.01);display:inline-block;position:relative;min-width:28px;height:28px;-webkit-transition:background 120ms ease, -webkit-transform 120ms ease;transition:background 120ms ease, -webkit-transform 120ms ease;transition:transform 120ms ease, background 120ms ease;transition:transform 120ms ease, background 120ms ease, -webkit-transform 120ms ease;background:var(--pin-background);color:var(--pin-color);text-align:center}.range-pin::before{left:50%;top:3px;margin-left:-13px;border-radius:50% 50% 50% 0;position:absolute;width:26px;height:26px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transition:background 120ms ease;transition:background 120ms ease;background:var(--pin-background);content:"";z-index:-1}[dir=rtl] .range-pin::before,:host-context([dir=rtl]) .range-pin::before{left:unset;right:unset;right:50%}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.range-pin::before{margin-left:unset;-webkit-margin-start:-13px;margin-inline-start:-13px}}[dir=rtl] .range-pin::before,:host-context([dir=rtl]) .range-pin::before{left:unset}.range-knob-pressed .range-pin{-webkit-transform:translate3d(0,  -24px,  0) scale(1);transform:translate3d(0,  -24px,  0) scale(1)}:host(:not(.range-has-pin)) .range-knob-pressed .range-knob{-webkit-transform:scale(1);transform:scale(1)}:host(.range-disabled) .range-bar-active,:host(.range-disabled) .range-bar,:host(.range-disabled) .range-tick{background-color:var(--ion-color-step-250, #bfbfbf)}:host(.range-disabled) .range-knob{-webkit-transform:scale(0.55);transform:scale(0.55);outline:5px solid #fff;background-color:var(--ion-color-step-250, #bfbfbf)}'}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[34],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-route_4.entry.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-route_4.entry.js ***!
+  \********************************************************************/
+/*! exports provided: ion_route, ion_route_redirect, ion_router, ion_router_link */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_route", function() { return Route; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_route_redirect", function() { return RouteRedirect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router", function() { return Router; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router_link", function() { return RouterLink; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+
+var Route = /** @class */ (function () {
+    function Route(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteDataChanged = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDataChanged", 7);
+        /**
+         * Relative path that needs to match in order for this route to apply.
+         *
+         * Accepts paths similar to expressjs so that you can define parameters
+         * in the url /foo/:bar where bar would be available in incoming props.
+         */
+        this.url = '';
+    }
+    Route.prototype.onUpdate = function (newValue) {
+        this.ionRouteDataChanged.emit(newValue);
+    };
+    Route.prototype.onComponentProps = function (newValue, oldValue) {
+        if (newValue === oldValue) {
+            return;
+        }
+        var keys1 = newValue ? Object.keys(newValue) : [];
+        var keys2 = oldValue ? Object.keys(oldValue) : [];
+        if (keys1.length !== keys2.length) {
+            this.onUpdate(newValue);
+            return;
+        }
+        for (var _i = 0, keys1_1 = keys1; _i < keys1_1.length; _i++) {
+            var key = keys1_1[_i];
+            if (newValue[key] !== oldValue[key]) {
+                this.onUpdate(newValue);
+                return;
+            }
+        }
+    };
+    Route.prototype.connectedCallback = function () {
+        this.ionRouteDataChanged.emit();
+    };
+    Object.defineProperty(Route, "watchers", {
+        get: function () {
+            return {
+                "url": ["onUpdate"],
+                "component": ["onUpdate"],
+                "componentProps": ["onComponentProps"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Route;
+}());
+var RouteRedirect = /** @class */ (function () {
+    function RouteRedirect(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteRedirectChanged = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteRedirectChanged", 7);
+    }
+    RouteRedirect.prototype.propDidChange = function () {
+        this.ionRouteRedirectChanged.emit();
+    };
+    RouteRedirect.prototype.connectedCallback = function () {
+        this.ionRouteRedirectChanged.emit();
+    };
+    Object.defineProperty(RouteRedirect, "watchers", {
+        get: function () {
+            return {
+                "from": ["propDidChange"],
+                "to": ["propDidChange"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return RouteRedirect;
+}());
+var ROUTER_INTENT_NONE = 'root';
+var ROUTER_INTENT_FORWARD = 'forward';
+var ROUTER_INTENT_BACK = 'back';
+var generatePath = function (segments) {
+    var path = segments
+        .filter(function (s) { return s.length > 0; })
+        .join('/');
+    return '/' + path;
+};
+var chainToPath = function (chain) {
+    var path = [];
+    for (var _i = 0, chain_1 = chain; _i < chain_1.length; _i++) {
+        var route = chain_1[_i];
+        for (var _a = 0, _b = route.path; _a < _b.length; _a++) {
+            var segment = _b[_a];
+            if (segment[0] === ':') {
+                var param = route.params && route.params[segment.slice(1)];
+                if (!param) {
+                    return null;
+                }
+                path.push(param);
+            }
+            else if (segment !== '') {
+                path.push(segment);
+            }
+        }
+    }
+    return path;
+};
+var writePath = function (history, root, useHash, path, direction, state, queryString) {
+    var url = generatePath(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArrays"])(parsePath(root), path));
+    if (useHash) {
+        url = '#' + url;
+    }
+    if (queryString !== undefined) {
+        url = url + '?' + queryString;
+    }
+    if (direction === ROUTER_INTENT_FORWARD) {
+        history.pushState(state, '', url);
+    }
+    else {
+        history.replaceState(state, '', url);
+    }
+};
+var removePrefix = function (prefix, path) {
+    if (prefix.length > path.length) {
+        return null;
+    }
+    if (prefix.length <= 1 && prefix[0] === '') {
+        return path;
+    }
+    for (var i = 0; i < prefix.length; i++) {
+        if (prefix[i].length > 0 && prefix[i] !== path[i]) {
+            return null;
+        }
+    }
+    if (path.length === prefix.length) {
+        return [''];
+    }
+    return path.slice(prefix.length);
+};
+var readPath = function (loc, root, useHash) {
+    var pathname = loc.pathname;
+    if (useHash) {
+        var hash = loc.hash;
+        pathname = (hash[0] === '#')
+            ? hash.slice(1)
+            : '';
+    }
+    var prefix = parsePath(root);
+    var path = parsePath(pathname);
+    return removePrefix(prefix, path);
+};
+var parsePath = function (path) {
+    if (path == null) {
+        return [''];
+    }
+    var removeQueryString = path.split('?')[0];
+    var segments = removeQueryString.split('/')
+        .map(function (s) { return s.trim(); })
+        .filter(function (s) { return s.length > 0; });
+    if (segments.length === 0) {
+        return [''];
+    }
+    else {
+        return segments;
+    }
+};
+var printRoutes = function (routes) {
+    console.group("[ion-core] ROUTES[" + routes.length + "]");
+    var _loop_1 = function (chain) {
+        var path = [];
+        chain.forEach(function (r) { return path.push.apply(path, r.path); });
+        var ids = chain.map(function (r) { return r.id; });
+        console.debug("%c " + generatePath(path), 'font-weight: bold; padding-left: 20px', '=>\t', "(" + ids.join(', ') + ")");
+    };
+    for (var _i = 0, routes_1 = routes; _i < routes_1.length; _i++) {
+        var chain = routes_1[_i];
+        _loop_1(chain);
+    }
+    console.groupEnd();
+};
+var printRedirects = function (redirects) {
+    console.group("[ion-core] REDIRECTS[" + redirects.length + "]");
+    for (var _i = 0, redirects_1 = redirects; _i < redirects_1.length; _i++) {
+        var redirect = redirects_1[_i];
+        if (redirect.to) {
+            console.debug('FROM: ', "$c " + generatePath(redirect.from), 'font-weight: bold', ' TO: ', "$c " + generatePath(redirect.to), 'font-weight: bold');
+        }
+    }
+    console.groupEnd();
+};
+var writeNavState = function (root, chain, direction, index, changed, animation) {
+    if (changed === void 0) { changed = false; }
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+        var outlet, route, result, e_1;
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 6, , 7]);
+                    outlet = searchNavNode(root);
+                    // make sure we can continue interacting the DOM, otherwise abort
+                    if (index >= chain.length || !outlet) {
+                        return [2 /*return*/, changed];
+                    }
+                    return [4 /*yield*/, outlet.componentOnReady()];
+                case 1:
+                    _a.sent();
+                    route = chain[index];
+                    return [4 /*yield*/, outlet.setRouteId(route.id, route.params, direction, animation)];
+                case 2:
+                    result = _a.sent();
+                    // if the outlet changed the page, reset navigation to neutral (no direction)
+                    // this means nested outlets will not animate
+                    if (result.changed) {
+                        direction = ROUTER_INTENT_NONE;
+                        changed = true;
+                    }
+                    return [4 /*yield*/, writeNavState(result.element, chain, direction, index + 1, changed, animation)];
+                case 3:
+                    // recursively set nested outlets
+                    changed = _a.sent();
+                    if (!result.markVisible) return [3 /*break*/, 5];
+                    return [4 /*yield*/, result.markVisible()];
+                case 4:
+                    _a.sent();
+                    _a.label = 5;
+                case 5: return [2 /*return*/, changed];
+                case 6:
+                    e_1 = _a.sent();
+                    console.error(e_1);
+                    return [2 /*return*/, false];
+                case 7: return [2 /*return*/];
+            }
+        });
+    });
+};
+var readNavState = function (root) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var ids, outlet, node, id;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                ids = [];
+                node = root;
+                _a.label = 1;
+            case 1:
+                if (false) {}
+                outlet = searchNavNode(node);
+                if (!outlet) return [3 /*break*/, 3];
+                return [4 /*yield*/, outlet.getRouteId()];
+            case 2:
+                id = _a.sent();
+                if (id) {
+                    node = id.element;
+                    id.element = undefined;
+                    ids.push(id);
+                }
+                else {
+                    return [3 /*break*/, 5];
+                }
+                return [3 /*break*/, 4];
+            case 3: return [3 /*break*/, 5];
+            case 4: return [3 /*break*/, 1];
+            case 5: return [2 /*return*/, { ids: ids, outlet: outlet }];
+        }
+    });
+}); };
+var waitUntilNavNode = function () {
+    if (searchNavNode(document.body)) {
+        return Promise.resolve();
+    }
+    return new Promise(function (resolve) {
+        window.addEventListener('ionNavWillLoad', resolve, { once: true });
+    });
+};
+var QUERY = ':not([no-router]) ion-nav, :not([no-router]) ion-tabs, :not([no-router]) ion-router-outlet';
+var searchNavNode = function (root) {
+    if (!root) {
+        return undefined;
+    }
+    if (root.matches(QUERY)) {
+        return root;
+    }
+    var outlet = root.querySelector(QUERY);
+    return outlet ? outlet : undefined;
+};
+var matchesRedirect = function (input, route) {
+    var from = route.from, to = route.to;
+    if (to === undefined) {
+        return false;
+    }
+    if (from.length > input.length) {
+        return false;
+    }
+    for (var i = 0; i < from.length; i++) {
+        var expected = from[i];
+        if (expected === '*') {
+            return true;
+        }
+        if (expected !== input[i]) {
+            return false;
+        }
+    }
+    return from.length === input.length;
+};
+var routeRedirect = function (path, routes) {
+    return routes.find(function (route) { return matchesRedirect(path, route); });
+};
+var matchesIDs = function (ids, chain) {
+    var len = Math.min(ids.length, chain.length);
+    var i = 0;
+    for (; i < len; i++) {
+        if (ids[i].toLowerCase() !== chain[i].id) {
+            break;
+        }
+    }
+    return i;
+};
+var matchesPath = function (inputPath, chain) {
+    var segments = new RouterSegments(inputPath);
+    var matchesDefault = false;
+    var allparams;
+    for (var i = 0; i < chain.length; i++) {
+        var path = chain[i].path;
+        if (path[0] === '') {
+            matchesDefault = true;
+        }
+        else {
+            for (var _i = 0, path_1 = path; _i < path_1.length; _i++) {
+                var segment = path_1[_i];
+                var data = segments.next();
+                // data param
+                if (segment[0] === ':') {
+                    if (data === '') {
+                        return null;
+                    }
+                    allparams = allparams || [];
+                    var params = allparams[i] || (allparams[i] = {});
+                    params[segment.slice(1)] = data;
+                }
+                else if (data !== segment) {
+                    return null;
+                }
+            }
+            matchesDefault = false;
+        }
+    }
+    var matches = (matchesDefault)
+        ? matchesDefault === (segments.next() === '')
+        : true;
+    if (!matches) {
+        return null;
+    }
+    if (allparams) {
+        return chain.map(function (route, i) { return ({
+            id: route.id,
+            path: route.path,
+            params: mergeParams(route.params, allparams[i])
+        }); });
+    }
+    return chain;
+};
+var mergeParams = function (a, b) {
+    if (!a && b) {
+        return b;
+    }
+    else if (a && !b) {
+        return a;
+    }
+    else if (a && b) {
+        return Object.assign(Object.assign({}, a), b);
+    }
+    return undefined;
+};
+var routerIDsToChain = function (ids, chains) {
+    var match = null;
+    var maxMatches = 0;
+    var plainIDs = ids.map(function (i) { return i.id; });
+    for (var _i = 0, chains_1 = chains; _i < chains_1.length; _i++) {
+        var chain = chains_1[_i];
+        var score = matchesIDs(plainIDs, chain);
+        if (score > maxMatches) {
+            match = chain;
+            maxMatches = score;
+        }
+    }
+    if (match) {
+        return match.map(function (route, i) { return ({
+            id: route.id,
+            path: route.path,
+            params: mergeParams(route.params, ids[i] && ids[i].params)
+        }); });
+    }
+    return null;
+};
+var routerPathToChain = function (path, chains) {
+    var match = null;
+    var matches = 0;
+    for (var _i = 0, chains_2 = chains; _i < chains_2.length; _i++) {
+        var chain = chains_2[_i];
+        var matchedChain = matchesPath(path, chain);
+        if (matchedChain !== null) {
+            var score = computePriority(matchedChain);
+            if (score > matches) {
+                matches = score;
+                match = matchedChain;
+            }
+        }
+    }
+    return match;
+};
+var computePriority = function (chain) {
+    var score = 1;
+    var level = 1;
+    for (var _i = 0, chain_2 = chain; _i < chain_2.length; _i++) {
+        var route = chain_2[_i];
+        for (var _a = 0, _b = route.path; _a < _b.length; _a++) {
+            var path = _b[_a];
+            if (path[0] === ':') {
+                score += Math.pow(1, level);
+            }
+            else if (path !== '') {
+                score += Math.pow(2, level);
+            }
+            level++;
+        }
+    }
+    return score;
+};
+var RouterSegments = /** @class */ (function () {
+    function RouterSegments(path) {
+        this.path = path.slice();
+    }
+    RouterSegments.prototype.next = function () {
+        if (this.path.length > 0) {
+            return this.path.shift();
+        }
+        return '';
+    };
+    return RouterSegments;
+}());
+var readRedirects = function (root) {
+    return Array.from(root.children)
+        .filter(function (el) { return el.tagName === 'ION-ROUTE-REDIRECT'; })
+        .map(function (el) {
+        var to = readProp(el, 'to');
+        return {
+            from: parsePath(readProp(el, 'from')),
+            to: to == null ? undefined : parsePath(to),
+        };
+    });
+};
+var readRoutes = function (root) {
+    return flattenRouterTree(readRouteNodes(root));
+};
+var readRouteNodes = function (root, node) {
+    if (node === void 0) { node = root; }
+    return Array.from(node.children)
+        .filter(function (el) { return el.tagName === 'ION-ROUTE' && el.component; })
+        .map(function (el) {
+        var component = readProp(el, 'component');
+        if (component == null) {
+            throw new Error('component missing in ion-route');
+        }
+        return {
+            path: parsePath(readProp(el, 'url')),
+            id: component.toLowerCase(),
+            params: el.componentProps,
+            beforeLeave: el.beforeLeave,
+            beforeEnter: el.beforeEnter,
+            children: readRouteNodes(root, el)
+        };
+    });
+};
+var readProp = function (el, prop) {
+    if (prop in el) {
+        return el[prop];
+    }
+    if (el.hasAttribute(prop)) {
+        return el.getAttribute(prop);
+    }
+    return null;
+};
+var flattenRouterTree = function (nodes) {
+    var routes = [];
+    for (var _i = 0, nodes_1 = nodes; _i < nodes_1.length; _i++) {
+        var node = nodes_1[_i];
+        flattenNode([], routes, node);
+    }
+    return routes;
+};
+var flattenNode = function (chain, routes, node) {
+    var s = chain.slice();
+    s.push({
+        id: node.id,
+        path: node.path,
+        params: node.params,
+        beforeLeave: node.beforeLeave,
+        beforeEnter: node.beforeEnter
+    });
+    if (node.children.length === 0) {
+        routes.push(s);
+        return;
+    }
+    for (var _i = 0, _a = node.children; _i < _a.length; _i++) {
+        var sub = _a[_i];
+        flattenNode(s, routes, sub);
+    }
+};
+var Router = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteWillChange = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteWillChange", 7);
+        this.ionRouteDidChange = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDidChange", 7);
+        this.previousPath = null;
+        this.busy = false;
+        this.state = 0;
+        this.lastState = 0;
+        /**
+         * By default `ion-router` will match the routes at the root path ("/").
+         * That can be changed when
+         *
+         */
+        this.root = '/';
+        /**
+         * The router can work in two "modes":
+         * - With hash: `/index.html#/path/to/page`
+         * - Without hash: `/path/to/page`
+         *
+         * Using one or another might depend in the requirements of your app and/or where it's deployed.
+         *
+         * Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might
+         * requires additional server-side configuration in order to properly work.
+         *
+         * On the otherside hash-navigation is much easier to deploy, it even works over the file protocol.
+         *
+         * By default, this property is `true`, change to `false` to allow hash-less URLs.
+         */
+        this.useHash = true;
+    }
+    class_1.prototype.componentWillLoad = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.debug('[ion-router] router will load');
+                        return [4 /*yield*/, waitUntilNavNode()];
+                    case 1:
+                        _a.sent();
+                        console.debug('[ion-router] found nav');
+                        return [4 /*yield*/, this.onRoutesChanged()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.componentDidLoad = function () {
+        window.addEventListener('ionRouteRedirectChanged', Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["e"])(this.onRedirectChanged.bind(this), 10));
+        window.addEventListener('ionRouteDataChanged', Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["e"])(this.onRoutesChanged.bind(this), 100));
+    };
+    class_1.prototype.onPopState = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var direction, path, canProceed;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        direction = this.historyDirection();
+                        path = this.getPath();
+                        return [4 /*yield*/, this.runGuards(path)];
+                    case 1:
+                        canProceed = _a.sent();
+                        if (canProceed !== true) {
+                            if (typeof canProceed === 'object') {
+                                path = parsePath(canProceed.redirect);
+                            }
+                            return [2 /*return*/, false];
+                        }
+                        console.debug('[ion-router] URL changed -> update nav', path, direction);
+                        return [2 /*return*/, this.writeNavStateRoot(path, direction)];
+                }
+            });
+        });
+    };
+    class_1.prototype.onBackButton = function (ev) {
+        var _this = this;
+        ev.detail.register(0, function (processNextHandler) {
+            _this.back();
+            processNextHandler();
+        });
+    };
+    /** @internal */
+    class_1.prototype.canTransition = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var canProceed;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.runGuards()];
+                    case 1:
+                        canProceed = _a.sent();
+                        if (canProceed !== true) {
+                            if (typeof canProceed === 'object') {
+                                return [2 /*return*/, canProceed.redirect];
+                            }
+                            else {
+                                return [2 /*return*/, false];
+                            }
+                        }
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    /**
+     * Navigate to the specified URL.
+     *
+     * @param url The url to navigate to.
+     * @param direction The direction of the animation. Defaults to `"forward"`.
+     */
+    class_1.prototype.push = function (url, direction, animation) {
+        if (direction === void 0) { direction = 'forward'; }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var path, queryString, canProceed;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (url.startsWith('.')) {
+                            url = (new URL(url, window.location.href)).pathname;
+                        }
+                        console.debug('[ion-router] URL pushed -> updating nav', url, direction);
+                        path = parsePath(url);
+                        queryString = url.split('?')[1];
+                        return [4 /*yield*/, this.runGuards(path)];
+                    case 1:
+                        canProceed = _a.sent();
+                        if (canProceed !== true) {
+                            if (typeof canProceed === 'object') {
+                                path = parsePath(canProceed.redirect);
+                                queryString = canProceed.redirect.split('?')[1];
+                            }
+                            else {
+                                return [2 /*return*/, false];
+                            }
+                        }
+                        this.setPath(path, direction, queryString);
+                        return [2 /*return*/, this.writeNavStateRoot(path, direction, animation)];
+                }
+            });
+        });
+    };
+    /**
+     * Go back to previous page in the window.history.
+     */
+    class_1.prototype.back = function () {
+        window.history.back();
+        return Promise.resolve(this.waitPromise);
+    };
+    /** @internal */
+    class_1.prototype.printDebug = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                console.debug('CURRENT PATH', this.getPath());
+                console.debug('PREVIOUS PATH', this.previousPath);
+                printRoutes(readRoutes(this.el));
+                printRedirects(readRedirects(this.el));
+                return [2 /*return*/];
+            });
+        });
+    };
+    /** @internal */
+    class_1.prototype.navChanged = function (direction) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _a, ids, outlet, routes, chain, path;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (this.busy) {
+                            console.warn('[ion-router] router is busy, navChanged was cancelled');
+                            return [2 /*return*/, false];
+                        }
+                        return [4 /*yield*/, readNavState(window.document.body)];
+                    case 1:
+                        _a = _b.sent(), ids = _a.ids, outlet = _a.outlet;
+                        routes = readRoutes(this.el);
+                        chain = routerIDsToChain(ids, routes);
+                        if (!chain) {
+                            console.warn('[ion-router] no matching URL for ', ids.map(function (i) { return i.id; }));
+                            return [2 /*return*/, false];
+                        }
+                        path = chainToPath(chain);
+                        if (!path) {
+                            console.warn('[ion-router] router could not match path because some required param is missing');
+                            return [2 /*return*/, false];
+                        }
+                        console.debug('[ion-router] nav changed -> update URL', ids, path);
+                        this.setPath(path, direction);
+                        return [4 /*yield*/, this.safeWriteNavState(outlet, chain, ROUTER_INTENT_NONE, path, null, ids.length)];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    class_1.prototype.onRedirectChanged = function () {
+        var path = this.getPath();
+        if (path && routeRedirect(path, readRedirects(this.el))) {
+            this.writeNavStateRoot(path, ROUTER_INTENT_NONE);
+        }
+    };
+    class_1.prototype.onRoutesChanged = function () {
+        return this.writeNavStateRoot(this.getPath(), ROUTER_INTENT_NONE);
+    };
+    class_1.prototype.historyDirection = function () {
+        var win = window;
+        if (win.history.state === null) {
+            this.state++;
+            win.history.replaceState(this.state, win.document.title, win.document.location && win.document.location.href);
+        }
+        var state = win.history.state;
+        var lastState = this.lastState;
+        this.lastState = state;
+        if (state > lastState || (state >= lastState && lastState > 0)) {
+            return ROUTER_INTENT_FORWARD;
+        }
+        else if (state < lastState) {
+            return ROUTER_INTENT_BACK;
+        }
+        else {
+            return ROUTER_INTENT_NONE;
+        }
+    };
+    class_1.prototype.writeNavStateRoot = function (path, direction, animation) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var redirects, redirect, redirectFrom, routes, chain;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                if (!path) {
+                    console.error('[ion-router] URL is not part of the routing set');
+                    return [2 /*return*/, false];
+                }
+                redirects = readRedirects(this.el);
+                redirect = routeRedirect(path, redirects);
+                redirectFrom = null;
+                if (redirect) {
+                    this.setPath(redirect.to, direction);
+                    redirectFrom = redirect.from;
+                    path = redirect.to;
+                }
+                routes = readRoutes(this.el);
+                chain = routerPathToChain(path, routes);
+                if (!chain) {
+                    console.error('[ion-router] the path does not match any route');
+                    return [2 /*return*/, false];
+                }
+                // write DOM give
+                return [2 /*return*/, this.safeWriteNavState(document.body, chain, direction, path, redirectFrom, 0, animation)];
+            });
+        });
+    };
+    class_1.prototype.safeWriteNavState = function (node, chain, direction, path, redirectFrom, index, animation) {
+        if (index === void 0) { index = 0; }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var unlock, changed, e_2;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.lock()];
+                    case 1:
+                        unlock = _a.sent();
+                        changed = false;
+                        _a.label = 2;
+                    case 2:
+                        _a.trys.push([2, 4, , 5]);
+                        return [4 /*yield*/, this.writeNavState(node, chain, direction, path, redirectFrom, index, animation)];
+                    case 3:
+                        changed = _a.sent();
+                        return [3 /*break*/, 5];
+                    case 4:
+                        e_2 = _a.sent();
+                        console.error(e_2);
+                        return [3 /*break*/, 5];
+                    case 5:
+                        unlock();
+                        return [2 /*return*/, changed];
+                }
+            });
+        });
+    };
+    class_1.prototype.lock = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var p, resolve;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        p = this.waitPromise;
+                        this.waitPromise = new Promise(function (r) { return resolve = r; });
+                        if (!(p !== undefined)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, p];
+                    case 1:
+                        _a.sent();
+                        _a.label = 2;
+                    case 2: return [2 /*return*/, resolve];
+                }
+            });
+        });
+    };
+    class_1.prototype.runGuards = function (to, from) {
+        if (to === void 0) { to = this.getPath(); }
+        if (from === void 0) { from = parsePath(this.previousPath); }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var routes, toChain, fromChain, beforeEnterHook, beforeLeaveHook, canLeave, _a, canEnter, _b;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (!to || !from) {
+                            return [2 /*return*/, true];
+                        }
+                        routes = readRoutes(this.el);
+                        toChain = routerPathToChain(to, routes);
+                        fromChain = routerPathToChain(from, routes);
+                        beforeEnterHook = toChain && toChain[toChain.length - 1].beforeEnter;
+                        beforeLeaveHook = fromChain && fromChain[fromChain.length - 1].beforeLeave;
+                        if (!beforeLeaveHook) return [3 /*break*/, 2];
+                        return [4 /*yield*/, beforeLeaveHook()];
+                    case 1:
+                        _a = _c.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        _a = true;
+                        _c.label = 3;
+                    case 3:
+                        canLeave = _a;
+                        if (canLeave === false || typeof canLeave === 'object') {
+                            return [2 /*return*/, canLeave];
+                        }
+                        if (!beforeEnterHook) return [3 /*break*/, 5];
+                        return [4 /*yield*/, beforeEnterHook()];
+                    case 4:
+                        _b = _c.sent();
+                        return [3 /*break*/, 6];
+                    case 5:
+                        _b = true;
+                        _c.label = 6;
+                    case 6:
+                        canEnter = _b;
+                        if (canEnter === false || typeof canEnter === 'object') {
+                            return [2 /*return*/, canEnter];
+                        }
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    class_1.prototype.writeNavState = function (node, chain, direction, path, redirectFrom, index, animation) {
+        if (index === void 0) { index = 0; }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var routeEvent, changed;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.busy) {
+                            console.warn('[ion-router] router is busy, transition was cancelled');
+                            return [2 /*return*/, false];
+                        }
+                        this.busy = true;
+                        routeEvent = this.routeChangeEvent(path, redirectFrom);
+                        if (routeEvent) {
+                            this.ionRouteWillChange.emit(routeEvent);
+                        }
+                        return [4 /*yield*/, writeNavState(node, chain, direction, index, false, animation)];
+                    case 1:
+                        changed = _a.sent();
+                        this.busy = false;
+                        if (changed) {
+                            console.debug('[ion-router] route changed', path);
+                        }
+                        // emit did change
+                        if (routeEvent) {
+                            this.ionRouteDidChange.emit(routeEvent);
+                        }
+                        return [2 /*return*/, changed];
+                }
+            });
+        });
+    };
+    class_1.prototype.setPath = function (path, direction, queryString) {
+        this.state++;
+        writePath(window.history, this.root, this.useHash, path, direction, this.state, queryString);
+    };
+    class_1.prototype.getPath = function () {
+        return readPath(window.location, this.root, this.useHash);
+    };
+    class_1.prototype.routeChangeEvent = function (path, redirectFromPath) {
+        var from = this.previousPath;
+        var to = generatePath(path);
+        this.previousPath = to;
+        if (to === from) {
+            return null;
+        }
+        var redirectedFrom = redirectFromPath ? generatePath(redirectFromPath) : null;
+        return {
+            from: from,
+            redirectedFrom: redirectedFrom,
+            to: to,
+        };
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+var routerLinkCss = ":host{--background:transparent;--color:var(--ion-color-primary, #3880ff);background:var(--background);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}a{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit}";
+var RouterLink = /** @class */ (function () {
+    function RouterLink(hostRef) {
+        var _this = this;
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        /**
+         * When using a router, it specifies the transition direction when navigating to
+         * another page using `href`.
+         */
+        this.routerDirection = 'forward';
+        this.onClick = function (ev) {
+            Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["o"])(_this.href, ev, _this.routerDirection, _this.routerAnimation);
+        };
+    }
+    RouterLink.prototype.render = function () {
+        var _a;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var attrs = {
+            href: this.href,
+            rel: this.rel,
+            target: this.target
+        };
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color)), (_a = {}, _a[mode] = true, _a['ion-activatable'] = true, _a)) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("a", Object.assign({}, attrs), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null))));
+    };
+    return RouterLink;
+}());
+RouterLink.style = routerLinkCss;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

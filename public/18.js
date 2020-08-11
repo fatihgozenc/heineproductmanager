@@ -1,1 +1,470 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{262:function(t,e,i){"use strict";i.r(e),i.d(e,"ion_tab",(function(){return s})),i.d(e,"ion_tabs",(function(){return a}));var n=i(0),r=i(1),o=i(43),s=function(){function t(t){Object(r.q)(this,t),this.loaded=!1,this.active=!1}return t.prototype.componentWillLoad=function(){return Object(n.__awaiter)(this,void 0,void 0,(function(){return Object(n.__generator)(this,(function(t){switch(t.label){case 0:return this.active?[4,this.setActive()]:[3,2];case 1:t.sent(),t.label=2;case 2:return[2]}}))}))},t.prototype.setActive=function(){return Object(n.__awaiter)(this,void 0,void 0,(function(){return Object(n.__generator)(this,(function(t){switch(t.label){case 0:return[4,this.prepareLazyLoaded()];case 1:return t.sent(),this.active=!0,[2]}}))}))},t.prototype.changeActive=function(t){t&&this.prepareLazyLoaded()},t.prototype.prepareLazyLoaded=function(){if(!this.loaded&&null!=this.component){this.loaded=!0;try{return Object(o.a)(this.delegate,this.el,this.component,["ion-page"])}catch(t){console.error(t)}}return Promise.resolve(void 0)},t.prototype.render=function(){var t=this.tab,e=this.active,i=this.component;return Object(r.l)(r.c,{role:"tabpanel","aria-hidden":e?null:"true","aria-labelledby":"tab-button-"+t,class:{"ion-page":void 0===i,"tab-hidden":!e}},Object(r.l)("slot",null))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(r.m)(this)},enumerable:!1,configurable:!0}),Object.defineProperty(t,"watchers",{get:function(){return{active:["changeActive"]}},enumerable:!1,configurable:!0}),t}();s.style=":host(.tab-hidden){display:none !important}";var a=function(){function t(t){var e=this;Object(r.q)(this,t),this.ionNavWillLoad=Object(r.i)(this,"ionNavWillLoad",7),this.ionTabsWillChange=Object(r.i)(this,"ionTabsWillChange",3),this.ionTabsDidChange=Object(r.i)(this,"ionTabsDidChange",3),this.transitioning=!1,this.useRouter=!1,this.onTabClicked=function(t){var i=t.detail,n=i.href,r=i.tab;if(e.useRouter&&void 0!==n){var o=document.querySelector("ion-router");o&&o.push(n)}else e.select(r)}}return t.prototype.componentWillLoad=function(){return Object(n.__awaiter)(this,void 0,void 0,(function(){var t;return Object(n.__generator)(this,(function(e){switch(e.label){case 0:return this.useRouter||(this.useRouter=!!document.querySelector("ion-router")&&!this.el.closest("[no-router]")),this.useRouter?[3,2]:(t=this.tabs).length>0?[4,this.select(t[0])]:[3,2];case 1:e.sent(),e.label=2;case 2:return this.ionNavWillLoad.emit(),[2]}}))}))},t.prototype.componentWillRender=function(){var t=this.el.querySelector("ion-tab-bar");if(t){var e=this.selectedTab?this.selectedTab.tab:void 0;t.selectedTab=e}},t.prototype.select=function(t){return Object(n.__awaiter)(this,void 0,void 0,(function(){var e;return Object(n.__generator)(this,(function(i){switch(i.label){case 0:return e=c(this.tabs,t),this.shouldSwitch(e)?[4,this.setActive(e)]:[2,!1];case 1:return i.sent(),[4,this.notifyRouter()];case 2:return i.sent(),this.tabSwitch(),[2,!0]}}))}))},t.prototype.getTab=function(t){return Object(n.__awaiter)(this,void 0,void 0,(function(){return Object(n.__generator)(this,(function(e){return[2,c(this.tabs,t)]}))}))},t.prototype.getSelected=function(){return Promise.resolve(this.selectedTab?this.selectedTab.tab:void 0)},t.prototype.setRouteId=function(t){return Object(n.__awaiter)(this,void 0,void 0,(function(){var e,i=this;return Object(n.__generator)(this,(function(n){switch(n.label){case 0:return e=c(this.tabs,t),this.shouldSwitch(e)?[4,this.setActive(e)]:[2,{changed:!1,element:this.selectedTab}];case 1:return n.sent(),[2,{changed:!0,element:this.selectedTab,markVisible:function(){return i.tabSwitch()}}]}}))}))},t.prototype.getRouteId=function(){return Object(n.__awaiter)(this,void 0,void 0,(function(){var t;return Object(n.__generator)(this,(function(e){return[2,void 0!==(t=this.selectedTab&&this.selectedTab.tab)?{id:t,element:this.selectedTab}:void 0]}))}))},t.prototype.setActive=function(t){return this.transitioning?Promise.reject("transitioning already happening"):(this.transitioning=!0,this.leavingTab=this.selectedTab,this.selectedTab=t,this.ionTabsWillChange.emit({tab:t.tab}),t.active=!0,Promise.resolve())},t.prototype.tabSwitch=function(){var t=this.selectedTab,e=this.leavingTab;this.leavingTab=void 0,this.transitioning=!1,t&&e!==t&&(e&&(e.active=!1),this.ionTabsDidChange.emit({tab:t.tab}))},t.prototype.notifyRouter=function(){if(this.useRouter){var t=document.querySelector("ion-router");if(t)return t.navChanged("forward")}return Promise.resolve(!1)},t.prototype.shouldSwitch=function(t){var e=this.selectedTab;return void 0!==t&&t!==e&&!this.transitioning},Object.defineProperty(t.prototype,"tabs",{get:function(){return Array.from(this.el.querySelectorAll("ion-tab"))},enumerable:!1,configurable:!0}),t.prototype.render=function(){return Object(r.l)(r.c,{onIonTabButtonClick:this.onTabClicked},Object(r.l)("slot",{name:"top"}),Object(r.l)("div",{class:"tabs-inner"},Object(r.l)("slot",null)),Object(r.l)("slot",{name:"bottom"}))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(r.m)(this)},enumerable:!1,configurable:!0}),t}(),c=function(t,e){var i="string"==typeof e?t.find((function(t){return t.tab===e})):e;return i||console.error('tab with id: "'+i+'" does not exist'),i};a.style=":host{left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%;contain:layout size style;z-index:0}.tabs-inner{position:relative;-ms-flex:1;flex:1;contain:layout size style}"},43:function(t,e,i){"use strict";i.d(e,"a",(function(){return r})),i.d(e,"b",(function(){return o}));var n=i(0),r=function(t,e,i,r,o){return Object(n.__awaiter)(void 0,void 0,void 0,(function(){var s;return Object(n.__generator)(this,(function(n){switch(n.label){case 0:if(t)return[2,t.attachViewToDom(e,i,o,r)];if("string"!=typeof i&&!(i instanceof HTMLElement))throw new Error("framework delegate is missing");return s="string"==typeof i?e.ownerDocument&&e.ownerDocument.createElement(i):i,r&&r.forEach((function(t){return s.classList.add(t)})),o&&Object.assign(s,o),e.appendChild(s),s.componentOnReady?[4,s.componentOnReady()]:[3,2];case 1:n.sent(),n.label=2;case 2:return[2,s]}}))}))},o=function(t,e){if(e){if(t){var i=e.parentElement;return t.removeViewFromDom(i,e)}e.remove()}return Promise.resolve()}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[18],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js ***!
+  \******************************************************************/
+/*! exports provided: a, b, c, d, h */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hapticSelectionChanged; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticImpact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hapticSelectionEnd; });
+var HapticEngine = {
+    getEngine: function () {
+        var win = window;
+        return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
+    },
+    available: function () {
+        return !!this.getEngine();
+    },
+    isCordova: function () {
+        return !!window.TapticEngine;
+    },
+    isCapacitor: function () {
+        var win = window;
+        return !!win.Capacitor;
+    },
+    impact: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.impact({ style: style });
+    },
+    notification: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.notification({ style: style });
+    },
+    selection: function () {
+        this.impact({ style: 'light' });
+    },
+    selectionStart: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionStart();
+        }
+        else {
+            engine.gestureSelectionStart();
+        }
+    },
+    selectionChanged: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionChanged();
+        }
+        else {
+            engine.gestureSelectionChanged();
+        }
+    },
+    selectionEnd: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionEnd();
+        }
+        else {
+            engine.gestureSelectionEnd();
+        }
+    }
+};
+/**
+ * Trigger a selection changed haptic event. Good for one-time events
+ * (not for gestures)
+ */
+var hapticSelection = function () {
+    HapticEngine.selection();
+};
+/**
+ * Tell the haptic engine that a gesture for a selection change is starting.
+ */
+var hapticSelectionStart = function () {
+    HapticEngine.selectionStart();
+};
+/**
+ * Tell the haptic engine that a selection changed during a gesture.
+ */
+var hapticSelectionChanged = function () {
+    HapticEngine.selectionChanged();
+};
+/**
+ * Tell the haptic engine we are done with a gesture. This needs to be
+ * called lest resources are not properly recycled.
+ */
+var hapticSelectionEnd = function () {
+    HapticEngine.selectionEnd();
+};
+/**
+ * Use this to indicate success/failure/warning to the user.
+ * options should be of the type `{ style: 'light' }` (or `medium`/`heavy`)
+ */
+var hapticImpact = function (options) {
+    HapticEngine.impact(options);
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-reorder_2.entry.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-reorder_2.entry.js ***!
+  \**********************************************************************/
+/*! exports provided: ion_reorder, ion_reorder_group */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder", function() { return Reorder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder_group", function() { return ReorderGroup; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./haptic-7b8ba70a.js */ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js");
+
+
+
+
+var reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
+var reorderMdCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:31px;opacity:0.3}";
+var Reorder = /** @class */ (function () {
+    function Reorder(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+    }
+    Reorder.prototype.onClick = function (ev) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+    };
+    Reorder.prototype.render = function () {
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var reorderIcon = mode === 'ios' ? 'reorder-three-outline' : 'reorder-two-sharp';
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: mode }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon", part: "icon" }))));
+    };
+    return Reorder;
+}());
+Reorder.style = {
+    ios: reorderIosCss,
+    md: reorderMdCss
+};
+var reorderGroupCss = ".reorder-list-active>*{-webkit-transition:-webkit-transform 300ms;transition:-webkit-transform 300ms;transition:transform 300ms;transition:transform 300ms, -webkit-transform 300ms;will-change:transform}.reorder-enabled{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.reorder-enabled ion-reorder{display:block;cursor:-webkit-grab;cursor:grab;pointer-events:all;-ms-touch-action:none;touch-action:none}.reorder-selected,.reorder-selected ion-reorder{cursor:-webkit-grabbing;cursor:grabbing}.reorder-selected{position:relative;-webkit-transition:none !important;transition:none !important;-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.4);box-shadow:0 0 10px rgba(0, 0, 0, 0.4);opacity:0.8;z-index:100}.reorder-visible ion-reorder .reorder-icon{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}";
+var ReorderGroup = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionItemReorder = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionItemReorder", 7);
+        this.lastToIndex = -1;
+        this.cachedHeights = [];
+        this.scrollElTop = 0;
+        this.scrollElBottom = 0;
+        this.scrollElInitial = 0;
+        this.containerTop = 0;
+        this.containerBottom = 0;
+        this.state = 0 /* Idle */;
+        /**
+         * If `true`, the reorder will be hidden.
+         */
+        this.disabled = true;
+    }
+    class_1.prototype.disabledChanged = function () {
+        if (this.gesture) {
+            this.gesture.enable(!this.disabled);
+        }
+    };
+    class_1.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var contentEl, _a, _b;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        contentEl = this.el.closest('ion-content');
+                        if (!contentEl) return [3 /*break*/, 2];
+                        _a = this;
+                        return [4 /*yield*/, contentEl.getScrollElement()];
+                    case 1:
+                        _a.scrollEl = _c.sent();
+                        _c.label = 2;
+                    case 2:
+                        _b = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 3:
+                        _b.gesture = (_c.sent()).createGesture({
+                            el: this.el,
+                            gestureName: 'reorder',
+                            gesturePriority: 110,
+                            threshold: 0,
+                            direction: 'y',
+                            passive: false,
+                            canStart: function (detail) { return _this.canStart(detail); },
+                            onStart: function (ev) { return _this.onStart(ev); },
+                            onMove: function (ev) { return _this.onMove(ev); },
+                            onEnd: function () { return _this.onEnd(); },
+                        });
+                        this.disabledChanged();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.disconnectedCallback = function () {
+        this.onEnd();
+        if (this.gesture) {
+            this.gesture.destroy();
+            this.gesture = undefined;
+        }
+    };
+    /**
+     * Completes the reorder operation. Must be called by the `ionItemReorder` event.
+     *
+     * If a list of items is passed, the list will be reordered and returned in the
+     * proper order.
+     *
+     * If no parameters are passed or if `true` is passed in, the reorder will complete
+     * and the item will remain in the position it was dragged to. If `false` is passed,
+     * the reorder will complete and the item will bounce back to its original position.
+     *
+     * @param listOrReorder A list of items to be sorted and returned in the new order or a
+     * boolean of whether or not the reorder should reposition the item.
+     */
+    class_1.prototype.complete = function (listOrReorder) {
+        return Promise.resolve(this.completeSync(listOrReorder));
+    };
+    class_1.prototype.canStart = function (ev) {
+        if (this.selectedItemEl || this.state !== 0 /* Idle */) {
+            return false;
+        }
+        var target = ev.event.target;
+        var reorderEl = target.closest('ion-reorder');
+        if (!reorderEl) {
+            return false;
+        }
+        var item = findReorderItem(reorderEl, this.el);
+        if (!item) {
+            return false;
+        }
+        ev.data = item;
+        return true;
+    };
+    class_1.prototype.onStart = function (ev) {
+        ev.event.preventDefault();
+        var item = this.selectedItemEl = ev.data;
+        var heights = this.cachedHeights;
+        heights.length = 0;
+        var el = this.el;
+        var children = el.children;
+        if (!children || children.length === 0) {
+            return;
+        }
+        var sum = 0;
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            sum += child.offsetHeight;
+            heights.push(sum);
+            child.$ionIndex = i;
+        }
+        var box = el.getBoundingClientRect();
+        this.containerTop = box.top;
+        this.containerBottom = box.bottom;
+        if (this.scrollEl) {
+            var scrollBox = this.scrollEl.getBoundingClientRect();
+            this.scrollElInitial = this.scrollEl.scrollTop;
+            this.scrollElTop = scrollBox.top + AUTO_SCROLL_MARGIN;
+            this.scrollElBottom = scrollBox.bottom - AUTO_SCROLL_MARGIN;
+        }
+        else {
+            this.scrollElInitial = 0;
+            this.scrollElTop = 0;
+            this.scrollElBottom = 0;
+        }
+        this.lastToIndex = indexForItem(item);
+        this.selectedItemHeight = item.offsetHeight;
+        this.state = 1 /* Active */;
+        item.classList.add(ITEM_REORDER_SELECTED);
+        Object(_haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_3__["a"])();
+    };
+    class_1.prototype.onMove = function (ev) {
+        var selectedItem = this.selectedItemEl;
+        if (!selectedItem) {
+            return;
+        }
+        // Scroll if we reach the scroll margins
+        var scroll = this.autoscroll(ev.currentY);
+        // // Get coordinate
+        var top = this.containerTop - scroll;
+        var bottom = this.containerBottom - scroll;
+        var currentY = Math.max(top, Math.min(ev.currentY, bottom));
+        var deltaY = scroll + currentY - ev.startY;
+        var normalizedY = currentY - top;
+        var toIndex = this.itemIndexForTop(normalizedY);
+        if (toIndex !== this.lastToIndex) {
+            var fromIndex = indexForItem(selectedItem);
+            this.lastToIndex = toIndex;
+            Object(_haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_3__["b"])();
+            this.reorderMove(fromIndex, toIndex);
+        }
+        // Update selected item position
+        selectedItem.style.transform = "translateY(" + deltaY + "px)";
+    };
+    class_1.prototype.onEnd = function () {
+        var selectedItemEl = this.selectedItemEl;
+        this.state = 2 /* Complete */;
+        if (!selectedItemEl) {
+            this.state = 0 /* Idle */;
+            return;
+        }
+        var toIndex = this.lastToIndex;
+        var fromIndex = indexForItem(selectedItemEl);
+        if (toIndex === fromIndex) {
+            this.completeSync();
+        }
+        else {
+            this.ionItemReorder.emit({
+                from: fromIndex,
+                to: toIndex,
+                complete: this.completeSync.bind(this)
+            });
+        }
+        Object(_haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_3__["h"])();
+    };
+    class_1.prototype.completeSync = function (listOrReorder) {
+        var selectedItemEl = this.selectedItemEl;
+        if (selectedItemEl && this.state === 2 /* Complete */) {
+            var children = this.el.children;
+            var len = children.length;
+            var toIndex = this.lastToIndex;
+            var fromIndex = indexForItem(selectedItemEl);
+            if (toIndex !== fromIndex && (listOrReorder === undefined || listOrReorder === true)) {
+                var ref = (fromIndex < toIndex)
+                    ? children[toIndex + 1]
+                    : children[toIndex];
+                this.el.insertBefore(selectedItemEl, ref);
+            }
+            if (Array.isArray(listOrReorder)) {
+                listOrReorder = reorderArray(listOrReorder, fromIndex, toIndex);
+            }
+            for (var i = 0; i < len; i++) {
+                children[i].style['transform'] = '';
+            }
+            selectedItemEl.style.transition = '';
+            selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
+            this.selectedItemEl = undefined;
+            this.state = 0 /* Idle */;
+        }
+        return listOrReorder;
+    };
+    class_1.prototype.itemIndexForTop = function (deltaY) {
+        var heights = this.cachedHeights;
+        var i = 0;
+        // TODO: since heights is a sorted array of integers, we can do
+        // speed up the search using binary search. Remember that linear-search is still
+        // faster than binary-search for small arrays (<64) due CPU branch misprediction.
+        for (i = 0; i < heights.length; i++) {
+            if (heights[i] > deltaY) {
+                break;
+            }
+        }
+        return i;
+    };
+    /********* DOM WRITE ********* */
+    class_1.prototype.reorderMove = function (fromIndex, toIndex) {
+        var itemHeight = this.selectedItemHeight;
+        var children = this.el.children;
+        for (var i = 0; i < children.length; i++) {
+            var style = children[i].style;
+            var value = '';
+            if (i > fromIndex && i <= toIndex) {
+                value = "translateY(" + -itemHeight + "px)";
+            }
+            else if (i < fromIndex && i >= toIndex) {
+                value = "translateY(" + itemHeight + "px)";
+            }
+            style['transform'] = value;
+        }
+    };
+    class_1.prototype.autoscroll = function (posY) {
+        if (!this.scrollEl) {
+            return 0;
+        }
+        var amount = 0;
+        if (posY < this.scrollElTop) {
+            amount = -SCROLL_JUMP;
+        }
+        else if (posY > this.scrollElBottom) {
+            amount = SCROLL_JUMP;
+        }
+        if (amount !== 0) {
+            this.scrollEl.scrollBy(0, amount);
+        }
+        return this.scrollEl.scrollTop - this.scrollElInitial;
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+                _a[mode] = true,
+                _a['reorder-enabled'] = !this.disabled,
+                _a['reorder-list-active'] = this.state !== 0 /* Idle */,
+                _a) }));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "watchers", {
+        get: function () {
+            return {
+                "disabled": ["disabledChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+var indexForItem = function (element) {
+    return element['$ionIndex'];
+};
+var findReorderItem = function (node, container) {
+    var parent;
+    while (node) {
+        parent = node.parentElement;
+        if (parent === container) {
+            return node;
+        }
+        node = parent;
+    }
+    return undefined;
+};
+var AUTO_SCROLL_MARGIN = 60;
+var SCROLL_JUMP = 10;
+var ITEM_REORDER_SELECTED = 'reorder-selected';
+var reorderArray = function (array, from, to) {
+    var element = array[from];
+    array.splice(from, 1);
+    array.splice(to, 0, element);
+    return array.slice();
+};
+ReorderGroup.style = reorderGroupCss;
+
+
+
+/***/ })
+
+}]);

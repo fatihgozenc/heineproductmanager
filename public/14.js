@@ -1,1 +1,305 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{11:function(e,t,r){"use strict";r.d(t,"a",(function(){return s})),r.d(t,"b",(function(){return a})),r.d(t,"c",(function(){return i})),r.d(t,"d",(function(){return c}));var n=r(0),i=function(e,t){return null!==t.closest(e)},s=function(e){var t;return"string"==typeof e&&e.length>0?((t={"ion-color":!0})["ion-color-"+e]=!0,t):void 0},a=function(e){var t={};return function(e){return void 0!==e?(Array.isArray(e)?e:e.split(" ")).filter((function(e){return null!=e})).map((function(e){return e.trim()})).filter((function(e){return""!==e})):[]}(e).forEach((function(e){return t[e]=!0})),t},o=/^[a-z][a-z0-9+\-.]*:/,c=function(e,t,r,i){return Object(n.__awaiter)(void 0,void 0,void 0,(function(){var s;return Object(n.__generator)(this,(function(n){return null!=e&&"#"!==e[0]&&!o.test(e)&&(s=document.querySelector("ion-router"))?(null!=t&&t.preventDefault(),[2,s.push(e,r,i)]):[2,!1]}))}))}},259:function(e,t,r){"use strict";r.r(t),r.d(t,"ion_spinner",(function(){return o}));var n=r(1),i=r(6),s=r(11),a=r(72),o=function(){function e(e){Object(n.q)(this,e),this.paused=!1}return e.prototype.getName=function(){var e=this.name||i.c.get("spinner"),t=Object(i.b)(this);return e||("ios"===t?"lines":"circular")},e.prototype.render=function(){var e,t=Object(i.b)(this),r=this.getName(),o=a.a[r]||a.a.lines,f="number"==typeof this.duration&&this.duration>10?this.duration:o.dur,u=[];if(void 0!==o.circles)for(var p=0;p<o.circles;p++)u.push(c(o,f,p,o.circles));else if(void 0!==o.lines)for(p=0;p<o.lines;p++)u.push(l(o,f,p,o.lines));return Object(n.l)(n.c,{class:Object.assign(Object.assign({},Object(s.a)(this.color)),(e={},e[t]=!0,e["spinner-"+r]=!0,e["spinner-paused"]=!!this.paused||i.c.getBoolean("_testing"),e)),role:"progressbar",style:o.elmDuration?{animationDuration:f+"ms"}:{}},u)},e}(),c=function(e,t,r,i){var s=e.fn(t,r,i);return s.style["animation-duration"]=t+"ms",Object(n.l)("svg",{viewBox:s.viewBox||"0 0 64 64",style:s.style},Object(n.l)("circle",{transform:s.transform||"translate(32,32)",cx:s.cx,cy:s.cy,r:s.r,style:e.elmDuration?{animationDuration:t+"ms"}:{}}))},l=function(e,t,r,i){var s=e.fn(t,r,i);return s.style["animation-duration"]=t+"ms",Object(n.l)("svg",{viewBox:s.viewBox||"0 0 64 64",style:s.style},Object(n.l)("line",{transform:"translate(32,32)",y1:s.y1,y2:s.y2}))};o.style=":host{display:inline-block;position:relative;width:28px;height:28px;color:var(--color);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.ion-color){color:var(--ion-color-base)}svg{left:0;top:0;-webkit-transform-origin:center;transform-origin:center;position:absolute;width:100%;height:100%;-webkit-transform:translateZ(0);transform:translateZ(0)}[dir=rtl] svg,:host-context([dir=rtl]) svg{left:unset;right:unset;right:0}[dir=rtl] svg,:host-context([dir=rtl]) svg{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}:host(.spinner-lines) line,:host(.spinner-lines-small) line{stroke-width:4px;stroke-linecap:round;stroke:currentColor}:host(.spinner-lines) svg,:host(.spinner-lines-small) svg{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite}:host(.spinner-bubbles) svg{-webkit-animation:spinner-scale-out 1s linear infinite;animation:spinner-scale-out 1s linear infinite;fill:currentColor}:host(.spinner-circles) svg{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite;fill:currentColor}:host(.spinner-crescent) circle{fill:transparent;stroke-width:4px;stroke-dasharray:128px;stroke-dashoffset:82px;stroke:currentColor}:host(.spinner-crescent) svg{-webkit-animation:spinner-rotate 1s linear infinite;animation:spinner-rotate 1s linear infinite}:host(.spinner-dots) circle{stroke-width:0;fill:currentColor}:host(.spinner-dots) svg{-webkit-animation:spinner-dots 1s linear infinite;animation:spinner-dots 1s linear infinite}:host(.spinner-circular){-webkit-animation:spinner-circular linear infinite;animation:spinner-circular linear infinite}:host(.spinner-circular) circle{-webkit-animation:spinner-circular-inner ease-in-out infinite;animation:spinner-circular-inner ease-in-out infinite;stroke:currentColor;stroke-dasharray:80px, 200px;stroke-dashoffset:0px;stroke-width:5.6;fill:none}:host(.spinner-paused),:host(.spinner-paused) svg,:host(.spinner-paused) circle{-webkit-animation-play-state:paused;animation-play-state:paused}@-webkit-keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@-webkit-keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@-webkit-keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}@keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}"},72:function(e,t,r){"use strict";r.d(t,"a",(function(){return n}));var n={bubbles:{dur:1e3,circles:9,fn:function(e,t,r){var n=e*t/r-e+"ms",i=2*Math.PI*t/r;return{r:5,style:{top:9*Math.sin(i)+"px",left:9*Math.cos(i)+"px","animation-delay":n}}}},circles:{dur:1e3,circles:8,fn:function(e,t,r){var n=t/r,i=e*n-e+"ms",s=2*Math.PI*n;return{r:5,style:{top:9*Math.sin(s)+"px",left:9*Math.cos(s)+"px","animation-delay":i}}}},circular:{dur:1400,elmDuration:!0,circles:1,fn:function(){return{r:20,cx:48,cy:48,fill:"none",viewBox:"24 24 48 48",transform:"translate(0,0)",style:{}}}},crescent:{dur:750,circles:1,fn:function(){return{r:26,style:{}}}},dots:{dur:750,circles:3,fn:function(e,t){return{r:6,style:{left:9-9*t+"px","animation-delay":-110*t+"ms"}}}},lines:{dur:1e3,lines:12,fn:function(e,t,r){return{y1:17,y2:29,style:{transform:"rotate("+(30*t+(t<6?180:-180))+"deg)","animation-delay":e*t/r-e+"ms"}}}},"lines-small":{dur:1e3,lines:12,fn:function(e,t,r){return{y1:12,y2:20,style:{transform:"rotate("+(30*t+(t<6?180:-180))+"deg)","animation-delay":e*t/r-e+"ms"}}}}}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[14],{
+
+/***/ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-s3-text-picker.entry.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-s3-text-picker.entry.js ***!
+  \**********************************************************************************************/
+/*! exports provided: amplify_s3_text_picker */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_s3_text_picker", function() { return AmplifyS3TextPicker; });
+/* harmony import */ var _index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-a93ff41e.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/index-a93ff41e.js");
+/* harmony import */ var _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @aws-amplify/core */ "./node_modules/@aws-amplify/core/lib-esm/index.js");
+/* harmony import */ var _storage_types_f257c0f2_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage-types-f257c0f2.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/storage-types-f257c0f2.js");
+/* harmony import */ var _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @aws-amplify/auth */ "./node_modules/@aws-amplify/auth/lib-esm/index.js");
+/* harmony import */ var _Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Translations-59947173.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/Translations-59947173.js");
+/* harmony import */ var _constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants-6835ae6a.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/constants-6835ae6a.js");
+/* harmony import */ var _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @aws-amplify/storage */ "./node_modules/@aws-amplify/storage/lib-esm/index.js");
+/* harmony import */ var _storage_helper_21c6d15f_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./storage-helper-21c6d15f.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/storage-helper-21c6d15f.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+var logger = new _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["Logger"]('S3TextPicker');
+var AmplifyS3TextPicker = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** The content type header used when uploading to S3 */
+        this.contentType = 'text/*';
+        /** The access level of the text file */
+        this.level = _storage_types_f257c0f2_js__WEBPACK_IMPORTED_MODULE_2__["A"].Public;
+        /** Fallback content for aplify-s3-text */
+        this.fallbackText = _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__["I18n"].get(_Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__["T"].PICKER_TEXT);
+    }
+    class_1.prototype.handleInput = function (event) {
+        return __awaiter(this, void 0, void 0, function () {
+            var file, _a, _b, path, level, fileToKey, track, key, error_1;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        file = event.target.files[0];
+                        _a = this, _b = _a.path, path = _b === void 0 ? '' : _b, level = _a.level, fileToKey = _a.fileToKey, track = _a.track;
+                        key = path + Object(_storage_helper_21c6d15f_js__WEBPACK_IMPORTED_MODULE_7__["c"])(file, fileToKey);
+                        if (!file) {
+                            throw new Error('No file was selected');
+                        }
+                        _c.label = 1;
+                    case 1:
+                        _c.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, Object(_storage_helper_21c6d15f_js__WEBPACK_IMPORTED_MODULE_7__["p"])(key, file, level, track, file['type'], logger)];
+                    case 2:
+                        _c.sent();
+                        this.src = key;
+                        return [3 /*break*/, 4];
+                    case 3:
+                        error_1 = _c.sent();
+                        logger.debug(error_1);
+                        throw new Error(error_1);
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.render = function () {
+        var _this = this;
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["H"], null, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-s3-text", { textKey: this.src, path: this.path, level: this.level, track: this.track, identityId: this.identityId, contentType: this.contentType, fallbackText: this.fallbackText }), Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-picker", { inputHandler: function (e) { return _this.handleInput(e); }, acceptValue: 'text/*' })));
+    };
+    return class_1;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/storage-helper-21c6d15f.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@aws-amplify/ui-components/dist/esm-es5/storage-helper-21c6d15f.js ***!
+  \*****************************************************************************************/
+/*! exports provided: a, c, g, i, p */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getTextSource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return calcKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getStorageObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return imageFileType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return putStorageObject; });
+/* harmony import */ var _constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants-6835ae6a.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/constants-6835ae6a.js");
+/* harmony import */ var _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @aws-amplify/storage */ "./node_modules/@aws-amplify/storage/lib-esm/index.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+var imageFileType = new Set([
+    'apng',
+    'bmp',
+    'gif',
+    'ico',
+    'cur',
+    'jpg',
+    'jpeg',
+    'jfif',
+    'pjpeg',
+    'pjp',
+    'png',
+    'svg',
+    'tif',
+    'tiff',
+    'webp',
+]);
+var calcKey = function (file, fileToKey) {
+    var name = file.name, size = file.size, type = file.type;
+    var key = encodeURI(name);
+    if (fileToKey) {
+        if (typeof fileToKey === 'string') {
+            key = fileToKey;
+        }
+        else if (typeof fileToKey === 'function') {
+            key = fileToKey({ name: name, size: size, type: type });
+        }
+        else {
+            key = encodeURI(JSON.stringify(fileToKey));
+        }
+        if (!key) {
+            key = 'empty_key';
+        }
+    }
+    return key.replace(/\s/g, '_');
+};
+var getStorageObject = function (key, level, track, identityId, logger) { return __awaiter(void 0, void 0, void 0, function () {
+    var src, error_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                if (!_aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"] || typeof _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].get !== 'function') {
+                    throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_0__["d"]);
+                }
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].get(key, { level: level, track: track, identityId: identityId })];
+            case 2:
+                src = _a.sent();
+                logger.debug('Storage image get', src);
+                return [2 /*return*/, src];
+            case 3:
+                error_1 = _a.sent();
+                throw new Error(error_1);
+            case 4: return [2 /*return*/];
+        }
+    });
+}); };
+var readFileAsync = function (blob) {
+    return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            resolve(reader.result);
+        };
+        reader.onerror = function () {
+            reject('Failed to read file!');
+            reader.abort();
+        };
+        reader.readAsText(blob);
+    });
+};
+var getTextSource = function (key, level, track, identityId, logger) { return __awaiter(void 0, void 0, void 0, function () {
+    var textSrc, text, error_2;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                if (!_aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"] || typeof _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].get !== 'function') {
+                    throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_0__["d"]);
+                }
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].get(key, {
+                        download: true,
+                        level: level,
+                        track: track,
+                        identityId: identityId,
+                    })];
+            case 2:
+                textSrc = _a.sent();
+                logger.debug(textSrc);
+                return [4 /*yield*/, readFileAsync(textSrc['Body'])];
+            case 3:
+                text = (_a.sent());
+                return [2 /*return*/, text];
+            case 4:
+                error_2 = _a.sent();
+                throw new Error(error_2);
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
+var putStorageObject = function (key, body, level, track, contentType, logger) { return __awaiter(void 0, void 0, void 0, function () {
+    var data, error_3;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                if (!_aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"] || typeof _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].put !== 'function') {
+                    throw new Error(_constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_0__["d"]);
+                }
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, _aws_amplify_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"].put(key, body, {
+                        contentType: contentType,
+                        level: level,
+                        track: track,
+                    })];
+            case 2:
+                data = _a.sent();
+                logger.debug('Upload data', data);
+                return [3 /*break*/, 4];
+            case 3:
+                error_3 = _a.sent();
+                throw new Error(error_3);
+            case 4: return [2 /*return*/];
+        }
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

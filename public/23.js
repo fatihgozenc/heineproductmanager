@@ -1,1 +1,205 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{11:function(t,r,n){"use strict";n.d(r,"a",(function(){return e})),n.d(r,"b",(function(){return a})),n.d(r,"c",(function(){return o})),n.d(r,"d",(function(){return c}));var i=n(0),o=function(t,r){return null!==r.closest(t)},e=function(t){var r;return"string"==typeof t&&t.length>0?((r={"ion-color":!0})["ion-color-"+t]=!0,r):void 0},a=function(t){var r={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return r[t]=!0})),r},s=/^[a-z][a-z0-9+\-.]*:/,c=function(t,r,n,o){return Object(i.__awaiter)(void 0,void 0,void 0,(function(){var e;return Object(i.__generator)(this,(function(i){return null!=t&&"#"!==t[0]&&!s.test(t)&&(e=document.querySelector("ion-router"))?(null!=r&&r.preventDefault(),[2,e.push(t,n,o)]):[2,!1]}))}))}},232:function(t,r,n){"use strict";n.r(r),n.d(r,"ion_card",(function(){return a})),n.d(r,"ion_card_content",(function(){return s})),n.d(r,"ion_card_header",(function(){return c})),n.d(r,"ion_card_subtitle",(function(){return d})),n.d(r,"ion_card_title",(function(){return l}));var i=n(1),o=n(6),e=n(11),a=function(){function t(t){Object(i.q)(this,t),this.button=!1,this.type="button",this.disabled=!1,this.routerDirection="forward"}return t.prototype.isClickable=function(){return void 0!==this.href||this.button},t.prototype.renderCard=function(t){var r=this.isClickable();if(!r)return[Object(i.l)("slot",null)];var n=this.href,o=this.routerAnimation,a=this.routerDirection,s=r?void 0===n?"button":"a":"div",c="button"===s?{type:this.type}:{download:this.download,href:this.href,rel:this.rel,target:this.target};return Object(i.l)(s,Object.assign({},c,{class:"card-native",part:"native",disabled:this.disabled,onClick:function(t){return Object(e.d)(n,t,a,o)}}),Object(i.l)("slot",null),r&&"md"===t&&Object(i.l)("ion-ripple-effect",null))},t.prototype.render=function(){var t,r=Object(o.b)(this);return Object(i.l)(i.c,{class:Object.assign(Object.assign((t={},t[r]=!0,t),Object(e.a)(this.color)),{"card-disabled":this.disabled,"ion-activatable":this.isClickable()})},this.renderCard(r))},t}();a.style={ios:":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-600, #666666)));margin-left:16px;margin-right:16px;margin-top:24px;margin-bottom:24px;border-radius:8px;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1), -webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);font-size:14px;-webkit-box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);box-shadow:0 4px 16px rgba(0, 0, 0, 0.12)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px}}:host(.ion-activated){-webkit-transform:scale3d(0.97, 0.97, 1);transform:scale3d(0.97, 0.97, 1)}",md:":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-550, #737373)));margin-left:10px;margin-right:10px;margin-top:10px;margin-bottom:10px;border-radius:4px;font-size:14px;-webkit-box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px}}"};var s=function(){function t(t){Object(i.q)(this,t)}return t.prototype.render=function(){var t,r=Object(o.b)(this);return Object(i.l)(i.c,{class:(t={},t[r]=!0,t["card-content-"+r]=!0,t)})},t}();s.style={ios:"ion-card-content{display:block;position:relative}.card-content-ios{padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:20px;font-size:16px;line-height:1.4}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.card-content-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px}}.card-content-ios h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.card-content-ios h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.card-content-ios h3,.card-content-ios h4,.card-content-ios h5,.card-content-ios h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal}.card-content-ios p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px}ion-card-header+.card-content-ios{padding-top:0}",md:"ion-card-content{display:block;position:relative}.card-content-md{padding-left:16px;padding-right:16px;padding-top:13px;padding-bottom:13px;font-size:14px;line-height:1.5}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.card-content-md{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.card-content-md h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.card-content-md h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.card-content-md h3,.card-content-md h4,.card-content-md h5,.card-content-md h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal}.card-content-md p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:1.5}ion-card-header+.card-content-md{padding-top:0}"};var c=function(){function t(t){Object(i.q)(this,t),this.translucent=!1}return t.prototype.render=function(){var t,r=Object(o.b)(this);return Object(i.l)(i.c,{class:Object.assign(Object.assign({},Object(e.a)(this.color)),(t={"card-header-translucent":this.translucent,"ion-inherit-color":!0},t[r]=!0,t))},Object(i.l)("slot",null))},t}();c.style={ios:":host{--background:transparent;--color:inherit;display:block;position:relative;background:var(--background);color:var(--color)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:16px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px}}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.card-header-translucent){background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.9);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px)}}",md:":host{--background:transparent;--color:inherit;display:block;position:relative;background:var(--background);color:var(--color)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}::slotted(ion-card-title:not(:first-child)),::slotted(ion-card-subtitle:not(:first-child)){margin-top:8px}"};var d=function(){function t(t){Object(i.q)(this,t)}return t.prototype.render=function(){var t,r=Object(o.b)(this);return Object(i.l)(i.c,{role:"heading","aria-level":"3",class:Object.assign(Object.assign({},Object(e.a)(this.color)),(t={"ion-inherit-color":!0},t[r]=!0,t))},Object(i.l)("slot",null))},t}();d.style={ios:":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-600, #666666);margin-left:0;margin-right:0;margin-top:0;margin-bottom:4px;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:12px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase}",md:":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-550, #737373);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:14px;font-weight:500}"};var l=function(){function t(t){Object(i.q)(this,t)}return t.prototype.render=function(){var t,r=Object(o.b)(this);return Object(i.l)(i.c,{role:"heading","aria-level":"2",class:Object.assign(Object.assign({},Object(e.a)(this.color)),(t={"ion-inherit-color":!0},t[r]=!0,t))},Object(i.l)("slot",null))},t}();l.style={ios:":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-text-color, #000);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:28px;font-weight:700;line-height:1.2}",md:":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-850, #262626);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:20px;font-weight:500;line-height:1.2}"}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[23],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-checkbox.entry.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-checkbox.entry.js ***!
+  \*********************************************************************/
+/*! exports provided: ion_checkbox */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_checkbox", function() { return Checkbox; });
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+var checkboxIosCss = ":host{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.ion-color){--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.checkbox-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}.checkbox-icon path{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}:host(.checkbox-checked) .checkbox-icon,:host(.checkbox-indeterminate) .checkbox-icon{border-color:var(--border-color-checked);background:var(--background-checked)}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{opacity:1}:host(.checkbox-disabled){pointer-events:none}:host{--border-radius:50%;--border-width:1px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.23);--background:var(--ion-item-background, var(--ion-background-color, #fff));--size:26px;width:var(--size);height:var(--size)}:host(.checkbox-disabled){opacity:0.3}:host(.in-item){margin-left:0;margin-right:8px;margin-top:10px;margin-bottom:9px;display:block;position:static}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px}}:host(.in-item[slot=start]){margin-left:2px;margin-right:20px;margin-top:8px;margin-bottom:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:20px;margin-inline-end:20px}}";
+var checkboxMdCss = ":host{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.ion-color){--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.checkbox-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}.checkbox-icon path{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}:host(.checkbox-checked) .checkbox-icon,:host(.checkbox-indeterminate) .checkbox-icon{border-color:var(--border-color-checked);background:var(--background-checked)}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{opacity:1}:host(.checkbox-disabled){pointer-events:none}:host{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.51);--checkmark-width:3;--background:var(--ion-item-background, var(--ion-background-color, #fff));--transition:background 180ms cubic-bezier(0.4, 0, 0.2, 1);--size:18px;width:var(--size);height:var(--size)}.checkbox-icon path{stroke-dasharray:30;stroke-dashoffset:30}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}:host(.checkbox-disabled){opacity:0.3}:host(.in-item){margin-left:0;margin-right:0;margin-top:18px;margin-bottom:18px;display:block;position:static}:host(.in-item[slot=start]){margin-left:4px;margin-right:36px;margin-top:18px;margin-bottom:18px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}";
+var Checkbox = /** @class */ (function () {
+    function Checkbox(hostRef) {
+        var _this = this;
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        this.ionChange = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionChange", 7);
+        this.ionFocus = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionBlur", 7);
+        this.ionStyle = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionStyle", 7);
+        this.inputId = "ion-cb-" + checkboxIds++;
+        /**
+         * The name of the control, which is submitted with the form data.
+         */
+        this.name = this.inputId;
+        /**
+         * If `true`, the checkbox is selected.
+         */
+        this.checked = false;
+        /**
+         * If `true`, the checkbox will visually appear as indeterminate.
+         */
+        this.indeterminate = false;
+        /**
+         * If `true`, the user cannot interact with the checkbox.
+         */
+        this.disabled = false;
+        /**
+         * The value of the toggle does not mean if it's checked or not, use the `checked`
+         * property for that.
+         *
+         * The value of a toggle is analogous to the value of a `<input type="checkbox">`,
+         * it's only used when the toggle participates in a native `<form>`.
+         */
+        this.value = 'on';
+        this.onClick = function () {
+            _this.setFocus();
+            _this.checked = !_this.checked;
+            _this.indeterminate = false;
+        };
+        this.onFocus = function () {
+            _this.ionFocus.emit();
+        };
+        this.onBlur = function () {
+            _this.ionBlur.emit();
+        };
+    }
+    Checkbox.prototype.componentWillLoad = function () {
+        this.emitStyle();
+    };
+    Checkbox.prototype.checkedChanged = function (isChecked) {
+        this.ionChange.emit({
+            checked: isChecked,
+            value: this.value
+        });
+        this.emitStyle();
+    };
+    Checkbox.prototype.disabledChanged = function () {
+        this.emitStyle();
+    };
+    Checkbox.prototype.emitStyle = function () {
+        this.ionStyle.emit({
+            'checkbox-checked': this.checked,
+            'interactive-disabled': this.disabled,
+        });
+    };
+    Checkbox.prototype.setFocus = function () {
+        if (this.buttonEl) {
+            this.buttonEl.focus();
+        }
+    };
+    Checkbox.prototype.render = function () {
+        var _a;
+        var _this = this;
+        var _b = this, inputId = _b.inputId, indeterminate = _b.indeterminate, disabled = _b.disabled, checked = _b.checked, value = _b.value, color = _b.color, el = _b.el;
+        var labelId = inputId + '-lbl';
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        var label = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_2__["f"])(el);
+        if (label) {
+            label.id = labelId;
+        }
+        Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_2__["a"])(true, el, this.name, (checked ? value : ''), disabled);
+        var path = indeterminate
+            ? Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { d: "M6 12L18 12", part: "mark" })
+            : Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
+        if (mode === 'md') {
+            path = indeterminate
+                ? Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { d: "M2 12H22", part: "mark" })
+                : Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
+        }
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, role: "checkbox", "aria-disabled": disabled ? 'true' : null, "aria-checked": "" + checked, "aria-labelledby": labelId, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color)), (_a = {}, _a[mode] = true, _a['in-item'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-item', el), _a['checkbox-checked'] = checked, _a['checkbox-disabled'] = disabled, _a['checkbox-indeterminate'] = indeterminate, _a['interactive'] = true, _a)) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg", { class: "checkbox-icon", viewBox: "0 0 24 24", part: "container" }, path), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: function (btnEl) { return _this.buttonEl = btnEl; } })));
+    };
+    Object.defineProperty(Checkbox.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Checkbox, "watchers", {
+        get: function () {
+            return {
+                "checked": ["checkedChanged"],
+                "disabled": ["disabledChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Checkbox;
+}());
+var checkboxIds = 0;
+Checkbox.style = {
+    ios: checkboxIosCss,
+    md: checkboxMdCss
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

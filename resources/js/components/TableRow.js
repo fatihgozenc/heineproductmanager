@@ -61,12 +61,6 @@ const TableRow = ({ item }) => {
 		return table
 	}
 
-	const [formStatus, setFormStatus] = React.useState("")
-
-	React.useEffect(() => {
-		console.log(formStatus)
-	}, [formStatus])
-
 	const updateItem = (e) => {
 		e.preventDefault();
 		axios.put(`/products/${item.id}/update`, { formData })
@@ -74,13 +68,12 @@ const TableRow = ({ item }) => {
 				setIsRowActive(false)
 				const fieldsLeftEmpty = Object.values(formData).filter(item => isFieldEmpty(item)).length;
 				if (fieldsLeftEmpty == 0) {
-					setFormStatus(`${res.data}`)
-					state.setServerResponse(`${res.data}`)
+					state.setServerResponse({ ...state.serverResponse, en: `${res.data.en}`, de: `${res.data.de}` })
 					setEmptyFieldCount(0)
 				} else {
-					let message = `${res.data} But there are ${fieldsLeftEmpty} empty fields in the latest edited row, please fill them.`
-					setFormStatus(message)
-					state.setServerResponse(message)
+					let messageEn = `${res.data.en} There are ${fieldsLeftEmpty} empty field${fieldsLeftEmpty > 1 ? 's' : ''} in the latest edited row, please insert your information.`
+					let messageDe = `${res.data.de} Jedoch befinden sich in der zuletzt bearbeiteten Zeile noch ${fieldsLeftEmpty} ${fieldsLeftEmpty > 1 ? 'leere Felder' : "leeres Feld"}. Bitte ergänzen Sie die Informationen.`
+					state.setServerResponse({ ...state.serverResponse, en: `${messageEn}`, de: `${messageDe}` })
 					setEmptyFieldCount(fieldsLeftEmpty)
 				}
 			})

@@ -1,1 +1,49 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[52],{282:function(t,i,e){"use strict";e.r(i),e.d(i,"amplify_form_field",(function(){return r})),e.d(i,"amplify_hint",(function(){return n})),e.d(i,"amplify_input",(function(){return l})),e.d(i,"amplify_label",(function(){return a}));var o=e(3),r=function(){function t(t){Object(o.k)(this,t),this.type="text",this.required=!1,this.placeholder=""}return t.prototype.render=function(){return Object(o.i)("div",{class:"form-field"},this.label&&Object(o.i)("div",{class:"form-field-label"},Object(o.i)("amplify-label",{htmlFor:this.fieldId},this.label)),this.description&&Object(o.i)("div",{id:this.fieldId+"-description",class:"form-field-description","data-test":"form-field-description"},this.description),Object(o.i)("div",null,Object(o.i)("slot",{name:"input"},Object(o.i)("amplify-input",{fieldId:this.fieldId,description:this.description,type:this.type,handleInputChange:this.handleInputChange,placeholder:this.placeholder,name:this.name,value:this.value,inputProps:this.inputProps,disabled:this.disabled}))),this.hint&&Object(o.i)("amplify-hint",{id:this.fieldId+"-hint"},this.hint))},t}();r.style=":host{--label-font-size:var(--amplify-text-md);--description-font-size:var(--amplify-text-sm)}.form-field{margin-bottom:15px}.form-field-label{display:block;font-size:var(--label-font-size);padding-bottom:0.5em}.form-field-description{font-size:var(--description-font-size);padding-top:0.5em}";var n=function(){function t(t){Object(o.k)(this,t)}return t.prototype.render=function(){return Object(o.i)("div",{class:"hint"},Object(o.i)("slot",null))},t}();n.style=":host{--color:var(--amplify-grey);--font-family:var(--amplify-font-family);--font-size:var(--amplify-text-xs);--font-weight:var(--amplify-font-weight)}.hint{color:var(--color);font-family:var(--font-family);font-weight:var(--font-weight);font-size:var(--font-size);margin-bottom:2.625rem}";var l=function(){function t(t){Object(o.k)(this,t),this.type="text",this.handleInputChange=function(){},this.placeholder="",this.formSubmit=Object(o.f)(this,"formSubmit",7)}return t.prototype.handleKeyDown=function(t){"Enter"===t.key&&this.formSubmit.emit(t)},t.prototype.render=function(){var t=this;return Object(o.i)(o.b,{class:"input-host"},Object(o.i)("input",Object.assign({id:this.fieldId,"aria-describedby":this.fieldId&&this.description?this.fieldId+"-description":null,type:this.type,onInput:function(i){return t.handleInputChange(i)},placeholder:this.placeholder,name:this.name,class:"input",value:this.value,disabled:this.disabled},this.inputProps)))},t}();l.style=":host{--color:var(--amplify-secondary-color);--background-color:var(--amplify-secondary-contrast);--border-color:var(--amplify-light-grey);--border-color-focus:var(--amplify-primary-color)}.input-host{width:100%}.input{display:block;width:100%;padding:1rem;font-size:var(--amplify-text-sm);color:var(--color);background-color:var(--background-color);background-image:none;border:1px solid var(--border-color);border-radius:3px;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0 0 0.625rem 0;height:3.125rem;line-height:1.1}.input:focus{outline:none;border-color:var(--border-color-focus)}.input:disabled{opacity:0.5}";var a=function(){function t(t){Object(o.k)(this,t)}return t.prototype.render=function(){return Object(o.i)("label",{class:"label",htmlFor:this.htmlFor},Object(o.i)("slot",null))},t}();a.style=":host{--label-color:var(--amplify-secondary-color)}.label{color:var(--label-color);font-size:var(--amplify-text-sm);margin-bottom:16px}"}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[52],{
+
+/***/ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-greetings.entry.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@aws-amplify/ui-components/dist/esm-es5/amplify-greetings.entry.js ***!
+  \*****************************************************************************************/
+/*! exports provided: amplify_greetings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "amplify_greetings", function() { return AmplifyGreetings; });
+/* harmony import */ var _index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-a93ff41e.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/index-a93ff41e.js");
+/* harmony import */ var _aws_amplify_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @aws-amplify/core */ "./node_modules/@aws-amplify/core/lib-esm/index.js");
+/* harmony import */ var _auth_types_78df304e_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth-types-78df304e.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/auth-types-78df304e.js");
+/* harmony import */ var _aws_amplify_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @aws-amplify/auth */ "./node_modules/@aws-amplify/auth/lib-esm/index.js");
+/* harmony import */ var _Translations_59947173_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Translations-59947173.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/Translations-59947173.js");
+/* harmony import */ var _constants_6835ae6a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants-6835ae6a.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/constants-6835ae6a.js");
+/* harmony import */ var _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helpers-e703dacf.js */ "./node_modules/@aws-amplify/ui-components/dist/esm-es5/helpers-e703dacf.js");
+
+
+
+
+
+
+
+var amplifyGreetingsCss = ":host{--background-color:var(--amplify-white);--border-color:var(--amplify-light-grey);--font-family:var(--amplify-font-family)}.greetings{position:relative;border:1px solid transparent;background-color:var(--background-color);border-color:var(--border-color);padding:10px;font-family:var(--font-family)}amplify-sign-out{margin-left:1rem}";
+var AmplifyGreetings = /** @class */ (function () {
+    function AmplifyGreetings(hostRef) {
+        Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        /** Username displayed in the greetings */
+        this.username = null;
+        /** Logo displayed inside of the header */
+        this.logo = null;
+        /** Auth state change handler for this component */
+        this.handleAuthStateChange = _helpers_e703dacf_js__WEBPACK_IMPORTED_MODULE_6__["d"];
+    }
+    AmplifyGreetings.prototype.render = function () {
+        return (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("header", { class: "greetings" }, this.logo && Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", null, this.logo), Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-nav", null, this.username && (Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "greetings-message" }, Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", null, "Hello, ", this.username))), Object(_index_a93ff41e_js__WEBPACK_IMPORTED_MODULE_0__["h"])("amplify-sign-out", { handleAuthStateChange: this.handleAuthStateChange }))));
+    };
+    return AmplifyGreetings;
+}());
+AmplifyGreetings.style = amplifyGreetingsCss;
+
+
+
+/***/ })
+
+}]);

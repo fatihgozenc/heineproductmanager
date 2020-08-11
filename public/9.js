@@ -1,1 +1,387 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{11:function(e,t,o){"use strict";o.d(t,"a",(function(){return r})),o.d(t,"b",(function(){return n})),o.d(t,"c",(function(){return a})),o.d(t,"d",(function(){return d}));var i=o(0),a=function(e,t){return null!==t.closest(e)},r=function(e){var t;return"string"==typeof e&&e.length>0?((t={"ion-color":!0})["ion-color-"+e]=!0,t):void 0},n=function(e){var t={};return function(e){return void 0!==e?(Array.isArray(e)?e:e.split(" ")).filter((function(e){return null!=e})).map((function(e){return e.trim()})).filter((function(e){return""!==e})):[]}(e).forEach((function(e){return t[e]=!0})),t},s=/^[a-z][a-z0-9+\-.]*:/,d=function(e,t,o,a){return Object(i.__awaiter)(void 0,void 0,void 0,(function(){var r;return Object(i.__generator)(this,(function(i){return null!=e&&"#"!==e[0]&&!s.test(e)&&(r=document.querySelector("ion-router"))?(null!=t&&t.preventDefault(),[2,r.push(e,o,a)]):[2,!1]}))}))}},245:function(e,t,o){"use strict";o.r(t),o.d(t,"ion_modal",(function(){return v}));var i=o(0),a=o(1),r=o(6),n=o(10),s=o(8),d=o(24),l=o(38),c=(o(42),o(30)),m=(o(37),o(16)),p=o(11),h=o(43),f=.93,u=function(e,t){return Object(n.c)(400,e/Math.abs(1.1*t),500)},b=function(e,t){var o=Object(s.a)().addElement(e.querySelector("ion-backdrop")).fromTo("opacity",.01,"var(--backdrop-opacity)").beforeStyles({"pointer-events":"none"}).afterClearStyles(["pointer-events"]),i=Object(s.a)().addElement(e.querySelectorAll(".modal-wrapper, .modal-shadow")).beforeStyles({opacity:1}).fromTo("transform","translateY(100vh)","translateY(0vh)"),a=Object(s.a)().addElement(e).easing("cubic-bezier(0.32,0.72,0,1)").duration(500).addAnimation(i);if(t){var r=window.innerWidth<768,n="ION-MODAL"===t.tagName&&void 0!==t.presentingElement,d=Object(s.a)().beforeStyles({transform:"translateY(0)","transform-origin":"top center",overflow:"hidden"}),l=document.body;if(r){var c=CSS.supports("width","max(0px, 1px)")?"max(30px, var(--ion-safe-area-top))":"30px",m="translateY("+(n?"-10px":c)+") scale("+f+")";d.afterStyles({transform:m}).beforeAddWrite((function(){return l.style.setProperty("background-color","black")})).addElement(t).keyframes([{offset:0,filter:"contrast(1)",transform:"translateY(0px) scale(1)",borderRadius:"0px"},{offset:1,filter:"contrast(0.85)",transform:m,borderRadius:"10px 10px 0 0"}]),a.addAnimation(d)}else if(a.addAnimation(o),n){m="translateY(-10px) scale("+(n?f:1)+")";d.afterStyles({transform:m}).addElement(t.querySelector(".modal-wrapper")).keyframes([{offset:0,filter:"contrast(1)",transform:"translateY(0) scale(1)"},{offset:1,filter:"contrast(0.85)",transform:m}]);var p=Object(s.a)().afterStyles({transform:m}).addElement(t.querySelector(".modal-shadow")).keyframes([{offset:0,opacity:"1",transform:"translateY(0) scale(1)"},{offset:1,opacity:"0",transform:m}]);a.addAnimation([d,p])}else i.fromTo("opacity","0","1")}else a.addAnimation(o);return a},w=function(e,t,o){void 0===o&&(o=500);var i=Object(s.a)().addElement(e.querySelector("ion-backdrop")).fromTo("opacity","var(--backdrop-opacity)",0),a=Object(s.a)().addElement(e.querySelectorAll(".modal-wrapper, .modal-shadow")).beforeStyles({opacity:1}).fromTo("transform","translateY(0vh)","translateY(100vh)"),r=Object(s.a)().addElement(e).easing("cubic-bezier(0.32,0.72,0,1)").duration(o).addAnimation(a);if(t){var n=window.innerWidth<768,d="ION-MODAL"===t.tagName&&void 0!==t.presentingElement,l=Object(s.a)().beforeClearStyles(["transform"]).afterClearStyles(["transform"]).onFinish((function(e){1===e&&(t.style.setProperty("overflow",""),Array.from(c.querySelectorAll("ion-modal")).filter((function(e){return void 0!==e.presentingElement})).length<=1&&c.style.setProperty("background-color",""))})),c=document.body;if(n){var m=CSS.supports("width","max(0px, 1px)")?"max(30px, var(--ion-safe-area-top))":"30px",p="translateY("+(d?"-10px":m)+") scale("+f+")";l.addElement(t).keyframes([{offset:0,filter:"contrast(0.85)",transform:p,borderRadius:"10px 10px 0 0"},{offset:1,filter:"contrast(1)",transform:"translateY(0px) scale(1)",borderRadius:"0px"}]),r.addAnimation(l)}else if(r.addAnimation(i),d){p="translateY(-10px) scale("+(d?f:1)+")";l.addElement(t.querySelector(".modal-wrapper")).afterStyles({transform:"translate3d(0, 0, 0)"}).keyframes([{offset:0,filter:"contrast(0.85)",transform:p},{offset:1,filter:"contrast(1)",transform:"translateY(0) scale(1)"}]);var h=Object(s.a)().addElement(t.querySelector(".modal-shadow")).afterStyles({transform:"translateY(0) scale(1)"}).keyframes([{offset:0,opacity:"0",transform:p},{offset:1,opacity:"1",transform:"translateY(0) scale(1)"}]);r.addAnimation([l,h])}else a.fromTo("opacity","1","0")}else r.addAnimation(i);return r},x=function(e){var t=Object(s.a)(),o=Object(s.a)(),i=Object(s.a)();return o.addElement(e.querySelector("ion-backdrop")).fromTo("opacity",.01,"var(--backdrop-opacity)").beforeStyles({"pointer-events":"none"}).afterClearStyles(["pointer-events"]),i.addElement(e.querySelector(".modal-wrapper")).keyframes([{offset:0,opacity:.01,transform:"translateY(40px)"},{offset:1,opacity:1,transform:"translateY(0px)"}]),t.addElement(e).easing("cubic-bezier(0.36,0.66,0.04,1)").duration(280).addAnimation([o,i])},y=function(e){var t=Object(s.a)(),o=Object(s.a)(),i=Object(s.a)(),a=e.querySelector(".modal-wrapper");return o.addElement(e.querySelector("ion-backdrop")).fromTo("opacity","var(--backdrop-opacity)",0),i.addElement(a).keyframes([{offset:0,opacity:.99,transform:"translateY(0px)"},{offset:1,opacity:0,transform:"translateY(40px)"}]),t.addElement(e).easing("cubic-bezier(0.47,0,0.745,0.715)").duration(200).addAnimation([o,i])},v=function(){function e(e){var t=this;Object(a.q)(this,e),this.didPresent=Object(a.i)(this,"ionModalDidPresent",7),this.willPresent=Object(a.i)(this,"ionModalWillPresent",7),this.willDismiss=Object(a.i)(this,"ionModalWillDismiss",7),this.didDismiss=Object(a.i)(this,"ionModalDidDismiss",7),this.gestureAnimationDismissing=!1,this.presented=!1,this.keyboardClose=!0,this.backdropDismiss=!0,this.showBackdrop=!0,this.animated=!0,this.swipeToClose=!1,this.onBackdropTap=function(){t.dismiss(void 0,m.a)},this.onDismiss=function(e){e.stopPropagation(),e.preventDefault(),t.dismiss()},this.onLifecycle=function(e){var o=t.usersElement,i=g[e.type];if(o&&i){var a=new CustomEvent(i,{bubbles:!1,cancelable:!1,detail:e.detail});o.dispatchEvent(a)}}}return e.prototype.swipeToCloseChanged=function(e){this.gesture?this.gesture.enable(e):e&&this.initSwipeToClose()},e.prototype.connectedCallback=function(){Object(m.f)(this.el)},e.prototype.present=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){var e,t,o,r=this;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:if(this.presented)return[2];if(!(e=this.el.querySelector(".modal-wrapper")))throw new Error("container is undefined");return t=Object.assign(Object.assign({},this.componentProps),{modal:this.el}),o=this,[4,Object(h.a)(this.delegate,e,this.component,["ion-page"],t)];case 1:return o.usersElement=i.sent(),[4,Object(d.d)(this.usersElement)];case 2:return i.sent(),Object(a.g)((function(){return r.el.classList.add("show-modal")})),[4,Object(m.e)(this,"modalEnter",b,x,this.presentingElement)];case 3:return i.sent(),this.swipeToClose&&this.initSwipeToClose(),[2]}}))}))},e.prototype.initSwipeToClose=function(){var e=this;if("ios"===Object(r.b)(this)){var t,o,a,s,d,m,p=this.leaveAnimation||r.c.get("modalLeave",w),h=this.animation=p(this.el,this.presentingElement);this.gesture=(t=this.el,o=h,a=function(){e.gestureAnimationDismissing=!0,e.animation.onFinish((function(){return Object(i.__awaiter)(e,void 0,void 0,(function(){return Object(i.__generator)(this,(function(e){switch(e.label){case 0:return[4,this.dismiss(void 0,"gesture")];case 1:return e.sent(),this.gestureAnimationDismissing=!1,[2]}}))}))}))},s=t.offsetHeight,d=!1,m=Object(c.createGesture)({el:t,gestureName:"modalSwipeToClose",gesturePriority:40,direction:"y",threshold:10,canStart:function(e){var t=e.event.target;return null===t||!t.closest||null===t.closest("ion-content")},onStart:function(){o.progressStart(!0,d?1:0)},onMove:function(e){var t=Object(n.c)(1e-4,e.deltaY/s,.9999);o.progressStep(t)},onEnd:function(e){var t=e.velocityY,i=Object(n.c)(1e-4,e.deltaY/s,.9999),r=(e.deltaY+1e3*t)/s>=.5,c=r?-.001:.001;r?(o.easing("cubic-bezier(0.32, 0.72, 0, 1)"),c+=Object(l.a)([0,0],[.32,.72],[0,1],[1,1],i)[0]):(o.easing("cubic-bezier(1, 0, 0.68, 0.28)"),c+=Object(l.a)([0,0],[1,0],[.68,.28],[1,1],i)[0]);var p=u(r?i*s:(1-i)*s,t);d=r,m.enable(!1),o.onFinish((function(){r||m.enable(!0)})).progressEnd(r?1:0,c,p),r&&a()}})),this.gesture.enable(!0)}},e.prototype.dismiss=function(e,t){return Object(i.__awaiter)(this,void 0,void 0,(function(){var o,a;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:return this.gestureAnimationDismissing&&"gesture"!==t?[2,!1]:(o=m.i.get(this)||[],[4,Object(m.g)(this,e,t,"modalLeave",w,y,this.presentingElement)]);case 1:return(a=i.sent())?[4,Object(h.b)(this.delegate,this.usersElement)]:[3,3];case 2:i.sent(),this.animation&&this.animation.destroy(),o.forEach((function(e){return e.destroy()})),i.label=3;case 3:return this.animation=void 0,[2,a]}}))}))},e.prototype.onDidDismiss=function(){return Object(m.h)(this.el,"ionModalDidDismiss")},e.prototype.onWillDismiss=function(){return Object(m.h)(this.el,"ionModalWillDismiss")},e.prototype.render=function(){var e,t=Object(r.b)(this);return Object(a.l)(a.c,{"no-router":!0,"aria-modal":"true",tabindex:"-1",class:Object.assign((e={},e[t]=!0,e["modal-card"]=void 0!==this.presentingElement&&"ios"===t,e),Object(p.b)(this.cssClass)),style:{zIndex:""+(2e4+this.overlayIndex)},onIonBackdropTap:this.onBackdropTap,onIonDismiss:this.onDismiss,onIonModalDidPresent:this.onLifecycle,onIonModalWillPresent:this.onLifecycle,onIonModalWillDismiss:this.onLifecycle,onIonModalDidDismiss:this.onLifecycle},Object(a.l)("ion-backdrop",{visible:this.showBackdrop,tappable:this.backdropDismiss}),"ios"===t&&Object(a.l)("div",{class:"modal-shadow"}),Object(a.l)("div",{tabindex:"0"}),Object(a.l)("div",{role:"dialog",class:"modal-wrapper ion-overlay-wrapper"}),Object(a.l)("div",{tabindex:"0"}))},Object.defineProperty(e.prototype,"el",{get:function(){return Object(a.m)(this)},enumerable:!1,configurable:!0}),Object.defineProperty(e,"watchers",{get:function(){return{swipeToClose:["swipeToCloseChanged"]}},enumerable:!1,configurable:!0}),e}(),g={ionModalDidPresent:"ionViewDidEnter",ionModalWillPresent:"ionViewWillEnter",ionModalWillDismiss:"ionViewWillLeave",ionModalDidDismiss:"ionViewDidLeave"};v.style={ios:".sc-ion-modal-ios-h{--width:100%;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--overflow:hidden;--border-radius:0;--border-width:0;--border-style:none;--border-color:transparent;--background:var(--ion-background-color, #fff);--box-shadow:none;--backdrop-opacity:0;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;contain:strict}.overlay-hidden.sc-ion-modal-ios-h{display:none}.modal-wrapper.sc-ion-modal-ios,.modal-shadow.sc-ion-modal-ios{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:var(--overflow);z-index:10}.modal-shadow.sc-ion-modal-ios{position:absolute;background:transparent}@media only screen and (min-width: 768px) and (min-height: 600px){.sc-ion-modal-ios-h{--width:600px;--height:500px;--ion-safe-area-top:0px;--ion-safe-area-bottom:0px;--ion-safe-area-right:0px;--ion-safe-area-left:0px}}@media only screen and (min-width: 768px) and (min-height: 768px){.sc-ion-modal-ios-h{--width:600px;--height:600px}}.sc-ion-modal-ios-h:first-of-type{--backdrop-opacity:var(--ion-backdrop-opacity, 0.4)}@media only screen and (min-width: 768px) and (min-height: 600px){.sc-ion-modal-ios-h{--border-radius:10px}}.modal-wrapper.sc-ion-modal-ios{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0)}@media screen and (max-width: 767px){@supports (width: max(0px, 1px)){.modal-card.sc-ion-modal-ios-h{--height:calc(100% - max(30px, var(--ion-safe-area-top)) - 10px)}}@supports not (width: max(0px, 1px)){.modal-card.sc-ion-modal-ios-h{--height:calc(100% - 40px)}}.modal-card.sc-ion-modal-ios-h .modal-wrapper.sc-ion-modal-ios{border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:0;border-bottom-left-radius:0}[dir=rtl].sc-ion-modal-ios-h -no-combinator.modal-card.sc-ion-modal-ios-h .modal-wrapper.sc-ion-modal-ios,[dir=rtl] .sc-ion-modal-ios-h -no-combinator.modal-card.sc-ion-modal-ios-h .modal-wrapper.sc-ion-modal-ios,[dir=rtl].modal-card.sc-ion-modal-ios-h .modal-wrapper.sc-ion-modal-ios,[dir=rtl] .modal-card.sc-ion-modal-ios-h .modal-wrapper.sc-ion-modal-ios{border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:0;border-bottom-left-radius:0}.modal-card.sc-ion-modal-ios-h{--backdrop-opacity:0;--width:100%;-ms-flex-align:end;align-items:flex-end}.modal-card.sc-ion-modal-ios-h .modal-shadow.sc-ion-modal-ios{display:none}.modal-card.sc-ion-modal-ios-h ion-backdrop.sc-ion-modal-ios{pointer-events:none}}@media screen and (min-width: 768px){.modal-card.sc-ion-modal-ios-h{--width:calc(100% - 120px);--height:calc(100% - (120px + var(--ion-safe-area-top) + var(--ion-safe-area-bottom)));--max-width:720px;--max-height:1000px}.modal-card.sc-ion-modal-ios-h{--backdrop-opacity:0;-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}.modal-card.sc-ion-modal-ios-h:first-of-type{--backdrop-opacity:0.18}.modal-card.sc-ion-modal-ios-h .modal-shadow.sc-ion-modal-ios{-webkit-box-shadow:0px 0px 30px 10px rgba(0, 0, 0, 0.1);box-shadow:0px 0px 30px 10px rgba(0, 0, 0, 0.1)}}",md:".sc-ion-modal-md-h{--width:100%;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--overflow:hidden;--border-radius:0;--border-width:0;--border-style:none;--border-color:transparent;--background:var(--ion-background-color, #fff);--box-shadow:none;--backdrop-opacity:0;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;contain:strict}.overlay-hidden.sc-ion-modal-md-h{display:none}.modal-wrapper.sc-ion-modal-md,.modal-shadow.sc-ion-modal-md{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:var(--overflow);z-index:10}.modal-shadow.sc-ion-modal-md{position:absolute;background:transparent}@media only screen and (min-width: 768px) and (min-height: 600px){.sc-ion-modal-md-h{--width:600px;--height:500px;--ion-safe-area-top:0px;--ion-safe-area-bottom:0px;--ion-safe-area-right:0px;--ion-safe-area-left:0px}}@media only screen and (min-width: 768px) and (min-height: 768px){.sc-ion-modal-md-h{--width:600px;--height:600px}}.sc-ion-modal-md-h:first-of-type{--backdrop-opacity:var(--ion-backdrop-opacity, 0.32)}@media only screen and (min-width: 768px) and (min-height: 600px){.sc-ion-modal-md-h{--border-radius:2px}.sc-ion-modal-md-h:first-of-type{--box-shadow:0 28px 48px rgba(0, 0, 0, 0.4)}}.modal-wrapper.sc-ion-modal-md{-webkit-transform:translate3d(0,  40px,  0);transform:translate3d(0,  40px,  0);opacity:0.01}"}},43:function(e,t,o){"use strict";o.d(t,"a",(function(){return a})),o.d(t,"b",(function(){return r}));var i=o(0),a=function(e,t,o,a,r){return Object(i.__awaiter)(void 0,void 0,void 0,(function(){var n;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:if(e)return[2,e.attachViewToDom(t,o,r,a)];if("string"!=typeof o&&!(o instanceof HTMLElement))throw new Error("framework delegate is missing");return n="string"==typeof o?t.ownerDocument&&t.ownerDocument.createElement(o):o,a&&a.forEach((function(e){return n.classList.add(e)})),r&&Object.assign(n,r),t.appendChild(n),n.componentOnReady?[4,n.componentOnReady()]:[3,2];case 1:i.sent(),i.label=2;case 2:return[2,n]}}))}))},r=function(e,t){if(t){if(e){var o=t.parentElement;return e.removeViewFromDom(o,t)}t.remove()}return Promise.resolve()}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[9],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js ***!
+  \******************************************************************/
+/*! exports provided: a, b, c, d, h */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hapticSelectionChanged; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticImpact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hapticSelectionEnd; });
+var HapticEngine = {
+    getEngine: function () {
+        var win = window;
+        return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
+    },
+    available: function () {
+        return !!this.getEngine();
+    },
+    isCordova: function () {
+        return !!window.TapticEngine;
+    },
+    isCapacitor: function () {
+        var win = window;
+        return !!win.Capacitor;
+    },
+    impact: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.impact({ style: style });
+    },
+    notification: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.notification({ style: style });
+    },
+    selection: function () {
+        this.impact({ style: 'light' });
+    },
+    selectionStart: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionStart();
+        }
+        else {
+            engine.gestureSelectionStart();
+        }
+    },
+    selectionChanged: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionChanged();
+        }
+        else {
+            engine.gestureSelectionChanged();
+        }
+    },
+    selectionEnd: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionEnd();
+        }
+        else {
+            engine.gestureSelectionEnd();
+        }
+    }
+};
+/**
+ * Trigger a selection changed haptic event. Good for one-time events
+ * (not for gestures)
+ */
+var hapticSelection = function () {
+    HapticEngine.selection();
+};
+/**
+ * Tell the haptic engine that a gesture for a selection change is starting.
+ */
+var hapticSelectionStart = function () {
+    HapticEngine.selectionStart();
+};
+/**
+ * Tell the haptic engine that a selection changed during a gesture.
+ */
+var hapticSelectionChanged = function () {
+    HapticEngine.selectionChanged();
+};
+/**
+ * Tell the haptic engine we are done with a gesture. This needs to be
+ * called lest resources are not properly recycled.
+ */
+var hapticSelectionEnd = function () {
+    HapticEngine.selectionEnd();
+};
+/**
+ * Use this to indicate success/failure/warning to the user.
+ * options should be of the type `{ style: 'light' }` (or `medium`/`heavy`)
+ */
+var hapticImpact = function (options) {
+    HapticEngine.impact(options);
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-toggle.entry.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-toggle.entry.js ***!
+  \*******************************************************************/
+/*! exports provided: ion_toggle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_toggle", function() { return Toggle; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./haptic-7b8ba70a.js */ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+
+
+var toggleIosCss = ":host{-webkit-box-sizing:content-box !important;box-sizing:content-box !important;display:inline-block;position:relative;outline:none;contain:content;cursor:pointer;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.ion-focused) input{border:2px solid #5e9ed6}:host(.toggle-disabled){pointer-events:none}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.toggle-icon-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;-webkit-transition:var(--handle-transition);transition:var(--handle-transition);will-change:transform}.toggle-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;background:var(--background);pointer-events:none;overflow:inherit}:host(.toggle-checked) .toggle-icon{background:var(--background-checked)}.toggle-inner{left:var(--handle-spacing);border-radius:var(--handle-border-radius);position:absolute;width:var(--handle-width);height:var(--handle-height);max-height:var(--handle-max-height);-webkit-transition:var(--handle-transition);transition:var(--handle-transition);background:var(--handle-background);-webkit-box-shadow:var(--handle-box-shadow);box-shadow:var(--handle-box-shadow);contain:strict}[dir=rtl] .toggle-inner,:host-context([dir=rtl]) .toggle-inner{left:unset;right:unset;right:var(--handle-spacing)}:host(.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width)), 0, 0);transform:translate3d(calc(100% - var(--handle-width)), 0, 0)}:host-context([dir=rtl]):host(.toggle-checked) .toggle-icon-wrapper,:host-context([dir=rtl]).toggle-checked .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width)), 0, 0);transform:translate3d(calc(-100% + var(--handle-width)), 0, 0)}:host(.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);background:var(--handle-background-checked)}:host-context([dir=rtl]):host(.toggle-checked) .toggle-inner,:host-context([dir=rtl]).toggle-checked .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0)}:host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.088);--background-checked:var(--ion-color-primary, #3880ff);--border-radius:16px;--handle-background:#ffffff;--handle-background-checked:#ffffff;--handle-border-radius:25.5px;--handle-box-shadow:0 3px 12px rgba(0, 0, 0, 0.16), 0 3px 1px rgba(0, 0, 0, 0.1);--handle-height:calc(32px - (2px * 2));--handle-max-height:calc(100% - (var(--handle-spacing) * 2));--handle-width:calc(32px - (2px * 2));--handle-spacing:2px;--handle-transition:transform 300ms, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms;width:51px;height:32px;contain:strict;overflow:hidden}:host(.ion-color.toggle-checked) .toggle-icon{background:var(--ion-color-base)}.toggle-icon{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);-webkit-transition:background-color 300ms;transition:background-color 300ms}.toggle-inner{will-change:transform}:host(.toggle-activated) .toggle-icon::before,:host(.toggle-checked) .toggle-icon::before{-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0)}:host(.toggle-activated.toggle-checked) .toggle-inner::before{-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0)}:host(.toggle-activated) .toggle-inner{width:calc(var(--handle-width) + 6px)}:host(.toggle-activated.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width) - 6px), 0, 0);transform:translate3d(calc(100% - var(--handle-width) - 6px), 0, 0)}:host-context([dir=rtl]):host(.toggle-activated.toggle-checked) .toggle-icon-wrapper,:host-context([dir=rtl]).toggle-activated.toggle-checked .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width) + 6px), 0, 0);transform:translate3d(calc(-100% + var(--handle-width) + 6px), 0, 0)}:host(.toggle-disabled){opacity:0.3}:host(.in-item[slot]){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:20px;padding-right:10px;padding-top:6px;padding-bottom:5px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot]){padding-left:unset;padding-right:unset;-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:10px;padding-inline-end:10px}}:host(.in-item[slot=start]){padding-left:0;padding-right:16px;padding-top:6px;padding-bottom:5px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot=start]){padding-left:unset;padding-right:unset;-webkit-padding-start:0;padding-inline-start:0;-webkit-padding-end:16px;padding-inline-end:16px}}";
+var toggleMdCss = ":host{-webkit-box-sizing:content-box !important;box-sizing:content-box !important;display:inline-block;position:relative;outline:none;contain:content;cursor:pointer;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.ion-focused) input{border:2px solid #5e9ed6}:host(.toggle-disabled){pointer-events:none}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.toggle-icon-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;-webkit-transition:var(--handle-transition);transition:var(--handle-transition);will-change:transform}.toggle-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;background:var(--background);pointer-events:none;overflow:inherit}:host(.toggle-checked) .toggle-icon{background:var(--background-checked)}.toggle-inner{left:var(--handle-spacing);border-radius:var(--handle-border-radius);position:absolute;width:var(--handle-width);height:var(--handle-height);max-height:var(--handle-max-height);-webkit-transition:var(--handle-transition);transition:var(--handle-transition);background:var(--handle-background);-webkit-box-shadow:var(--handle-box-shadow);box-shadow:var(--handle-box-shadow);contain:strict}[dir=rtl] .toggle-inner,:host-context([dir=rtl]) .toggle-inner{left:unset;right:unset;right:var(--handle-spacing)}:host(.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width)), 0, 0);transform:translate3d(calc(100% - var(--handle-width)), 0, 0)}:host-context([dir=rtl]):host(.toggle-checked) .toggle-icon-wrapper,:host-context([dir=rtl]).toggle-checked .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width)), 0, 0);transform:translate3d(calc(-100% + var(--handle-width)), 0, 0)}:host(.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);background:var(--handle-background-checked)}:host-context([dir=rtl]):host(.toggle-checked) .toggle-inner,:host-context([dir=rtl]).toggle-checked .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0)}:host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.39);--background-checked:rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.5);--border-radius:14px;--handle-background:#ffffff;--handle-background-checked:var(--ion-color-primary, #3880ff);--handle-border-radius:50%;--handle-box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);--handle-width:20px;--handle-height:20px;--handle-max-height:calc(100% + 6px);--handle-spacing:0;--handle-transition:transform 160ms cubic-bezier(0.4, 0, 0.2, 1), background-color 160ms cubic-bezier(0.4, 0, 0.2, 1);padding-left:12px;padding-right:12px;padding-top:12px;padding-bottom:12px;width:36px;height:14px;contain:strict}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px}}:host(.ion-color.toggle-checked) .toggle-icon{background:rgba(var(--ion-color-base-rgb), 0.5)}:host(.ion-color.toggle-checked) .toggle-inner{background:var(--ion-color-base)}.toggle-icon{-webkit-transition:background-color 160ms;transition:background-color 160ms}.toggle-inner{will-change:background-color, transform}:host(.toggle-disabled){opacity:0.3}:host(.in-item[slot]){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:16px;padding-right:0;padding-top:12px;padding-bottom:12px;cursor:pointer}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot]){padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:0;padding-inline-end:0}}:host(.in-item[slot=start]){padding-left:2px;padding-right:18px;padding-top:12px;padding-bottom:12px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-item[slot=start]){padding-left:unset;padding-right:unset;-webkit-padding-start:2px;padding-inline-start:2px;-webkit-padding-end:18px;padding-inline-end:18px}}";
+var Toggle = /** @class */ (function () {
+    function class_1(hostRef) {
+        var _this = this;
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionChange = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
+        this.ionFocus = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        this.ionStyle = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        this.inputId = "ion-tg-" + toggleIds++;
+        this.lastDrag = 0;
+        this.activated = false;
+        /**
+         * The name of the control, which is submitted with the form data.
+         */
+        this.name = this.inputId;
+        /**
+         * If `true`, the toggle is selected.
+         */
+        this.checked = false;
+        /**
+         * If `true`, the user cannot interact with the toggle.
+         */
+        this.disabled = false;
+        /**
+         * The value of the toggle does not mean if it's checked or not, use the `checked`
+         * property for that.
+         *
+         * The value of a toggle is analogous to the value of a `<input type="checkbox">`,
+         * it's only used when the toggle participates in a native `<form>`.
+         */
+        this.value = 'on';
+        this.onClick = function () {
+            if (_this.lastDrag + 300 < Date.now()) {
+                _this.checked = !_this.checked;
+            }
+        };
+        this.onFocus = function () {
+            _this.ionFocus.emit();
+        };
+        this.onBlur = function () {
+            _this.ionBlur.emit();
+        };
+    }
+    class_1.prototype.checkedChanged = function (isChecked) {
+        this.ionChange.emit({
+            checked: isChecked,
+            value: this.value
+        });
+    };
+    class_1.prototype.disabledChanged = function () {
+        this.emitStyle();
+        if (this.gesture) {
+            this.gesture.enable(!this.disabled);
+        }
+    };
+    class_1.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 1:
+                        _a.gesture = (_b.sent()).createGesture({
+                            el: this.el,
+                            gestureName: 'toggle',
+                            gesturePriority: 100,
+                            threshold: 5,
+                            passive: false,
+                            onStart: function () { return _this.onStart(); },
+                            onMove: function (ev) { return _this.onMove(ev); },
+                            onEnd: function (ev) { return _this.onEnd(ev); },
+                        });
+                        this.disabledChanged();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.disconnectedCallback = function () {
+        if (this.gesture) {
+            this.gesture.destroy();
+            this.gesture = undefined;
+        }
+    };
+    class_1.prototype.componentWillLoad = function () {
+        this.emitStyle();
+    };
+    class_1.prototype.emitStyle = function () {
+        this.ionStyle.emit({
+            'interactive-disabled': this.disabled,
+        });
+    };
+    class_1.prototype.onStart = function () {
+        this.activated = true;
+        // touch-action does not work in iOS
+        this.setFocus();
+    };
+    class_1.prototype.onMove = function (detail) {
+        if (shouldToggle(document, this.checked, detail.deltaX, -10)) {
+            this.checked = !this.checked;
+            Object(_haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+        }
+    };
+    class_1.prototype.onEnd = function (ev) {
+        this.activated = false;
+        this.lastDrag = Date.now();
+        ev.event.preventDefault();
+        ev.event.stopImmediatePropagation();
+    };
+    class_1.prototype.getValue = function () {
+        return this.value || '';
+    };
+    class_1.prototype.setFocus = function () {
+        if (this.buttonEl) {
+            this.buttonEl.focus();
+        }
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var _this = this;
+        var _b = this, inputId = _b.inputId, disabled = _b.disabled, checked = _b.checked, activated = _b.activated, color = _b.color, el = _b.el;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var labelId = inputId + '-lbl';
+        var label = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["f"])(el);
+        var value = this.getValue();
+        if (label) {
+            label.id = labelId;
+        }
+        Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["a"])(true, el, this.name, (checked ? value : ''), disabled);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, role: "checkbox", "aria-disabled": disabled ? 'true' : null, "aria-checked": "" + checked, "aria-labelledby": labelId, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__["c"])(color)), (_a = {}, _a[mode] = true, _a['in-item'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el), _a['toggle-activated'] = activated, _a['toggle-checked'] = checked, _a['toggle-disabled'] = disabled, _a['interactive'] = true, _a)) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon", part: "track" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon-wrapper" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-inner", part: "handle" }))), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: disabled, ref: function (btnEl) { return _this.buttonEl = btnEl; }, "aria-hidden": "true" })));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "watchers", {
+        get: function () {
+            return {
+                "checked": ["checkedChanged"],
+                "disabled": ["disabledChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+var shouldToggle = function (doc, checked, deltaX, margin) {
+    var isRTL = doc.dir === 'rtl';
+    if (checked) {
+        return (!isRTL && (margin > deltaX)) ||
+            (isRTL && (-margin < deltaX));
+    }
+    else {
+        return (!isRTL && (-margin < deltaX)) ||
+            (isRTL && (margin > deltaX));
+    }
+};
+var toggleIds = 0;
+Toggle.style = {
+    ios: toggleIosCss,
+    md: toggleMdCss
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);
