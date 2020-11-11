@@ -1,9 +1,0 @@
-{
-	"AmplifyConfig": {
-		"Auth": {
-			"region": "eu-west-1",
-			"userPoolId": "eu-west-1_7JZHU5OFH",
-			"userPoolWebClientId": "5drfamobjpj11nr7okri0d91f2"
-		}
-	}
-}

@@ -1,7 +1,7 @@
 {
     "/js/main.js": "/js/main.js",
     "/css/app.css": "/css/app.css",
-    "/polyfills-css-shim.js": "/polyfills-css-shim.js",
     "/vendors~polyfills-core-js.js": "/vendors~polyfills-core-js.js",
+    "/vendors~polyfills-css-shim.js": "/vendors~polyfills-css-shim.js",
     "/vendors~polyfills-dom.js": "/vendors~polyfills-dom.js"
 }

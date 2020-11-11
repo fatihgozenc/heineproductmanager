@@ -13,7 +13,6 @@ import {
 	personCircleOutline,
 	atCircleOutline
 } from 'ionicons/icons';
-import { AmplifySignOut } from '@aws-amplify/ui-react';
 import { StateContext } from '../context/StateContext'
 
 const Menu = (props) => {
@@ -41,7 +40,6 @@ const Menu = (props) => {
 						<IonLabel color="primary">{state.clientNumber}</IonLabel>
 					</IonItem>
 
-					<AmplifySignOut buttonText="Abmelden" />
 				</IonList>
 			</IonContent>
 		</IonMenu>

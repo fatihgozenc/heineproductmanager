@@ -27,7 +27,7 @@ const Page = (props) => {
 
 	// FETCHING ALL DATA IN RELATION WITH AUTHORIZED E-MAIL ADDRESS
 	React.useEffect(() => {
-		axios.get(`/products/${Auth.user.attributes.email}`)
+		axios.get(`/products/admin@narciss-taurus.de`)
 			.then(res => {
 				// SET ALL ROWS OF USER
 				setUserTable(res.data);

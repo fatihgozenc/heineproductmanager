@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
 
-Route::get('/', function () {
-	return view('welcome');
-});
-
-Route::get('/products/{email}', 'ProductsController@index');
-Route::put('/products/{id}/update', 'ProductsController@update');
-Route::get('/import', 'ProductsController@importCsv');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/products/{email}', [ProductsController::class, 'index']);
+Route::put('/products/{id}/update', [ProductsController::class, 'update']);
+Route::get('/import', [ProductsController::class, 'importCsv']);
+Auth::routes();

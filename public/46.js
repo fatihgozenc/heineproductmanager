@@ -1,1 +1,151 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[46],{276:function(r,t,i){"use strict";i.r(t),i.d(t,"amplify_button",(function(){return n})),i.d(t,"amplify_loading_spinner",(function(){return a})),i.d(t,"amplify_section",(function(){return l}));var e=i(3),o=(i(13),i(7),i(15),i(17)),n=function(){function r(r){var t=this;Object(e.k)(this,r),this.type="button",this.variant="button",this.disabled=!1,this.handleClick=function(r){if(t.handleButtonClick)t.handleButtonClick(r);else if(Object(o.e)(t.el)&&"submit"==t.type){var i=t.el.closest("form");if(!i){var e=t.el.closest("amplify-form-section");i=e&&e.shadowRoot.querySelector("form")}if(i){r.preventDefault();var n=document.createElement("button");n.type=t.type,n.style.display="none",i.appendChild(n),n.click(),n.remove()}}}}return r.prototype.render=function(){var r;return Object(e.i)("button",{class:(r={},r[this.variant]=!0,r),type:this.type,disabled:this.disabled,onClick:this.handleClick},Object(e.i)("slot",null))},Object.defineProperty(r.prototype,"el",{get:function(){return Object(e.h)(this)},enumerable:!1,configurable:!0}),r}();n.style=":host{--background-color:var(--amplify-primary-color);--background-color-active:var(--amplify-primary-shade);--background-color-disable:var(--amplify-primary-tint);--color:var(--amplify-primary-contrast);--border-width:0;--border-color:initial;--border-style:initial;--link-color:var(--amplify-primary-color);--link-hover:var(--amplify-primary-tint);--link-active:var(--amplify-primary-shade);--text-transform:uppercase;width:100%;text-align:center}@media (min-width: 672px){:host{width:inherit}}.button{width:100%;min-width:153px;display:inline-block;margin-bottom:0;font-size:var(--amplify-text-sm);font-family:var(--amplify-font-family);font-weight:600;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;color:var(--color);padding:1rem;letter-spacing:0.75px;text-transform:var(--text-transform);background-color:var(--background-color);border-width:var(--border-width);border-color:var(--border-color);border-style:var(--border-style)}.button:active{opacity:1;background-color:var(--background-color-active)}.button:hover{opacity:0.8}.button:disabled{opacity:0.65;cursor:auto;background-color:var(--background-color-disable)}.anchor{color:var(--link-color);background-color:inherit;padding:0;border:none;font:inherit;cursor:pointer}.anchor:link{color:var(--link-color);text-decoration:none}.anchor:hover{color:var(--link-hover);text-decoration:underline}.anchor:active{color:var(--link-active);text-decoration:underline}";var a=function(){function r(r){Object(e.k)(this,r)}return r.prototype.render=function(){return Object(e.i)("amplify-icon",{class:"loading-spinner",name:"loading"})},r}();a.style=":host{--spinner-circle-fill:var(--amplify-smoke-white);--spinner-bar-fill:var(--amplify-primary-color);--width:0.875rem;--height:0.875rem}.loading-spinner svg{-webkit-animation:loading-spinner 1s linear infinite;animation:loading-spinner 1s linear infinite;width:var(--width);height:var(--height)}.loading-spinner svg #spinner-circle{fill:var(--spinner-circle-fill)}.loading-spinner svg #spinner-bar{fill:var(--spinner-bar-fill)}@-webkit-keyframes loading-spinner{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loading-spinner{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}";var l=function(){function r(r){Object(e.k)(this,r),this.role="application"}return r.prototype.render=function(){return Object(e.i)("section",{class:"section",role:this.role},Object(e.i)("slot",null))},Object.defineProperty(r.prototype,"el",{get:function(){return Object(e.h)(this)},enumerable:!1,configurable:!0}),r}();l.style=":host{--font-family:var(--amplify-font-family)}.section{position:relative;margin-bottom:20px;background-color:var(--background-color);padding:35px 40px;text-align:left;display:inline-block;border-radius:6px;-webkit-box-shadow:1px 1px 4px 0 rgba(0, 0, 0, 0.15);box-shadow:1px 1px 4px 0 rgba(0, 0, 0, 0.15);-webkit-box-sizing:border-box;box-sizing:border-box;font-family:var(--font-family);width:100%;min-width:320px}@media (min-width: 672px){.section{width:auto;min-width:460px}}"}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[46],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/keyboard-dd970efc.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/keyboard-dd970efc.js ***!
+  \********************************************************************/
+/*! exports provided: KEYBOARD_DID_CLOSE, KEYBOARD_DID_OPEN, copyVisualViewport, keyboardDidClose, keyboardDidOpen, keyboardDidResize, resetKeyboardAssist, setKeyboardClose, setKeyboardOpen, startKeyboardAssist, trackViewportChanges */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KEYBOARD_DID_CLOSE", function() { return KEYBOARD_DID_CLOSE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KEYBOARD_DID_OPEN", function() { return KEYBOARD_DID_OPEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "copyVisualViewport", function() { return copyVisualViewport; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidClose", function() { return keyboardDidClose; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidOpen", function() { return keyboardDidOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidResize", function() { return keyboardDidResize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetKeyboardAssist", function() { return resetKeyboardAssist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setKeyboardClose", function() { return setKeyboardClose; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setKeyboardOpen", function() { return setKeyboardOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startKeyboardAssist", function() { return startKeyboardAssist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trackViewportChanges", function() { return trackViewportChanges; });
+var KEYBOARD_DID_OPEN = 'ionKeyboardDidShow';
+var KEYBOARD_DID_CLOSE = 'ionKeyboardDidHide';
+var KEYBOARD_THRESHOLD = 150;
+var previousVisualViewport = {};
+var currentVisualViewport = {};
+var keyboardOpen = false;
+/**
+ * This is only used for tests
+ */
+var resetKeyboardAssist = function () {
+    previousVisualViewport = {};
+    currentVisualViewport = {};
+    keyboardOpen = false;
+};
+var startKeyboardAssist = function (win) {
+    startNativeListeners(win);
+    if (!win.visualViewport) {
+        return;
+    }
+    currentVisualViewport = copyVisualViewport(win.visualViewport);
+    win.visualViewport.onresize = function () {
+        trackViewportChanges(win);
+        if (keyboardDidOpen() || keyboardDidResize(win)) {
+            setKeyboardOpen(win);
+        }
+        else if (keyboardDidClose(win)) {
+            setKeyboardClose(win);
+        }
+    };
+};
+/**
+ * Listen for events fired by native keyboard plugin
+ * in Capacitor/Cordova so devs only need to listen
+ * in one place.
+ */
+var startNativeListeners = function (win) {
+    win.addEventListener('keyboardDidShow', function (ev) { return setKeyboardOpen(win, ev); });
+    win.addEventListener('keyboardDidHide', function () { return setKeyboardClose(win); });
+};
+var setKeyboardOpen = function (win, ev) {
+    fireKeyboardOpenEvent(win, ev);
+    keyboardOpen = true;
+};
+var setKeyboardClose = function (win) {
+    fireKeyboardCloseEvent(win);
+    keyboardOpen = false;
+};
+/**
+ * Returns `true` if the `keyboardOpen` flag is not
+ * set, the previous visual viewport width equal the current
+ * visual viewport width, and if the scaled difference
+ * of the previous visual viewport height minus the current
+ * visual viewport height is greater than KEYBOARD_THRESHOLD
+ *
+ * We need to be able to accommodate users who have zooming
+ * enabled in their browser (or have zoomed in manually) which
+ * is why we take into account the current visual viewport's
+ * scale value.
+ */
+var keyboardDidOpen = function () {
+    var scaledHeightDifference = (previousVisualViewport.height - currentVisualViewport.height) * currentVisualViewport.scale;
+    return (!keyboardOpen &&
+        previousVisualViewport.width === currentVisualViewport.width &&
+        scaledHeightDifference > KEYBOARD_THRESHOLD);
+};
+/**
+ * Returns `true` if the keyboard is open,
+ * but the keyboard did not close
+ */
+var keyboardDidResize = function (win) {
+    return keyboardOpen && !keyboardDidClose(win);
+};
+/**
+ * Determine if the keyboard was closed
+ * Returns `true` if the `keyboardOpen` flag is set and
+ * the current visual viewport height equals the
+ * layout viewport height.
+ */
+var keyboardDidClose = function (win) {
+    return keyboardOpen && currentVisualViewport.height === win.innerHeight;
+};
+/**
+ * Dispatch a keyboard open event
+ */
+var fireKeyboardOpenEvent = function (win, nativeEv) {
+    var keyboardHeight = nativeEv ? nativeEv.keyboardHeight : win.innerHeight - currentVisualViewport.height;
+    var ev = new CustomEvent(KEYBOARD_DID_OPEN, {
+        detail: { keyboardHeight: keyboardHeight }
+    });
+    win.dispatchEvent(ev);
+};
+/**
+ * Dispatch a keyboard close event
+ */
+var fireKeyboardCloseEvent = function (win) {
+    var ev = new CustomEvent(KEYBOARD_DID_CLOSE);
+    win.dispatchEvent(ev);
+};
+/**
+ * Given a window object, create a copy of
+ * the current visual and layout viewport states
+ * while also preserving the previous visual and
+ * layout viewport states
+ */
+var trackViewportChanges = function (win) {
+    previousVisualViewport = Object.assign({}, currentVisualViewport);
+    currentVisualViewport = copyVisualViewport(win.visualViewport);
+};
+/**
+ * Creates a deep copy of the visual viewport
+ * at a given state
+ */
+var copyVisualViewport = function (visualViewport) {
+    return {
+        width: Math.round(visualViewport.width),
+        height: Math.round(visualViewport.height),
+        offsetTop: visualViewport.offsetTop,
+        offsetLeft: visualViewport.offsetLeft,
+        pageTop: visualViewport.pageTop,
+        pageLeft: visualViewport.pageLeft,
+        scale: visualViewport.scale
+    };
+};
+
+
+
+/***/ })
+
+}]);

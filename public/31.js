@@ -1,1 +1,626 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[31],{11:function(t,e,n){"use strict";n.d(e,"a",(function(){return r})),n.d(e,"b",(function(){return a})),n.d(e,"c",(function(){return o})),n.d(e,"d",(function(){return d}));var i=n(0),o=function(t,e){return null!==e.closest(t)},r=function(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0},a=function(t){var e={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return e[t]=!0})),e},s=/^[a-z][a-z0-9+\-.]*:/,d=function(t,e,n,o){return Object(i.__awaiter)(void 0,void 0,void 0,(function(){var r;return Object(i.__generator)(this,(function(i){return null!=t&&"#"!==t[0]&&!s.test(t)&&(r=document.querySelector("ion-router"))?(null!=e&&e.preventDefault(),[2,r.push(t,n,o)]):[2,!1]}))}))}},244:function(t,e,n){"use strict";n.r(e),n.d(e,"ion_menu",(function(){return h})),n.d(e,"ion_menu_button",(function(){return v})),n.d(e,"ion_menu_toggle",(function(){return y}));var i=n(0),o=n(1),r=n(6),a=n(10),s=(n(8),n(38)),d=n(42),c=(n(37),n(47)),l=n(11),h=function(){function t(t){Object(o.q)(this,t),this.ionWillOpen=Object(o.i)(this,"ionWillOpen",7),this.ionWillClose=Object(o.i)(this,"ionWillClose",7),this.ionDidOpen=Object(o.i)(this,"ionDidOpen",7),this.ionDidClose=Object(o.i)(this,"ionDidClose",7),this.ionMenuChange=Object(o.i)(this,"ionMenuChange",7),this.lastOnEnd=0,this.blocker=d.a.createBlocker({disableScroll:!0}),this.isAnimating=!1,this._isOpen=!1,this.isPaneVisible=!1,this.isEndSide=!1,this.disabled=!1,this.side="start",this.swipeGesture=!0,this.maxEdgeStart=50}return t.prototype.typeChanged=function(t,e){var n=this.contentEl;n&&(void 0!==e&&n.classList.remove("menu-content-"+e),n.classList.add("menu-content-"+t),n.removeAttribute("style")),this.menuInnerEl&&this.menuInnerEl.removeAttribute("style"),this.animation=void 0},t.prototype.disabledChanged=function(){this.updateState(),this.ionMenuChange.emit({disabled:this.disabled,open:this._isOpen})},t.prototype.sideChanged=function(){this.isEndSide=Object(a.i)(this.side)},t.prototype.swipeGestureChanged=function(){this.updateState()},t.prototype.connectedCallback=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){var t,e,o,a,s=this;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:return void 0===this.type&&(this.type=r.c.get("menuType","overlay")),t=this.el,e=t.parentNode,void 0===this.contentId&&console.warn('[DEPRECATED][ion-menu] Using the [main] attribute is deprecated, please use the "contentId" property instead:\nBEFORE:\n  <ion-menu>...</ion-menu>\n  <div main>...</div>\n\nAFTER:\n  <ion-menu contentId="main-content"></ion-menu>\n  <div id="main-content">...</div>\n'),(o=void 0!==this.contentId?document.getElementById(this.contentId):e&&e.querySelector&&e.querySelector("[main]"))&&o.tagName?(this.contentEl=o,o.classList.add("menu-content"),this.typeChanged(this.type,void 0),this.sideChanged(),c.a._register(this),a=this,[4,Promise.resolve().then(n.bind(null,30))]):(console.error('Menu: must have a "content" element to listen for drag events on.'),[2]);case 1:return a.gesture=i.sent().createGesture({el:document,gestureName:"menu-swipe",gesturePriority:30,threshold:10,blurOnStart:!0,canStart:function(t){return s.canStart(t)},onWillStart:function(){return s.onWillStart()},onStart:function(){return s.onStart()},onMove:function(t){return s.onMove(t)},onEnd:function(t){return s.onEnd(t)}}),this.updateState(),[2]}}))}))},t.prototype.componentDidLoad=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){return Object(i.__generator)(this,(function(t){return this.ionMenuChange.emit({disabled:this.disabled,open:this._isOpen}),this.updateState(),[2]}))}))},t.prototype.disconnectedCallback=function(){this.blocker.destroy(),c.a._unregister(this),this.animation&&this.animation.destroy(),this.gesture&&(this.gesture.destroy(),this.gesture=void 0),this.animation=void 0,this.contentEl=this.backdropEl=this.menuInnerEl=void 0},t.prototype.onSplitPaneChanged=function(t){this.isPaneVisible=t.detail.isPane(this.el),this.updateState()},t.prototype.onBackdropClick=function(t){this._isOpen&&this.lastOnEnd<t.timeStamp-100&&(!!t.composedPath&&!t.composedPath().includes(this.menuInnerEl)&&(t.preventDefault(),t.stopPropagation(),this.close()))},t.prototype.isOpen=function(){return Promise.resolve(this._isOpen)},t.prototype.isActive=function(){return Promise.resolve(this._isActive())},t.prototype.open=function(t){return void 0===t&&(t=!0),this.setOpen(!0,t)},t.prototype.close=function(t){return void 0===t&&(t=!0),this.setOpen(!1,t)},t.prototype.toggle=function(t){return void 0===t&&(t=!0),this.setOpen(!this._isOpen,t)},t.prototype.setOpen=function(t,e){return void 0===e&&(e=!0),c.a._setOpen(this,t,e)},t.prototype._setOpen=function(t,e){return void 0===e&&(e=!0),Object(i.__awaiter)(this,void 0,void 0,(function(){return Object(i.__generator)(this,(function(n){switch(n.label){case 0:return!this._isActive()||this.isAnimating||t===this._isOpen?[2,!1]:(this.beforeAnimation(t),[4,this.loadAnimation()]);case 1:return n.sent(),[4,this.startAnimation(t,e)];case 2:return n.sent(),this.afterAnimation(t),[2,!0]}}))}))},t.prototype.loadAnimation=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){var t,e;return Object(i.__generator)(this,(function(n){switch(n.label){case 0:return(t=this.menuInnerEl.offsetWidth)===this.width&&void 0!==this.animation?[2]:(this.width=t,this.animation&&(this.animation.destroy(),this.animation=void 0),e=this,[4,c.a._createAnimation(this.type,this)]);case 1:return e.animation=n.sent(),r.c.getBoolean("animated",!0)||this.animation.duration(0),this.animation.fill("both"),[2]}}))}))},t.prototype.startAnimation=function(t,e){return Object(i.__awaiter)(this,void 0,void 0,(function(){var n,o,a,s,d;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:return n=!t,o=Object(r.b)(this),a="ios"===o?"cubic-bezier(0.32,0.72,0,1)":"cubic-bezier(0.0,0.0,0.2,1)",s="ios"===o?"cubic-bezier(1, 0, 0.68, 0.28)":"cubic-bezier(0.4, 0, 0.6, 1)",d=this.animation.direction(n?"reverse":"normal").easing(n?s:a).onFinish((function(){"reverse"===d.getDirection()&&d.direction("normal")})),e?[4,d.play()]:[3,2];case 1:return i.sent(),[3,3];case 2:d.play({sync:!0}),i.label=3;case 3:return[2]}}))}))},t.prototype._isActive=function(){return!this.disabled&&!this.isPaneVisible},t.prototype.canSwipe=function(){return this.swipeGesture&&!this.isAnimating&&this._isActive()},t.prototype.canStart=function(t){return!(!!document.querySelector("ion-modal.show-modal")||!this.canSwipe())&&(!!this._isOpen||!c.a._getOpenSync()&&p(window,t.currentX,this.isEndSide,this.maxEdgeStart))},t.prototype.onWillStart=function(){return this.beforeAnimation(!this._isOpen),this.loadAnimation()},t.prototype.onStart=function(){this.isAnimating&&this.animation?this.animation.progressStart(!0,this._isOpen?1:0):Object(a.b)(!1,"isAnimating has to be true")},t.prototype.onMove=function(t){if(this.isAnimating&&this.animation){var e=u(t.deltaX,this._isOpen,this.isEndSide)/this.width;this.animation.progressStep(this._isOpen?1-e:e)}else Object(a.b)(!1,"isAnimating has to be true")},t.prototype.onEnd=function(t){var e=this;if(this.isAnimating&&this.animation){var n=this._isOpen,i=this.isEndSide,o=u(t.deltaX,n,i),r=this.width,d=o/r,c=t.velocityX,l=r/2,h=c>=0&&(c>.2||t.deltaX>l),p=c<=0&&(c<-.2||t.deltaX<-l),m=n?i?h:p:i?p:h,b=!n&&m;n&&!m&&(b=!0),this.lastOnEnd=t.currentTime;var f=m?.001:-.001,g=d<0?.01:d;f+=Object(s.a)([0,0],[.4,0],[.6,1],[1,1],Object(a.c)(0,g,.9999))[0]||0;var v=this._isOpen?!m:m;this.animation.easing("cubic-bezier(0.4, 0.0, 0.6, 1)").onFinish((function(){return e.afterAnimation(b)}),{oneTimeCallback:!0}).progressEnd(v?1:0,this._isOpen?1-f:f,300)}else Object(a.b)(!1,"isAnimating has to be true")},t.prototype.beforeAnimation=function(t){Object(a.b)(!this.isAnimating,"_before() should not be called while animating"),this.el.classList.add(m),this.backdropEl&&this.backdropEl.classList.add(b),this.blocker.block(),this.isAnimating=!0,t?this.ionWillOpen.emit():this.ionWillClose.emit()},t.prototype.afterAnimation=function(t){Object(a.b)(this.isAnimating,"_before() should be called while animating"),this._isOpen=t,this.isAnimating=!1,this._isOpen||this.blocker.unblock(),t?(this.contentEl&&this.contentEl.classList.add(f),this.ionDidOpen.emit()):(this.el.classList.remove(m),this.contentEl&&this.contentEl.classList.remove(f),this.backdropEl&&this.backdropEl.classList.remove(b),this.animation&&this.animation.stop(),this.ionDidClose.emit())},t.prototype.updateState=function(){var t=this._isActive();this.gesture&&this.gesture.enable(t&&this.swipeGesture),!t&&this._isOpen&&this.forceClosing(),this.disabled||c.a._setActiveMenu(this),Object(a.b)(!this.isAnimating,"can not be animating")},t.prototype.forceClosing=function(){Object(a.b)(this._isOpen,"menu cannot be closed"),this.isAnimating=!0,this.animation.direction("reverse").play({sync:!0}),this.afterAnimation(!1)},t.prototype.render=function(){var t,e=this,n=this.isEndSide,i=this.type,a=this.disabled,s=this.isPaneVisible,d=Object(r.b)(this);return Object(o.l)(o.c,{role:"navigation",class:(t={},t[d]=!0,t["menu-type-"+i]=!0,t["menu-enabled"]=!a,t["menu-side-end"]=n,t["menu-side-start"]=!n,t["menu-pane-visible"]=s,t)},Object(o.l)("div",{class:"menu-inner",part:"container",ref:function(t){return e.menuInnerEl=t}},Object(o.l)("slot",null)),Object(o.l)("ion-backdrop",{ref:function(t){return e.backdropEl=t},class:"menu-backdrop",tappable:!1,stopPropagation:!1,part:"backdrop"}))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(o.m)(this)},enumerable:!1,configurable:!0}),Object.defineProperty(t,"watchers",{get:function(){return{type:["typeChanged"],disabled:["disabledChanged"],side:["sideChanged"],swipeGesture:["swipeGestureChanged"]}},enumerable:!1,configurable:!0}),t}(),u=function(t,e,n){return Math.max(0,e!==n?-t:t)},p=function(t,e,n,i){return n?e>=t.innerWidth-i:e<=i},m="show-menu",b="show-backdrop",f="menu-content-open";h.style={ios:":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-push){z-index:1000}:host(.menu-type-push) .show-backdrop{display:block}",md:":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-overlay) .menu-inner{-webkit-box-shadow:4px 0px 16px rgba(0, 0, 0, 0.18);box-shadow:4px 0px 16px rgba(0, 0, 0, 0.18)}"};var g=function(t){return Object(i.__awaiter)(void 0,void 0,void 0,(function(){var e,n;return Object(i.__generator)(this,(function(i){switch(i.label){case 0:return[4,c.a.get(t)];case 1:return e=i.sent(),(n=e)?[4,e.isActive()]:[3,3];case 2:n=i.sent(),i.label=3;case 3:return[2,!!n]}}))}))},v=function(){function t(t){var e=this;Object(o.q)(this,t),this.visible=!1,this.disabled=!1,this.autoHide=!0,this.type="button",this.onClick=function(){return Object(i.__awaiter)(e,void 0,void 0,(function(){return Object(i.__generator)(this,(function(t){return[2,c.a.toggle(this.menu)]}))}))}}return t.prototype.componentDidLoad=function(){this.visibilityChanged()},t.prototype.visibilityChanged=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){var t;return Object(i.__generator)(this,(function(e){switch(e.label){case 0:return t=this,[4,g(this.menu)];case 1:return t.visible=e.sent(),[2]}}))}))},t.prototype.render=function(){var t,e=this.color,n=this.disabled,i=Object(r.b)(this),a=r.c.get("menuIcon","ios"===i?"menu-outline":"menu-sharp"),s=this.autoHide&&!this.visible,d={type:this.type};return Object(o.l)(o.c,{onClick:this.onClick,"aria-disabled":n?"true":null,"aria-hidden":s?"true":null,class:Object.assign(Object.assign((t={},t[i]=!0,t),Object(l.a)(e)),{button:!0,"menu-button-hidden":s,"menu-button-disabled":n,"in-toolbar":Object(l.c)("ion-toolbar",this.el),"in-toolbar-color":Object(l.c)("ion-toolbar[color]",this.el),"ion-activatable":!0,"ion-focusable":!0})},Object(o.l)("button",Object.assign({},d,{disabled:n,class:"button-native",part:"native","aria-label":"menu"}),Object(o.l)("span",{class:"button-inner"},Object(o.l)("slot",null,Object(o.l)("ion-icon",{part:"icon",icon:a,mode:i,lazy:!1,"aria-hidden":"true"}))),"md"===i&&Object(o.l)("ion-ripple-effect",{type:"unbounded"})))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(o.m)(this)},enumerable:!1,configurable:!0}),t}();v.style={ios:':host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.1;--border-radius:4px;--color:var(--ion-color-primary, #3880ff);--padding-start:5px;--padding-end:5px;height:32px;font-size:31px}:host(.ion-activated){opacity:0.4}@media (any-hover: hover){:host(:hover){opacity:0.6}}',md:':host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:.04;--border-radius:50%;--color:initial;--padding-start:8px;--padding-end:8px;width:48px;height:48px;font-size:24px}:host(.ion-color.ion-focused)::after{background:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}'};var y=function(){function t(t){var e=this;Object(o.q)(this,t),this.visible=!1,this.autoHide=!0,this.onClick=function(){return c.a.toggle(e.menu)}}return t.prototype.connectedCallback=function(){this.visibilityChanged()},t.prototype.visibilityChanged=function(){return Object(i.__awaiter)(this,void 0,void 0,(function(){var t;return Object(i.__generator)(this,(function(e){switch(e.label){case 0:return t=this,[4,g(this.menu)];case 1:return t.visible=e.sent(),[2]}}))}))},t.prototype.render=function(){var t,e=Object(r.b)(this),n=this.autoHide&&!this.visible;return Object(o.l)(o.c,{onClick:this.onClick,"aria-hidden":n?"true":null,class:(t={},t[e]=!0,t["menu-toggle-hidden"]=n,t)},Object(o.l)("slot",null))},t}();y.style=":host(.menu-toggle-hidden){display:none}"}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[31],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-select_3.entry.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-select_3.entry.js ***!
+  \*********************************************************************/
+/*! exports provided: ion_select, ion_select_option, ion_select_popover */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_select", function() { return Select; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_select_option", function() { return SelectOption; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_select_popover", function() { return SelectPopover; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm-es5/hardware-back-button-7b6ede21.js");
+/* harmony import */ var _overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./overlays-63b08852.js */ "./node_modules/@ionic/core/dist/esm-es5/overlays-63b08852.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+
+
+
+var watchForOptions = function (containerEl, tagName, onChange) {
+    /* tslint:disable-next-line */
+    if (typeof MutationObserver === 'undefined') {
+        return;
+    }
+    var mutation = new MutationObserver(function (mutationList) {
+        onChange(getSelectedOption(mutationList, tagName));
+    });
+    mutation.observe(containerEl, {
+        childList: true,
+        subtree: true
+    });
+    return mutation;
+};
+var getSelectedOption = function (mutationList, tagName) {
+    var newOption;
+    mutationList.forEach(function (mut) {
+        // tslint:disable-next-line: prefer-for-of
+        for (var i = 0; i < mut.addedNodes.length; i++) {
+            newOption = findCheckedOption(mut.addedNodes[i], tagName) || newOption;
+        }
+    });
+    return newOption;
+};
+var findCheckedOption = function (el, tagName) {
+    if (el.nodeType !== 1) {
+        return undefined;
+    }
+    var options = (el.tagName === tagName.toUpperCase())
+        ? [el]
+        : Array.from(el.querySelectorAll(tagName));
+    return options.find(function (o) { return o.value === el.value; });
+};
+var selectIosCss = ":host{--placeholder-color:currentColor;--placeholder-opacity:0.33;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static;max-width:45%}:host(.select-disabled){opacity:0.4;pointer-events:none}:host(.ion-focused) button{border:2px solid #5e9ed6}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.select-icon{position:relative;opacity:0.33}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.select-icon-inner{left:5px;top:50%;margin-top:-3px;position:absolute;width:0;height:0;border-top:5px solid;border-right:5px solid transparent;border-left:5px solid transparent;color:currentColor;pointer-events:none}[dir=rtl] .select-icon-inner,:host-context([dir=rtl]) .select-icon-inner{left:unset;right:unset;right:5px}:host{--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:20px}.select-icon{width:12px;height:18px}";
+var selectMdCss = ":host{--placeholder-color:currentColor;--placeholder-opacity:0.33;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static;max-width:45%}:host(.select-disabled){opacity:0.4;pointer-events:none}:host(.ion-focused) button{border:2px solid #5e9ed6}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.select-icon{position:relative;opacity:0.33}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.select-icon-inner{left:5px;top:50%;margin-top:-3px;position:absolute;width:0;height:0;border-top:5px solid;border-right:5px solid transparent;border-left:5px solid transparent;color:currentColor;pointer-events:none}[dir=rtl] .select-icon-inner,:host-context([dir=rtl]) .select-icon-inner{left:unset;right:unset;right:5px}:host{--padding-top:10px;--padding-end:0;--padding-bottom:11px;--padding-start:16px}.select-icon{width:19px;height:19px}";
+var Select = /** @class */ (function () {
+    function class_1(hostRef) {
+        var _this = this;
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionChange = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
+        this.ionCancel = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionCancel", 7);
+        this.ionFocus = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        this.ionStyle = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        this.inputId = "ion-sel-" + selectIds++;
+        this.didInit = false;
+        this.isExpanded = false;
+        /**
+         * If `true`, the user cannot interact with the select.
+         */
+        this.disabled = false;
+        /**
+         * The text to display on the cancel button.
+         */
+        this.cancelText = 'Cancel';
+        /**
+         * The text to display on the ok button.
+         */
+        this.okText = 'OK';
+        /**
+         * The name of the control, which is submitted with the form data.
+         */
+        this.name = this.inputId;
+        /**
+         * If `true`, the select can accept multiple values.
+         */
+        this.multiple = false;
+        /**
+         * The interface the select should use: `action-sheet`, `popover` or `alert`.
+         */
+        this.interface = 'alert';
+        /**
+         * Any additional options that the `alert`, `action-sheet` or `popover` interface
+         * can take. See the [ion-alert docs](../alert), the
+         * [ion-action-sheet docs](../action-sheet) and the
+         * [ion-popover docs](../popover) for the
+         * create options for each interface.
+         *
+         * Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+         */
+        this.interfaceOptions = {};
+        this.onClick = function (ev) {
+            _this.setFocus();
+            _this.open(ev);
+        };
+        this.onFocus = function () {
+            _this.ionFocus.emit();
+        };
+        this.onBlur = function () {
+            _this.ionBlur.emit();
+        };
+    }
+    class_1.prototype.disabledChanged = function () {
+        this.emitStyle();
+    };
+    class_1.prototype.valueChanged = function () {
+        this.emitStyle();
+        if (this.didInit) {
+            this.ionChange.emit({
+                value: this.value,
+            });
+        }
+    };
+    class_1.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                this.updateOverlayOptions();
+                this.emitStyle();
+                this.mutationO = watchForOptions(this.el, 'ion-select-option', function () { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, function () {
+                    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                        this.updateOverlayOptions();
+                        return [2 /*return*/];
+                    });
+                }); });
+                return [2 /*return*/];
+            });
+        });
+    };
+    class_1.prototype.disconnectedCallback = function () {
+        if (this.mutationO) {
+            this.mutationO.disconnect();
+            this.mutationO = undefined;
+        }
+    };
+    class_1.prototype.componentDidLoad = function () {
+        this.didInit = true;
+    };
+    /**
+     * Open the select overlay. The overlay is either an alert, action sheet, or popover,
+     * depending on the `interface` property on the `ion-select`.
+     *
+     * @param event The user interface event that called the open.
+     */
+    class_1.prototype.open = function (event) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var overlay, _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (this.disabled || this.isExpanded) {
+                            return [2 /*return*/, undefined];
+                        }
+                        _a = this;
+                        return [4 /*yield*/, this.createOverlay(event)];
+                    case 1:
+                        overlay = _a.overlay = _b.sent();
+                        this.isExpanded = true;
+                        overlay.onDidDismiss().then(function () {
+                            _this.overlay = undefined;
+                            _this.isExpanded = false;
+                            _this.setFocus();
+                        });
+                        return [4 /*yield*/, overlay.present()];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/, overlay];
+                }
+            });
+        });
+    };
+    class_1.prototype.createOverlay = function (ev) {
+        var selectInterface = this.interface;
+        if ((selectInterface === 'action-sheet' || selectInterface === 'popover') && this.multiple) {
+            console.warn("Select interface cannot be \"" + selectInterface + "\" with a multi-value select. Using the \"alert\" interface instead.");
+            selectInterface = 'alert';
+        }
+        if (selectInterface === 'popover' && !ev) {
+            console.warn('Select interface cannot be a "popover" without passing an event. Using the "alert" interface instead.');
+            selectInterface = 'alert';
+        }
+        if (selectInterface === 'popover') {
+            return this.openPopover(ev);
+        }
+        if (selectInterface === 'action-sheet') {
+            return this.openActionSheet();
+        }
+        return this.openAlert();
+    };
+    class_1.prototype.updateOverlayOptions = function () {
+        var overlay = this.overlay;
+        if (!overlay) {
+            return;
+        }
+        var childOpts = this.childOpts;
+        var value = this.value;
+        switch (this.interface) {
+            case 'action-sheet':
+                overlay.buttons = this.createActionSheetButtons(childOpts, value);
+                break;
+            case 'popover':
+                var popover = overlay.querySelector('ion-select-popover');
+                if (popover) {
+                    popover.options = this.createPopoverOptions(childOpts, value);
+                }
+                break;
+            case 'alert':
+                var inputType = (this.multiple ? 'checkbox' : 'radio');
+                overlay.inputs = this.createAlertInputs(childOpts, inputType, value);
+                break;
+        }
+    };
+    class_1.prototype.createActionSheetButtons = function (data, selectValue) {
+        var _this = this;
+        var actionSheetButtons = data.map(function (option) {
+            var value = getOptionValue(option);
+            // Remove hydrated before copying over classes
+            var copyClasses = Array.from(option.classList).filter(function (cls) { return cls !== 'hydrated'; }).join(' ');
+            var optClass = OPTION_CLASS + " " + copyClasses;
+            return {
+                role: (isOptionSelected(value, selectValue, _this.compareWith) ? 'selected' : ''),
+                text: option.textContent,
+                cssClass: optClass,
+                handler: function () {
+                    _this.value = value;
+                }
+            };
+        });
+        // Add "cancel" button
+        actionSheetButtons.push({
+            text: this.cancelText,
+            role: 'cancel',
+            handler: function () {
+                _this.ionCancel.emit();
+            }
+        });
+        return actionSheetButtons;
+    };
+    class_1.prototype.createAlertInputs = function (data, inputType, selectValue) {
+        var _this = this;
+        var alertInputs = data.map(function (option) {
+            var value = getOptionValue(option);
+            // Remove hydrated before copying over classes
+            var copyClasses = Array.from(option.classList).filter(function (cls) { return cls !== 'hydrated'; }).join(' ');
+            var optClass = OPTION_CLASS + " " + copyClasses;
+            return {
+                type: inputType,
+                cssClass: optClass,
+                label: option.textContent || '',
+                value: value,
+                checked: isOptionSelected(value, selectValue, _this.compareWith),
+                disabled: option.disabled
+            };
+        });
+        return alertInputs;
+    };
+    class_1.prototype.createPopoverOptions = function (data, selectValue) {
+        var _this = this;
+        var popoverOptions = data.map(function (option) {
+            var value = getOptionValue(option);
+            // Remove hydrated before copying over classes
+            var copyClasses = Array.from(option.classList).filter(function (cls) { return cls !== 'hydrated'; }).join(' ');
+            var optClass = OPTION_CLASS + " " + copyClasses;
+            return {
+                text: option.textContent || '',
+                cssClass: optClass,
+                value: value,
+                checked: isOptionSelected(value, selectValue, _this.compareWith),
+                disabled: option.disabled,
+                handler: function () {
+                    _this.value = value;
+                    _this.close();
+                }
+            };
+        });
+        return popoverOptions;
+    };
+    class_1.prototype.openPopover = function (ev) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var interfaceOptions, mode, value, popoverOpts;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                interfaceOptions = this.interfaceOptions;
+                mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+                value = this.value;
+                popoverOpts = Object.assign(Object.assign({ mode: mode }, interfaceOptions), { component: 'ion-select-popover', cssClass: ['select-popover', interfaceOptions.cssClass], event: ev, componentProps: {
+                        header: interfaceOptions.header,
+                        subHeader: interfaceOptions.subHeader,
+                        message: interfaceOptions.message,
+                        value: value,
+                        options: this.createPopoverOptions(this.childOpts, value)
+                    } });
+                return [2 /*return*/, _overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_5__["c"].create(popoverOpts)];
+            });
+        });
+    };
+    class_1.prototype.openActionSheet = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var mode, interfaceOptions, actionSheetOpts;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+                interfaceOptions = this.interfaceOptions;
+                actionSheetOpts = Object.assign(Object.assign({ mode: mode }, interfaceOptions), { buttons: this.createActionSheetButtons(this.childOpts, this.value), cssClass: ['select-action-sheet', interfaceOptions.cssClass] });
+                return [2 /*return*/, _overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_5__["b"].create(actionSheetOpts)];
+            });
+        });
+    };
+    class_1.prototype.openAlert = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var label, labelText, interfaceOptions, inputType, mode, alertOpts;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                label = this.getLabel();
+                labelText = (label) ? label.textContent : null;
+                interfaceOptions = this.interfaceOptions;
+                inputType = (this.multiple ? 'checkbox' : 'radio');
+                mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+                alertOpts = Object.assign(Object.assign({ mode: mode }, interfaceOptions), { header: interfaceOptions.header ? interfaceOptions.header : labelText, inputs: this.createAlertInputs(this.childOpts, inputType, this.value), buttons: [
+                        {
+                            text: this.cancelText,
+                            role: 'cancel',
+                            handler: function () {
+                                _this.ionCancel.emit();
+                            }
+                        },
+                        {
+                            text: this.okText,
+                            handler: function (selectedValues) {
+                                _this.value = selectedValues;
+                            }
+                        }
+                    ], cssClass: ['select-alert', interfaceOptions.cssClass,
+                        (this.multiple ? 'multiple-select-alert' : 'single-select-alert')] });
+                return [2 /*return*/, _overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_5__["a"].create(alertOpts)];
+            });
+        });
+    };
+    /**
+     * Close the select interface.
+     */
+    class_1.prototype.close = function () {
+        // TODO check !this.overlay || !this.isFocus()
+        if (!this.overlay) {
+            return Promise.resolve(false);
+        }
+        return this.overlay.dismiss();
+    };
+    class_1.prototype.getLabel = function () {
+        return Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["f"])(this.el);
+    };
+    class_1.prototype.hasValue = function () {
+        return this.getText() !== '';
+    };
+    Object.defineProperty(class_1.prototype, "childOpts", {
+        get: function () {
+            return Array.from(this.el.querySelectorAll('ion-select-option'));
+        },
+        enumerable: false,
+        configurable: true
+    });
+    class_1.prototype.getText = function () {
+        var selectedText = this.selectedText;
+        if (selectedText != null && selectedText !== '') {
+            return selectedText;
+        }
+        return generateText(this.childOpts, this.value, this.compareWith);
+    };
+    class_1.prototype.setFocus = function () {
+        if (this.buttonEl) {
+            this.buttonEl.focus();
+        }
+    };
+    class_1.prototype.emitStyle = function () {
+        this.ionStyle.emit({
+            'interactive': true,
+            'select': true,
+            'has-placeholder': this.placeholder != null,
+            'has-value': this.hasValue(),
+            'interactive-disabled': this.disabled,
+            'select-disabled': this.disabled
+        });
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var _this = this;
+        var _b = this, placeholder = _b.placeholder, name = _b.name, disabled = _b.disabled, isExpanded = _b.isExpanded, value = _b.value, el = _b.el;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var labelId = this.inputId + '-lbl';
+        var label = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["f"])(el);
+        if (label) {
+            label.id = labelId;
+        }
+        var addPlaceholderClass = false;
+        var selectText = this.getText();
+        if (selectText === '' && placeholder != null) {
+            selectText = placeholder;
+            addPlaceholderClass = true;
+        }
+        Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["a"])(true, el, name, parseValue(value), disabled);
+        var selectTextClasses = {
+            'select-text': true,
+            'select-placeholder': addPlaceholderClass
+        };
+        var textPart = addPlaceholderClass ? 'placeholder' : 'text';
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, role: "listbox", "aria-haspopup": "dialog", "aria-disabled": disabled ? 'true' : null, "aria-expanded": "" + isExpanded, "aria-labelledby": labelId, class: (_a = {},
+                _a[mode] = true,
+                _a['in-item'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["h"])('ion-item', el),
+                _a['select-disabled'] = disabled,
+                _a) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: selectTextClasses, part: textPart }, selectText), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "select-icon", role: "presentation", part: "icon" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "select-icon-inner" })), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: disabled, ref: (function (btnEl) { return _this.buttonEl = btnEl; }) })));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "watchers", {
+        get: function () {
+            return {
+                "disabled": ["disabledChanged"],
+                "placeholder": ["disabledChanged"],
+                "value": ["valueChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+var isOptionSelected = function (currentValue, compareValue, compareWith) {
+    if (currentValue === undefined) {
+        return false;
+    }
+    if (Array.isArray(currentValue)) {
+        return currentValue.some(function (val) { return compareOptions(val, compareValue, compareWith); });
+    }
+    else {
+        return compareOptions(currentValue, compareValue, compareWith);
+    }
+};
+var getOptionValue = function (el) {
+    var value = el.value;
+    return (value === undefined)
+        ? el.textContent || ''
+        : value;
+};
+var parseValue = function (value) {
+    if (value == null) {
+        return undefined;
+    }
+    if (Array.isArray(value)) {
+        return value.join(',');
+    }
+    return value.toString();
+};
+var compareOptions = function (currentValue, compareValue, compareWith) {
+    if (typeof compareWith === 'function') {
+        return compareWith(currentValue, compareValue);
+    }
+    else if (typeof compareWith === 'string') {
+        return currentValue[compareWith] === compareValue[compareWith];
+    }
+    else {
+        return Array.isArray(compareValue) ? compareValue.includes(currentValue) : currentValue === compareValue;
+    }
+};
+var generateText = function (opts, value, compareWith) {
+    if (value === undefined) {
+        return '';
+    }
+    if (Array.isArray(value)) {
+        return value
+            .map(function (v) { return textForValue(opts, v, compareWith); })
+            .filter(function (opt) { return opt !== null; })
+            .join(', ');
+    }
+    else {
+        return textForValue(opts, value, compareWith) || '';
+    }
+};
+var textForValue = function (opts, value, compareWith) {
+    var selectOpt = opts.find(function (opt) {
+        return compareOptions(getOptionValue(opt), value, compareWith);
+    });
+    return selectOpt
+        ? selectOpt.textContent
+        : null;
+};
+var selectIds = 0;
+var OPTION_CLASS = 'select-interface-option';
+Select.style = {
+    ios: selectIosCss,
+    md: selectMdCss
+};
+var selectOptionCss = ":host{display:none}";
+var SelectOption = /** @class */ (function () {
+    function SelectOption(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.inputId = "ion-selopt-" + selectOptionIds++;
+        /**
+         * If `true`, the user cannot interact with the select option. This property does not apply when `interface="action-sheet"` as `ion-action-sheet` does not allow for disabled buttons.
+         */
+        this.disabled = false;
+    }
+    SelectOption.prototype.render = function () {
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "option", id: this.inputId, class: Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) }));
+    };
+    Object.defineProperty(SelectOption.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return SelectOption;
+}());
+var selectOptionIds = 0;
+SelectOption.style = selectOptionCss;
+var selectPopoverCss = ".sc-ion-select-popover-h ion-list.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:-1px;margin-bottom:-1px}.sc-ion-select-popover-h ion-list-header.sc-ion-select-popover,.sc-ion-select-popover-h ion-label.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
+var SelectPopover = /** @class */ (function () {
+    function SelectPopover(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        /** Array of options for the popover */
+        this.options = [];
+    }
+    SelectPopover.prototype.onSelect = function (ev) {
+        var option = this.options.find(function (o) { return o.value === ev.target.value; });
+        if (option) {
+            Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_5__["s"])(option.handler);
+        }
+    };
+    SelectPopover.prototype.render = function () {
+        var checkedOption = this.options.find(function (o) { return o.checked; });
+        var checkedValue = checkedOption ? checkedOption.value : undefined;
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-list", null, this.header !== undefined && Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-list-header", null, this.header), (this.subHeader !== undefined || this.message !== undefined) &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-item", null, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-label", { class: "ion-text-wrap" }, this.subHeader !== undefined && Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("h3", null, this.subHeader), this.message !== undefined && Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("p", null, this.message))), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-radio-group", { value: checkedValue }, this.options.map(function (option) { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-item", { class: Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["g"])(option.cssClass) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-label", null, option.text), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-radio", { value: option.value, disabled: option.disabled })); })))));
+    };
+    return SelectPopover;
+}());
+SelectPopover.style = selectPopoverCss;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

@@ -1,1 +1,600 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{11:function(t,n,i){"use strict";i.d(n,"a",(function(){return e})),i.d(n,"b",(function(){return a})),i.d(n,"c",(function(){return r})),i.d(n,"d",(function(){return s}));var o=i(0),r=function(t,n){return null!==n.closest(t)},e=function(t){var n;return"string"==typeof t&&t.length>0?((n={"ion-color":!0})["ion-color-"+t]=!0,n):void 0},a=function(t){var n={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return n[t]=!0})),n},d=/^[a-z][a-z0-9+\-.]*:/,s=function(t,n,i,r){return Object(o.__awaiter)(void 0,void 0,void 0,(function(){var e;return Object(o.__generator)(this,(function(o){return null!=t&&"#"!==t[0]&&!d.test(t)&&(e=document.querySelector("ion-router"))?(null!=n&&n.preventDefault(),[2,e.push(t,i,r)]):[2,!1]}))}))}},229:function(t,n,i){"use strict";i.r(n),i.d(n,"ion_back_button",(function(){return d}));var o=i(0),r=i(1),e=i(6),a=i(11),d=function(){function t(t){var n=this;Object(r.q)(this,t),this.disabled=!1,this.type="button",this.onClick=function(t){return Object(o.__awaiter)(n,void 0,void 0,(function(){var n,i;return Object(o.__generator)(this,(function(o){switch(o.label){case 0:return n=this.el.closest("ion-nav"),t.preventDefault(),(i=n)?[4,n.canGoBack()]:[3,2];case 1:i=o.sent(),o.label=2;case 2:return i?[2,n.pop({animationBuilder:this.routerAnimation,skipIfBusy:!0})]:[2,Object(a.d)(this.defaultHref,t,"back",this.routerAnimation)]}}))}))}}return t.prototype.componentWillLoad=function(){void 0===this.defaultHref&&(this.defaultHref=e.c.get("backButtonDefaultHref"))},Object.defineProperty(t.prototype,"backButtonIcon",{get:function(){var t=this.icon;return null!=t?t:"ios"===Object(e.b)(this)?e.c.get("backButtonIcon","chevron-back"):e.c.get("backButtonIcon","arrow-back-sharp")},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"backButtonText",{get:function(){var t="ios"===Object(e.b)(this)?"Back":null;return null!=this.text?this.text:e.c.get("backButtonText",t)},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"hasIconOnly",{get:function(){return this.backButtonIcon&&!this.backButtonText},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"rippleType",{get:function(){return this.hasIconOnly?"unbounded":"bounded"},enumerable:!1,configurable:!0}),t.prototype.render=function(){var t,n=this,i=n.color,o=n.defaultHref,d=n.disabled,s=n.type,c=n.hasIconOnly,g=n.backButtonIcon,l=n.backButtonText,p=void 0!==o,u=Object(e.b)(this);return Object(r.l)(r.c,{onClick:this.onClick,class:Object.assign(Object.assign({},Object(a.a)(i)),(t={},t[u]=!0,t.button=!0,t["back-button-disabled"]=d,t["back-button-has-icon-only"]=c,t["in-toolbar"]=Object(a.c)("ion-toolbar",this.el),t["in-toolbar-color"]=Object(a.c)("ion-toolbar[color]",this.el),t["ion-activatable"]=!0,t["ion-focusable"]=!0,t["show-back-button"]=p,t))},Object(r.l)("button",{type:s,disabled:d,class:"button-native",part:"native","aria-label":l||"back"},Object(r.l)("span",{class:"button-inner"},g&&Object(r.l)("ion-icon",{part:"icon",icon:g,"aria-hidden":"true",lazy:!1}),l&&Object(r.l)("span",{part:"text","aria-hidden":"true",class:"button-text"},l)),"md"===u&&Object(r.l)("ion-ripple-effect",{type:this.rippleType})))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(r.m)(this)},enumerable:!1,configurable:!0}),t}();d.style={ios:':host{--background:transparent;--color-focused:currentColor;--color-hover:currentColor;--icon-margin-top:0;--icon-margin-bottom:0;--icon-padding-top:0;--icon-padding-end:0;--icon-padding-bottom:0;--icon-padding-start:0;--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--min-width:auto;--min-height:auto;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--opacity:1;--ripple-color:currentColor;--transition:background-color, opacity 100ms linear;display:none;min-width:var(--min-width);min-height:var(--min-height);color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-font-kerning:none;font-kerning:none}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.show-back-button){display:block}:host(.back-button-disabled){cursor:default;opacity:0.5;pointer-events:none}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:var(--margin-start);margin-right:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;opacity:var(--opacity);overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{margin-left:unset;margin-right:unset;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end)}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{padding-left:var(--icon-padding-start);padding-right:var(--icon-padding-end);padding-top:var(--icon-padding-top);padding-bottom:var(--icon-padding-bottom);margin-left:var(--icon-margin-start);margin-right:var(--icon-margin-end);margin-top:var(--icon-margin-top);margin-bottom:var(--icon-margin-bottom);display:inherit;font-size:var(--icon-font-size);font-weight:var(--icon-font-weight);pointer-events:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-icon{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--icon-padding-start);padding-inline-start:var(--icon-padding-start);-webkit-padding-end:var(--icon-padding-end);padding-inline-end:var(--icon-padding-end)}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:var(--icon-margin-start);margin-inline-start:var(--icon-margin-start);-webkit-margin-end:var(--icon-margin-end);margin-inline-end:var(--icon-margin-end)}}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-color.ion-focused) .button-native{color:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-base)}}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-hover:transparent;--background-hover-opacity:1;--background-focused:currentColor;--background-focused-opacity:.1;--border-radius:4px;--color:var(--ion-color-primary, #3880ff);--icon-margin-end:-5px;--icon-margin-start:-4px;--icon-font-size:1.85em;--min-height:32px;font-size:17px}.button-native{-webkit-transform:translateZ(0);transform:translateZ(0);overflow:visible;z-index:99}:host(.ion-activated) .button-native{opacity:0.4}@media (any-hover: hover){:host(:hover){opacity:0.6}}:host(.ion-color.ion-focused) .button-native::after{background:var(--ion-color-base)}',md:':host{--background:transparent;--color-focused:currentColor;--color-hover:currentColor;--icon-margin-top:0;--icon-margin-bottom:0;--icon-padding-top:0;--icon-padding-end:0;--icon-padding-bottom:0;--icon-padding-start:0;--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--min-width:auto;--min-height:auto;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--opacity:1;--ripple-color:currentColor;--transition:background-color, opacity 100ms linear;display:none;min-width:var(--min-width);min-height:var(--min-height);color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-font-kerning:none;font-kerning:none}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.show-back-button){display:block}:host(.back-button-disabled){cursor:default;opacity:0.5;pointer-events:none}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:var(--margin-start);margin-right:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;opacity:var(--opacity);overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{margin-left:unset;margin-right:unset;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end)}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{padding-left:var(--icon-padding-start);padding-right:var(--icon-padding-end);padding-top:var(--icon-padding-top);padding-bottom:var(--icon-padding-bottom);margin-left:var(--icon-margin-start);margin-right:var(--icon-margin-end);margin-top:var(--icon-margin-top);margin-bottom:var(--icon-margin-bottom);display:inherit;font-size:var(--icon-font-size);font-weight:var(--icon-font-weight);pointer-events:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-icon{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--icon-padding-start);padding-inline-start:var(--icon-padding-start);-webkit-padding-end:var(--icon-padding-end);padding-inline-end:var(--icon-padding-end)}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:var(--icon-margin-start);margin-inline-start:var(--icon-margin-start);-webkit-margin-end:var(--icon-margin-end);margin-inline-end:var(--icon-margin-end)}}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-color.ion-focused) .button-native{color:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-base)}}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--border-radius:4px;--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:0.04;--color:currentColor;--icon-margin-end:0;--icon-margin-start:0;--icon-font-size:24px;--icon-font-weight:normal;--min-height:32px;--min-width:44px;--padding-start:12px;--padding-end:12px;font-size:14px;font-weight:500;text-transform:uppercase}:host(.back-button-has-icon-only){--border-radius:50%;min-width:48px;height:48px}.button-native{-webkit-box-shadow:none;box-shadow:none}.button-text{padding-left:4px;padding-right:4px;padding-top:0;padding-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-text{padding-left:unset;padding-right:unset;-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px}}ion-icon{line-height:0.67;text-align:start}@media (any-hover: hover){:host(.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}:host(.ion-color.ion-focused) .button-native::after{background:var(--ion-color-base)}'}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[21],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-item-option_3.entry.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-item-option_3.entry.js ***!
+  \**************************************************************************/
+/*! exports provided: ion_item_option, ion_item_options, ion_item_sliding */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_option", function() { return ItemOption; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_options", function() { return ItemOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_sliding", function() { return ItemSliding; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+
+var itemOptionIosCss = ":host{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit)}:host(.in-list.item-options-end:last-child){padding-right:calc(.7em + var(--ion-safe-area-right))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-end:last-child){padding-right:unset;-webkit-padding-end:calc(.7em + var(--ion-safe-area-right));padding-inline-end:calc(.7em + var(--ion-safe-area-right))}}:host(.in-list.item-options-start:first-child){padding-left:calc(.7em + var(--ion-safe-area-left))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-start:first-child){padding-left:unset;-webkit-padding-start:calc(.7em + var(--ion-safe-area-left));padding-inline-start:calc(.7em + var(--ion-safe-area-left))}}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.button-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0.7em;padding-right:0.7em;padding-top:0;padding-bottom:0;display:inline-block;position:relative;width:100%;height:100%;border:0;outline:none;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:0.7em;padding-inline-start:0.7em;-webkit-padding-end:0.7em;padding-inline-end:0.7em}}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.horizontal-wrapper{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}::slotted(*){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]){margin-left:0;margin-right:5px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:5px;margin-inline-end:5px}}::slotted([slot=end]){margin-left:5px;margin-right:0;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=end]){margin-left:unset;margin-right:unset;-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:0;margin-inline-end:0}}::slotted([slot=icon-only]){padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:10px;margin-right:10px;margin-top:0;margin-bottom:0;min-width:0.9em;font-size:1.8em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=icon-only]){margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px}}:host(.item-option-expandable){-ms-flex-negative:0;flex-shrink:0;-webkit-transition-duration:0;transition-duration:0;-webkit-transition-property:none;transition-property:none;-webkit-transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1);transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1)}:host(.item-option-disabled){pointer-events:none}:host(.item-option-disabled) .button-native{cursor:default;opacity:0.5;pointer-events:none}:host{font-size:16px}:host(.ion-activated){background:var(--ion-color-primary-shade, #3171e0)}:host(.ion-color.ion-activated){background:var(--ion-color-shade)}";
+var itemOptionMdCss = ":host{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit)}:host(.in-list.item-options-end:last-child){padding-right:calc(.7em + var(--ion-safe-area-right))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-end:last-child){padding-right:unset;-webkit-padding-end:calc(.7em + var(--ion-safe-area-right));padding-inline-end:calc(.7em + var(--ion-safe-area-right))}}:host(.in-list.item-options-start:first-child){padding-left:calc(.7em + var(--ion-safe-area-left))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-start:first-child){padding-left:unset;-webkit-padding-start:calc(.7em + var(--ion-safe-area-left));padding-inline-start:calc(.7em + var(--ion-safe-area-left))}}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.button-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0.7em;padding-right:0.7em;padding-top:0;padding-bottom:0;display:inline-block;position:relative;width:100%;height:100%;border:0;outline:none;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:0.7em;padding-inline-start:0.7em;-webkit-padding-end:0.7em;padding-inline-end:0.7em}}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.horizontal-wrapper{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}::slotted(*){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]){margin-left:0;margin-right:5px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:5px;margin-inline-end:5px}}::slotted([slot=end]){margin-left:5px;margin-right:0;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=end]){margin-left:unset;margin-right:unset;-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:0;margin-inline-end:0}}::slotted([slot=icon-only]){padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:10px;margin-right:10px;margin-top:0;margin-bottom:0;min-width:0.9em;font-size:1.8em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=icon-only]){margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px}}:host(.item-option-expandable){-ms-flex-negative:0;flex-shrink:0;-webkit-transition-duration:0;transition-duration:0;-webkit-transition-property:none;transition-property:none;-webkit-transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1);transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1)}:host(.item-option-disabled){pointer-events:none}:host(.item-option-disabled) .button-native{cursor:default;opacity:0.5;pointer-events:none}:host{font-size:14px;font-weight:500;text-transform:uppercase}";
+var ItemOption = /** @class */ (function () {
+    function ItemOption(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        /**
+         * If `true`, the user cannot interact with the item option.
+         */
+        this.disabled = false;
+        /**
+         * If `true`, the option will expand to take up the available width and cover any other options.
+         */
+        this.expandable = false;
+        /**
+         * The type of the button.
+         */
+        this.type = 'button';
+        this.onClick = function (ev) {
+            var el = ev.target.closest('ion-item-option');
+            if (el) {
+                ev.preventDefault();
+            }
+        };
+    }
+    ItemOption.prototype.render = function () {
+        var _a;
+        var _b = this, disabled = _b.disabled, expandable = _b.expandable, href = _b.href;
+        var TagType = href === undefined ? 'button' : 'a';
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var attrs = (TagType === 'button')
+            ? { type: this.type }
+            : {
+                download: this.download,
+                href: this.href,
+                target: this.target
+            };
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color)), (_a = {}, _a[mode] = true, _a['item-option-disabled'] = disabled, _a['item-option-expandable'] = expandable, _a['ion-activatable'] = true, _a)) }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled }), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { class: "button-inner" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "top" }), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "horizontal-wrapper" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "start" }), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "icon-only" }), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "end" })), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "bottom" })), mode === 'md' && Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", null))));
+    };
+    Object.defineProperty(ItemOption.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return ItemOption;
+}());
+ItemOption.style = {
+    ios: itemOptionIosCss,
+    md: itemOptionMdCss
+};
+var itemOptionsIosCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justify-content:flex-end;display:none;position:absolute;height:100%;font-size:14px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1}[dir=rtl] ion-item-options,:host-context([dir=rtl]) ion-item-options{-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] ion-item-options:not(.item-options-end),:host-context([dir=rtl]) ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}.item-options-start{right:auto;left:0;-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] .item-options-start,:host-context([dir=rtl]) .item-options-start{-ms-flex-pack:end;justify-content:flex-end}.item-options-start ion-item-option:first-child{padding-right:var(--ion-safe-area-left)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.item-options-start ion-item-option:first-child{padding-right:unset;-webkit-padding-end:var(--ion-safe-area-left);padding-inline-end:var(--ion-safe-area-left)}}.item-options-end ion-item-option:last-child{padding-right:var(--ion-safe-area-right)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.item-options-end ion-item-option:last-child{padding-right:unset;-webkit-padding-end:var(--ion-safe-area-right);padding-inline-end:var(--ion-safe-area-right)}}[dir=rtl] .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end),:host-context([dir=rtl]) .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}.item-sliding-active-slide ion-item-options{display:-ms-flexbox;display:flex;visibility:hidden}.item-sliding-active-slide.item-sliding-active-options-start .item-options-start,.item-sliding-active-slide.item-sliding-active-options-end ion-item-options:not(.item-options-start){width:100%;visibility:visible}.item-options-ios{border-bottom-width:0;border-bottom-style:solid;border-bottom-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, #c8c7cc)))}.item-options-ios.item-options-end{border-bottom-width:0.55px}.list-ios-lines-none .item-options-ios{border-bottom-width:0}.list-ios-lines-full .item-options-ios,.list-ios-lines-inset .item-options-ios.item-options-end{border-bottom-width:0.55px}";
+var itemOptionsMdCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justify-content:flex-end;display:none;position:absolute;height:100%;font-size:14px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1}[dir=rtl] ion-item-options,:host-context([dir=rtl]) ion-item-options{-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] ion-item-options:not(.item-options-end),:host-context([dir=rtl]) ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}.item-options-start{right:auto;left:0;-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] .item-options-start,:host-context([dir=rtl]) .item-options-start{-ms-flex-pack:end;justify-content:flex-end}.item-options-start ion-item-option:first-child{padding-right:var(--ion-safe-area-left)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.item-options-start ion-item-option:first-child{padding-right:unset;-webkit-padding-end:var(--ion-safe-area-left);padding-inline-end:var(--ion-safe-area-left)}}.item-options-end ion-item-option:last-child{padding-right:var(--ion-safe-area-right)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.item-options-end ion-item-option:last-child{padding-right:unset;-webkit-padding-end:var(--ion-safe-area-right);padding-inline-end:var(--ion-safe-area-right)}}[dir=rtl] .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end),:host-context([dir=rtl]) .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}.item-sliding-active-slide ion-item-options{display:-ms-flexbox;display:flex;visibility:hidden}.item-sliding-active-slide.item-sliding-active-options-start .item-options-start,.item-sliding-active-slide.item-sliding-active-options-end ion-item-options:not(.item-options-start){width:100%;visibility:visible}.item-options-md{border-bottom-width:0;border-bottom-style:solid;border-bottom-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgba(0, 0, 0, 0.13))))}.list-md-lines-none .item-options-md{border-bottom-width:0}.list-md-lines-full .item-options-md,.list-md-lines-inset .item-options-md.item-options-end{border-bottom-width:1px}";
+var ItemOptions = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionSwipe = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSwipe", 7);
+        /**
+         * The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each.
+         *
+         */
+        this.side = 'end';
+    }
+    /** @internal */
+    class_1.prototype.fireSwipeEvent = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                this.ionSwipe.emit({
+                    side: this.side
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var isEnd = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.side);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+                _a[mode] = true,
+                // Used internally for styling
+                _a["item-options-" + mode] = true,
+                _a['item-options-start'] = !isEnd,
+                _a['item-options-end'] = isEnd,
+                _a) }));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+ItemOptions.style = {
+    ios: itemOptionsIosCss,
+    md: itemOptionsMdCss
+};
+var itemSlidingCss = "ion-item-sliding{display:block;position:relative;width:100%;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-item-sliding .item{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.item-sliding-active-slide .item{position:relative;-webkit-transition:-webkit-transform 500ms cubic-bezier(0.36, 0.66, 0.04, 1);transition:-webkit-transform 500ms cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 500ms cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 500ms cubic-bezier(0.36, 0.66, 0.04, 1), -webkit-transform 500ms cubic-bezier(0.36, 0.66, 0.04, 1);opacity:1;z-index:2;pointer-events:none;will-change:transform}.item-sliding-active-swipe-end .item-options-end .item-option-expandable{padding-left:100%;-ms-flex-order:1;order:1;-webkit-transition-duration:0.6s;transition-duration:0.6s;-webkit-transition-property:padding-left;transition-property:padding-left}[dir=rtl] .item-sliding-active-swipe-end .item-options-end .item-option-expandable,:host-context([dir=rtl]) .item-sliding-active-swipe-end .item-options-end .item-option-expandable{-ms-flex-order:-1;order:-1}.item-sliding-active-swipe-start .item-options-start .item-option-expandable{padding-right:100%;-ms-flex-order:-1;order:-1;-webkit-transition-duration:0.6s;transition-duration:0.6s;-webkit-transition-property:padding-right;transition-property:padding-right}[dir=rtl] .item-sliding-active-swipe-start .item-options-start .item-option-expandable,:host-context([dir=rtl]) .item-sliding-active-swipe-start .item-options-start .item-option-expandable{-ms-flex-order:1;order:1}";
+var SWIPE_MARGIN = 30;
+var ELASTIC_FACTOR = 0.55;
+var openSlidingItem;
+var ItemSliding = /** @class */ (function () {
+    function class_2(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionDrag = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionDrag", 7);
+        this.item = null;
+        this.openAmount = 0;
+        this.initialOpenAmount = 0;
+        this.optsWidthRightSide = 0;
+        this.optsWidthLeftSide = 0;
+        this.sides = 0 /* None */;
+        this.optsDirty = true;
+        this.state = 2 /* Disabled */;
+        /**
+         * If `true`, the user cannot interact with the sliding item.
+         */
+        this.disabled = false;
+    }
+    class_2.prototype.disabledChanged = function () {
+        if (this.gesture) {
+            this.gesture.enable(!this.disabled);
+        }
+    };
+    class_2.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.item = this.el.querySelector('ion-item');
+                        return [4 /*yield*/, this.updateOptions()];
+                    case 1:
+                        _b.sent();
+                        _a = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 2:
+                        _a.gesture = (_b.sent()).createGesture({
+                            el: this.el,
+                            gestureName: 'item-swipe',
+                            gesturePriority: 100,
+                            threshold: 5,
+                            canStart: function (ev) { return _this.canStart(ev); },
+                            onStart: function () { return _this.onStart(); },
+                            onMove: function (ev) { return _this.onMove(ev); },
+                            onEnd: function (ev) { return _this.onEnd(ev); },
+                        });
+                        this.disabledChanged();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_2.prototype.disconnectedCallback = function () {
+        if (this.gesture) {
+            this.gesture.destroy();
+            this.gesture = undefined;
+        }
+        this.item = null;
+        this.leftOptions = this.rightOptions = undefined;
+        if (openSlidingItem === this.el) {
+            openSlidingItem = undefined;
+        }
+    };
+    /**
+     * Get the amount the item is open in pixels.
+     */
+    class_2.prototype.getOpenAmount = function () {
+        return Promise.resolve(this.openAmount);
+    };
+    /**
+     * Get the ratio of the open amount of the item compared to the width of the options.
+     * If the number returned is positive, then the options on the right side are open.
+     * If the number returned is negative, then the options on the left side are open.
+     * If the absolute value of the number is greater than 1, the item is open more than
+     * the width of the options.
+     */
+    class_2.prototype.getSlidingRatio = function () {
+        return Promise.resolve(this.getSlidingRatioSync());
+    };
+    /**
+     * Open the sliding item.
+     *
+     * @param side The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item.
+     */
+    class_2.prototype.open = function (side) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var optionsToOpen, isStartOpen, isEndOpen;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                if (this.item === null) {
+                    return [2 /*return*/];
+                }
+                optionsToOpen = this.getOptions(side);
+                if (!optionsToOpen) {
+                    return [2 /*return*/];
+                }
+                /**
+                 * If side is not set, we need to infer the side
+                 * so we know which direction to move the options
+                 */
+                if (side === undefined) {
+                    side = (optionsToOpen === this.leftOptions) ? 'start' : 'end';
+                }
+                // In RTL we want to switch the sides
+                side = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["i"])(side) ? 'end' : 'start';
+                isStartOpen = this.openAmount < 0;
+                isEndOpen = this.openAmount > 0;
+                /**
+                 * If a side is open and a user tries to
+                 * re-open the same side, we should not do anything
+                 */
+                if (isStartOpen && optionsToOpen === this.leftOptions) {
+                    return [2 /*return*/];
+                }
+                if (isEndOpen && optionsToOpen === this.rightOptions) {
+                    return [2 /*return*/];
+                }
+                this.closeOpened();
+                this.state = 4 /* Enabled */;
+                requestAnimationFrame(function () {
+                    _this.calculateOptsWidth();
+                    var width = (side === 'end') ? _this.optsWidthRightSide : -_this.optsWidthLeftSide;
+                    openSlidingItem = _this.el;
+                    _this.setOpenAmount(width, false);
+                    _this.state = (side === 'end') ? 8 /* End */ : 16 /* Start */;
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Close the sliding item. Items can also be closed from the [List](../list).
+     */
+    class_2.prototype.close = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                this.setOpenAmount(0, true);
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Close all of the sliding items in the list. Items can also be closed from the [List](../list).
+     */
+    class_2.prototype.closeOpened = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                if (openSlidingItem !== undefined) {
+                    openSlidingItem.close();
+                    openSlidingItem = undefined;
+                    return [2 /*return*/, true];
+                }
+                return [2 /*return*/, false];
+            });
+        });
+    };
+    /**
+     * Given an optional side, return the ion-item-options element.
+     *
+     * @param side This side of the options to get. If a side is not provided it will
+     * return the first one available.
+     */
+    class_2.prototype.getOptions = function (side) {
+        if (side === undefined) {
+            return this.leftOptions || this.rightOptions;
+        }
+        else if (side === 'start') {
+            return this.leftOptions;
+        }
+        else {
+            return this.rightOptions;
+        }
+    };
+    class_2.prototype.updateOptions = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var options, sides, i, option, side;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        options = this.el.querySelectorAll('ion-item-options');
+                        sides = 0;
+                        // Reset left and right options in case they were removed
+                        this.leftOptions = this.rightOptions = undefined;
+                        i = 0;
+                        _a.label = 1;
+                    case 1:
+                        if (!(i < options.length)) return [3 /*break*/, 4];
+                        return [4 /*yield*/, options.item(i).componentOnReady()];
+                    case 2:
+                        option = _a.sent();
+                        side = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["i"])(option.side) ? 'end' : 'start';
+                        if (side === 'start') {
+                            this.leftOptions = option;
+                            sides |= 1 /* Start */;
+                        }
+                        else {
+                            this.rightOptions = option;
+                            sides |= 2 /* End */;
+                        }
+                        _a.label = 3;
+                    case 3:
+                        i++;
+                        return [3 /*break*/, 1];
+                    case 4:
+                        this.optsDirty = true;
+                        this.sides = sides;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_2.prototype.canStart = function (gesture) {
+        /**
+         * If very close to start of the screen
+         * do not open left side so swipe to go
+         * back will still work.
+         */
+        var rtl = document.dir === 'rtl';
+        var atEdge = (rtl) ? (window.innerWidth - gesture.startX) < 15 : gesture.startX < 15;
+        if (atEdge) {
+            return false;
+        }
+        var selected = openSlidingItem;
+        if (selected && selected !== this.el) {
+            this.closeOpened();
+            return false;
+        }
+        return !!(this.rightOptions || this.leftOptions);
+    };
+    class_2.prototype.onStart = function () {
+        openSlidingItem = this.el;
+        if (this.tmr !== undefined) {
+            clearTimeout(this.tmr);
+            this.tmr = undefined;
+        }
+        if (this.openAmount === 0) {
+            this.optsDirty = true;
+            this.state = 4 /* Enabled */;
+        }
+        this.initialOpenAmount = this.openAmount;
+        if (this.item) {
+            this.item.style.transition = 'none';
+        }
+    };
+    class_2.prototype.onMove = function (gesture) {
+        if (this.optsDirty) {
+            this.calculateOptsWidth();
+        }
+        var openAmount = this.initialOpenAmount - gesture.deltaX;
+        switch (this.sides) {
+            case 2 /* End */:
+                openAmount = Math.max(0, openAmount);
+                break;
+            case 1 /* Start */:
+                openAmount = Math.min(0, openAmount);
+                break;
+            case 3 /* Both */: break;
+            case 0 /* None */: return;
+            default:
+                console.warn('invalid ItemSideFlags value', this.sides);
+                break;
+        }
+        var optsWidth;
+        if (openAmount > this.optsWidthRightSide) {
+            optsWidth = this.optsWidthRightSide;
+            openAmount = optsWidth + (openAmount - optsWidth) * ELASTIC_FACTOR;
+        }
+        else if (openAmount < -this.optsWidthLeftSide) {
+            optsWidth = -this.optsWidthLeftSide;
+            openAmount = optsWidth + (openAmount - optsWidth) * ELASTIC_FACTOR;
+        }
+        this.setOpenAmount(openAmount, false);
+    };
+    class_2.prototype.onEnd = function (gesture) {
+        var velocity = gesture.velocityX;
+        var restingPoint = (this.openAmount > 0)
+            ? this.optsWidthRightSide
+            : -this.optsWidthLeftSide;
+        // Check if the drag didn't clear the buttons mid-point
+        // and we aren't moving fast enough to swipe open
+        var isResetDirection = (this.openAmount > 0) === !(velocity < 0);
+        var isMovingFast = Math.abs(velocity) > 0.3;
+        var isOnCloseZone = Math.abs(this.openAmount) < Math.abs(restingPoint / 2);
+        if (swipeShouldReset(isResetDirection, isMovingFast, isOnCloseZone)) {
+            restingPoint = 0;
+        }
+        var state = this.state;
+        this.setOpenAmount(restingPoint, true);
+        if ((state & 32 /* SwipeEnd */) !== 0 && this.rightOptions) {
+            this.rightOptions.fireSwipeEvent();
+        }
+        else if ((state & 64 /* SwipeStart */) !== 0 && this.leftOptions) {
+            this.leftOptions.fireSwipeEvent();
+        }
+    };
+    class_2.prototype.calculateOptsWidth = function () {
+        this.optsWidthRightSide = 0;
+        if (this.rightOptions) {
+            this.rightOptions.style.display = 'flex';
+            this.optsWidthRightSide = this.rightOptions.offsetWidth;
+            this.rightOptions.style.display = '';
+        }
+        this.optsWidthLeftSide = 0;
+        if (this.leftOptions) {
+            this.leftOptions.style.display = 'flex';
+            this.optsWidthLeftSide = this.leftOptions.offsetWidth;
+            this.leftOptions.style.display = '';
+        }
+        this.optsDirty = false;
+    };
+    class_2.prototype.setOpenAmount = function (openAmount, isFinal) {
+        var _this = this;
+        if (this.tmr !== undefined) {
+            clearTimeout(this.tmr);
+            this.tmr = undefined;
+        }
+        if (!this.item) {
+            return;
+        }
+        var style = this.item.style;
+        this.openAmount = openAmount;
+        if (isFinal) {
+            style.transition = '';
+        }
+        if (openAmount > 0) {
+            this.state = (openAmount >= (this.optsWidthRightSide + SWIPE_MARGIN))
+                ? 8 /* End */ | 32 /* SwipeEnd */
+                : 8 /* End */;
+        }
+        else if (openAmount < 0) {
+            this.state = (openAmount <= (-this.optsWidthLeftSide - SWIPE_MARGIN))
+                ? 16 /* Start */ | 64 /* SwipeStart */
+                : 16 /* Start */;
+        }
+        else {
+            this.tmr = setTimeout(function () {
+                _this.state = 2 /* Disabled */;
+                _this.tmr = undefined;
+            }, 600);
+            openSlidingItem = undefined;
+            style.transform = '';
+            return;
+        }
+        style.transform = "translate3d(" + -openAmount + "px,0,0)";
+        this.ionDrag.emit({
+            amount: openAmount,
+            ratio: this.getSlidingRatioSync()
+        });
+    };
+    class_2.prototype.getSlidingRatioSync = function () {
+        if (this.openAmount > 0) {
+            return this.openAmount / this.optsWidthRightSide;
+        }
+        else if (this.openAmount < 0) {
+            return this.openAmount / this.optsWidthLeftSide;
+        }
+        else {
+            return 0;
+        }
+    };
+    class_2.prototype.render = function () {
+        var _a;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+                _a[mode] = true,
+                _a['item-sliding-active-slide'] = (this.state !== 2 /* Disabled */),
+                _a['item-sliding-active-options-end'] = (this.state & 8 /* End */) !== 0,
+                _a['item-sliding-active-options-start'] = (this.state & 16 /* Start */) !== 0,
+                _a['item-sliding-active-swipe-end'] = (this.state & 32 /* SwipeEnd */) !== 0,
+                _a['item-sliding-active-swipe-start'] = (this.state & 64 /* SwipeStart */) !== 0,
+                _a) }));
+    };
+    Object.defineProperty(class_2.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(class_2, "watchers", {
+        get: function () {
+            return {
+                "disabled": ["disabledChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return class_2;
+}());
+var swipeShouldReset = function (isResetDirection, isMovingFast, isOnResetZone) {
+    // The logic required to know when the sliding item should close (openAmount=0)
+    // depends on three booleans (isResetDirection, isMovingFast, isOnResetZone)
+    // and it ended up being too complicated to be written manually without errors
+    // so the truth table is attached below: (0=false, 1=true)
+    // isResetDirection | isMovingFast | isOnResetZone || shouldClose
+    //         0        |       0      |       0       ||    0
+    //         0        |       0      |       1       ||    1
+    //         0        |       1      |       0       ||    0
+    //         0        |       1      |       1       ||    0
+    //         1        |       0      |       0       ||    0
+    //         1        |       0      |       1       ||    1
+    //         1        |       1      |       0       ||    1
+    //         1        |       1      |       1       ||    1
+    // The resulting expression was generated by resolving the K-map (Karnaugh map):
+    return (!isMovingFast && isOnResetZone) || (isResetDirection && isMovingFast);
+};
+ItemSliding.style = itemSlidingCss;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

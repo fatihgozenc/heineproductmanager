@@ -1,1 +1,404 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[35],{11:function(t,e,n){"use strict";n.d(e,"a",(function(){return i})),n.d(e,"b",(function(){return a})),n.d(e,"c",(function(){return o})),n.d(e,"d",(function(){return s}));var r=n(0),o=function(t,e){return null!==e.closest(t)},i=function(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0},a=function(t){var e={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return e[t]=!0})),e},u=/^[a-z][a-z0-9+\-.]*:/,s=function(t,e,n,o){return Object(r.__awaiter)(void 0,void 0,void 0,(function(){var i;return Object(r.__generator)(this,(function(r){return null!=t&&"#"!==t[0]&&!u.test(t)&&(i=document.querySelector("ion-router"))?(null!=e&&e.preventDefault(),[2,i.push(t,n,o)]):[2,!1]}))}))}},254:function(t,e,n){"use strict";n.r(e),n.d(e,"ion_route",(function(){return s})),n.d(e,"ion_route_redirect",(function(){return c})),n.d(e,"ion_router",(function(){return k})),n.d(e,"ion_router_link",(function(){return S}));var r=n(0),o=n(1),i=n(6),a=n(10),u=n(11),s=function(){function t(t){Object(o.q)(this,t),this.ionRouteDataChanged=Object(o.i)(this,"ionRouteDataChanged",7),this.url=""}return t.prototype.onUpdate=function(t){this.ionRouteDataChanged.emit(t)},t.prototype.onComponentProps=function(t,e){if(t!==e){var n=t?Object.keys(t):[],r=e?Object.keys(e):[];if(n.length===r.length)for(var o=0,i=n;o<i.length;o++){var a=i[o];if(t[a]!==e[a])return void this.onUpdate(t)}else this.onUpdate(t)}},t.prototype.connectedCallback=function(){this.ionRouteDataChanged.emit()},Object.defineProperty(t,"watchers",{get:function(){return{url:["onUpdate"],component:["onUpdate"],componentProps:["onComponentProps"]}},enumerable:!1,configurable:!0}),t}(),c=function(){function t(t){Object(o.q)(this,t),this.ionRouteRedirectChanged=Object(o.i)(this,"ionRouteRedirectChanged",7)}return t.prototype.propDidChange=function(){this.ionRouteRedirectChanged.emit()},t.prototype.connectedCallback=function(){this.ionRouteRedirectChanged.emit()},Object.defineProperty(t,"watchers",{get:function(){return{from:["propDidChange"],to:["propDidChange"]}},enumerable:!1,configurable:!0}),t}(),h=function(t){return"/"+t.filter((function(t){return t.length>0})).join("/")},l=function(t){if(null==t)return[""];var e=t.split("?")[0].split("/").map((function(t){return t.trim()})).filter((function(t){return t.length>0}));return 0===e.length?[""]:e},f=function(t,e,n,o,i,a){return void 0===i&&(i=!1),Object(r.__awaiter)(void 0,void 0,void 0,(function(){var u,s,c,h;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return r.trys.push([0,6,,7]),u=p(t),o>=e.length||!u?[2,i]:[4,u.componentOnReady()];case 1:return r.sent(),s=e[o],[4,u.setRouteId(s.id,s.params,n,a)];case 2:return(c=r.sent()).changed&&(n="root",i=!0),[4,f(c.element,e,n,o+1,i,a)];case 3:return i=r.sent(),c.markVisible?[4,c.markVisible()]:[3,5];case 4:r.sent(),r.label=5;case 5:return[2,i];case 6:return h=r.sent(),console.error(h),[2,!1];case 7:return[2]}}))}))},d=":not([no-router]) ion-nav, :not([no-router]) ion-tabs, :not([no-router]) ion-router-outlet",p=function(t){if(t){if(t.matches(d))return t;var e=t.querySelector(d);return e||void 0}},v=function(t,e){return e.find((function(e){return function(t,e){var n=e.from;if(void 0===e.to)return!1;if(n.length>t.length)return!1;for(var r=0;r<n.length;r++){var o=n[r];if("*"===o)return!0;if(o!==t[r])return!1}return n.length===t.length}(t,e)}))},g=function(t,e){for(var n=Math.min(t.length,e.length),r=0;r<n&&t[r].toLowerCase()===e[r].id;r++);return r},b=function(t,e){for(var n,r=new O(t),o=!1,i=0;i<e.length;i++){var a=e[i].path;if(""===a[0])o=!0;else{for(var u=0,s=a;u<s.length;u++){var c=s[u],h=r.next();if(":"===c[0]){if(""===h)return null;((n=n||[])[i]||(n[i]={}))[c.slice(1)]=h}else if(h!==c)return null}o=!1}}return!o||o===(""===r.next())?n?e.map((function(t,e){return{id:t.id,path:t.path,params:m(t.params,n[e])}})):e:null},m=function(t,e){return!t&&e?e:t&&!e?t:t&&e?Object.assign(Object.assign({},t),e):void 0},w=function(t,e){for(var n=null,r=0,o=0,i=e;o<i.length;o++){var a=i[o],u=b(t,a);if(null!==u){var s=y(u);s>r&&(r=s,n=u)}}return n},y=function(t){for(var e=1,n=1,r=0,o=t;r<o.length;r++)for(var i=0,a=o[r].path;i<a.length;i++){var u=a[i];":"===u[0]?e+=Math.pow(1,n):""!==u&&(e+=Math.pow(2,n)),n++}return e},O=function(){function t(t){this.path=t.slice()}return t.prototype.next=function(){return this.path.length>0?this.path.shift():""},t}(),_=function(t){return Array.from(t.children).filter((function(t){return"ION-ROUTE-REDIRECT"===t.tagName})).map((function(t){var e=C(t,"to");return{from:l(C(t,"from")),to:null==e?void 0:l(e)}}))},j=function(t){return P(R(t))},R=function(t,e){return void 0===e&&(e=t),Array.from(e.children).filter((function(t){return"ION-ROUTE"===t.tagName&&t.component})).map((function(e){var n=C(e,"component");if(null==n)throw new Error("component missing in ion-route");return{path:l(C(e,"url")),id:n.toLowerCase(),params:e.componentProps,beforeLeave:e.beforeLeave,beforeEnter:e.beforeEnter,children:R(t,e)}}))},C=function(t,e){return e in t?t[e]:t.hasAttribute(e)?t.getAttribute(e):null},P=function(t){for(var e=[],n=0,r=t;n<r.length;n++){var o=r[n];E([],e,o)}return e},E=function(t,e,n){var r=t.slice();if(r.push({id:n.id,path:n.path,params:n.params,beforeLeave:n.beforeLeave,beforeEnter:n.beforeEnter}),0!==n.children.length)for(var o=0,i=n.children;o<i.length;o++){var a=i[o];E(r,e,a)}else e.push(r)},k=function(){function t(t){Object(o.q)(this,t),this.ionRouteWillChange=Object(o.i)(this,"ionRouteWillChange",7),this.ionRouteDidChange=Object(o.i)(this,"ionRouteDidChange",7),this.previousPath=null,this.busy=!1,this.state=0,this.lastState=0,this.root="/",this.useHash=!0}return t.prototype.componentWillLoad=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){return Object(r.__generator)(this,(function(t){switch(t.label){case 0:return console.debug("[ion-router] router will load"),[4,p(document.body)?Promise.resolve():new Promise((function(t){window.addEventListener("ionNavWillLoad",t,{once:!0})}))];case 1:return t.sent(),console.debug("[ion-router] found nav"),[4,this.onRoutesChanged()];case 2:return t.sent(),[2]}}))}))},t.prototype.componentDidLoad=function(){window.addEventListener("ionRouteRedirectChanged",Object(a.e)(this.onRedirectChanged.bind(this),10)),window.addEventListener("ionRouteDataChanged",Object(a.e)(this.onRoutesChanged.bind(this),100))},t.prototype.onPopState=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){var t,e,n;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return t=this.historyDirection(),e=this.getPath(),[4,this.runGuards(e)];case 1:return!0!==(n=r.sent())?("object"==typeof n&&(e=l(n.redirect)),[2,!1]):(console.debug("[ion-router] URL changed -> update nav",e,t),[2,this.writeNavStateRoot(e,t)])}}))}))},t.prototype.onBackButton=function(t){var e=this;t.detail.register(0,(function(t){e.back(),t()}))},t.prototype.canTransition=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){var t;return Object(r.__generator)(this,(function(e){switch(e.label){case 0:return[4,this.runGuards()];case 1:return!0!==(t=e.sent())?"object"==typeof t?[2,t.redirect]:[2,!1]:[2,!0]}}))}))},t.prototype.push=function(t,e,n){return void 0===e&&(e="forward"),Object(r.__awaiter)(this,void 0,void 0,(function(){var o,i,a;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return t.startsWith(".")&&(t=new URL(t,window.location.href).pathname),console.debug("[ion-router] URL pushed -> updating nav",t,e),o=l(t),i=t.split("?")[1],[4,this.runGuards(o)];case 1:if(!0!==(a=r.sent())){if("object"!=typeof a)return[2,!1];o=l(a.redirect),i=a.redirect.split("?")[1]}return this.setPath(o,e,i),[2,this.writeNavStateRoot(o,e,n)]}}))}))},t.prototype.back=function(){return window.history.back(),Promise.resolve(this.waitPromise)},t.prototype.printDebug=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){return Object(r.__generator)(this,(function(t){return console.debug("CURRENT PATH",this.getPath()),console.debug("PREVIOUS PATH",this.previousPath),function(t){console.group("[ion-core] ROUTES["+t.length+"]");for(var e=function(t){var e=[];t.forEach((function(t){return e.push.apply(e,t.path)}));var n=t.map((function(t){return t.id}));console.debug("%c "+h(e),"font-weight: bold; padding-left: 20px","=>\t","("+n.join(", ")+")")},n=0,r=t;n<r.length;n++){e(r[n])}console.groupEnd()}(j(this.el)),function(t){console.group("[ion-core] REDIRECTS["+t.length+"]");for(var e=0,n=t;e<n.length;e++){var r=n[e];r.to&&console.debug("FROM: ","$c "+h(r.from),"font-weight: bold"," TO: ","$c "+h(r.to),"font-weight: bold")}console.groupEnd()}(_(this.el)),[2]}))}))},t.prototype.navChanged=function(t){return Object(r.__awaiter)(this,void 0,void 0,(function(){var e,n,o,i,a,u;return Object(r.__generator)(this,(function(s){switch(s.label){case 0:return this.busy?(console.warn("[ion-router] router is busy, navChanged was cancelled"),[2,!1]):[4,(c=window.document.body,Object(r.__awaiter)(void 0,void 0,void 0,(function(){var t,e,n,o;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:t=[],n=c,r.label=1;case 1:return(e=p(n))?[4,e.getRouteId()]:[3,3];case 2:return(o=r.sent())?(n=o.element,o.element=void 0,t.push(o),[3,4]):[3,5];case 3:return[3,5];case 4:return[3,1];case 5:return[2,{ids:t,outlet:e}]}}))})))];case 1:return e=s.sent(),n=e.ids,o=e.outlet,i=j(this.el),(a=function(t,e){for(var n=null,r=0,o=t.map((function(t){return t.id})),i=0,a=e;i<a.length;i++){var u=a[i],s=g(o,u);s>r&&(n=u,r=s)}return n?n.map((function(e,n){return{id:e.id,path:e.path,params:m(e.params,t[n]&&t[n].params)}})):null}(n,i))?(u=function(t){for(var e=[],n=0,r=t;n<r.length;n++)for(var o=r[n],i=0,a=o.path;i<a.length;i++){var u=a[i];if(":"===u[0]){var s=o.params&&o.params[u.slice(1)];if(!s)return null;e.push(s)}else""!==u&&e.push(u)}return e}(a))?(console.debug("[ion-router] nav changed -> update URL",n,u),this.setPath(u,t),[4,this.safeWriteNavState(o,a,"root",u,null,n.length)]):(console.warn("[ion-router] router could not match path because some required param is missing"),[2,!1]):(console.warn("[ion-router] no matching URL for ",n.map((function(t){return t.id}))),[2,!1]);case 2:return s.sent(),[2,!0]}var c}))}))},t.prototype.onRedirectChanged=function(){var t=this.getPath();t&&v(t,_(this.el))&&this.writeNavStateRoot(t,"root")},t.prototype.onRoutesChanged=function(){return this.writeNavStateRoot(this.getPath(),"root")},t.prototype.historyDirection=function(){var t=window;null===t.history.state&&(this.state++,t.history.replaceState(this.state,t.document.title,t.document.location&&t.document.location.href));var e=t.history.state,n=this.lastState;return this.lastState=e,e>n||e>=n&&n>0?"forward":e<n?"back":"root"},t.prototype.writeNavStateRoot=function(t,e,n){return Object(r.__awaiter)(this,void 0,void 0,(function(){var o,i,a,u,s;return Object(r.__generator)(this,(function(r){return t?(o=_(this.el),i=v(t,o),a=null,i&&(this.setPath(i.to,e),a=i.from,t=i.to),u=j(this.el),(s=w(t,u))?[2,this.safeWriteNavState(document.body,s,e,t,a,0,n)]:(console.error("[ion-router] the path does not match any route"),[2,!1])):(console.error("[ion-router] URL is not part of the routing set"),[2,!1])}))}))},t.prototype.safeWriteNavState=function(t,e,n,o,i,a,u){return void 0===a&&(a=0),Object(r.__awaiter)(this,void 0,void 0,(function(){var s,c,h;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return[4,this.lock()];case 1:s=r.sent(),c=!1,r.label=2;case 2:return r.trys.push([2,4,,5]),[4,this.writeNavState(t,e,n,o,i,a,u)];case 3:return c=r.sent(),[3,5];case 4:return h=r.sent(),console.error(h),[3,5];case 5:return s(),[2,c]}}))}))},t.prototype.lock=function(){return Object(r.__awaiter)(this,void 0,void 0,(function(){var t,e;return Object(r.__generator)(this,(function(n){switch(n.label){case 0:return t=this.waitPromise,this.waitPromise=new Promise((function(t){return e=t})),void 0===t?[3,2]:[4,t];case 1:n.sent(),n.label=2;case 2:return[2,e]}}))}))},t.prototype.runGuards=function(t,e){return void 0===t&&(t=this.getPath()),void 0===e&&(e=l(this.previousPath)),Object(r.__awaiter)(this,void 0,void 0,(function(){var n,o,i,a,u,s,c,h,l;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return t&&e?(n=j(this.el),o=w(t,n),i=w(e,n),a=o&&o[o.length-1].beforeEnter,(u=i&&i[i.length-1].beforeLeave)?[4,u()]:[3,2]):[2,!0];case 1:return c=r.sent(),[3,3];case 2:c=!0,r.label=3;case 3:return!1===(s=c)||"object"==typeof s?[2,s]:a?[4,a()]:[3,5];case 4:return l=r.sent(),[3,6];case 5:l=!0,r.label=6;case 6:return!1===(h=l)||"object"==typeof h?[2,h]:[2,!0]}}))}))},t.prototype.writeNavState=function(t,e,n,o,i,a,u){return void 0===a&&(a=0),Object(r.__awaiter)(this,void 0,void 0,(function(){var s,c;return Object(r.__generator)(this,(function(r){switch(r.label){case 0:return this.busy?(console.warn("[ion-router] router is busy, transition was cancelled"),[2,!1]):(this.busy=!0,(s=this.routeChangeEvent(o,i))&&this.ionRouteWillChange.emit(s),[4,f(t,e,n,a,!1,u)]);case 1:return c=r.sent(),this.busy=!1,c&&console.debug("[ion-router] route changed",o),s&&this.ionRouteDidChange.emit(s),[2,c]}}))}))},t.prototype.setPath=function(t,e,n){this.state++,function(t,e,n,o,i,a,u){var s=h(Object(r.__spreadArrays)(l(e),o));n&&(s="#"+s),void 0!==u&&(s=s+"?"+u),"forward"===i?t.pushState(a,"",s):t.replaceState(a,"",s)}(window.history,this.root,this.useHash,t,e,this.state,n)},t.prototype.getPath=function(){return function(t,e,n){var r=t.pathname;if(n){var o=t.hash;r="#"===o[0]?o.slice(1):""}return function(t,e){if(t.length>e.length)return null;if(t.length<=1&&""===t[0])return e;for(var n=0;n<t.length;n++)if(t[n].length>0&&t[n]!==e[n])return null;return e.length===t.length?[""]:e.slice(t.length)}(l(e),l(r))}(window.location,this.root,this.useHash)},t.prototype.routeChangeEvent=function(t,e){var n=this.previousPath,r=h(t);return this.previousPath=r,r===n?null:{from:n,redirectedFrom:e?h(e):null,to:r}},Object.defineProperty(t.prototype,"el",{get:function(){return Object(o.m)(this)},enumerable:!1,configurable:!0}),t}(),S=function(){function t(t){var e=this;Object(o.q)(this,t),this.routerDirection="forward",this.onClick=function(t){Object(u.d)(e.href,t,e.routerDirection,e.routerAnimation)}}return t.prototype.render=function(){var t,e=Object(i.b)(this),n={href:this.href,rel:this.rel,target:this.target};return Object(o.l)(o.c,{onClick:this.onClick,class:Object.assign(Object.assign({},Object(u.a)(this.color)),(t={},t[e]=!0,t["ion-activatable"]=!0,t))},Object(o.l)("a",Object.assign({},n),Object(o.l)("slot",null)))},t}();S.style=":host{--background:transparent;--color:var(--ion-color-primary, #3880ff);background:var(--background);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}a{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit}"}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[35],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-toast.entry.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-toast.entry.js ***!
+  \******************************************************************/
+/*! exports provided: ion_toast */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_toast", function() { return Toast; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animation-a635a2fc.js */ "./node_modules/@ionic/core/dist/esm-es5/animation-a635a2fc.js");
+/* harmony import */ var _index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-79d74e0b.js */ "./node_modules/@ionic/core/dist/esm-es5/index-79d74e0b.js");
+/* harmony import */ var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm-es5/hardware-back-button-7b6ede21.js");
+/* harmony import */ var _overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./overlays-63b08852.js */ "./node_modules/@ionic/core/dist/esm-es5/overlays-63b08852.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
+
+
+
+
+
+
+
+
+
+/**
+ * iOS Toast Enter Animation
+ */
+var iosEnterAnimation = function (baseEl, position) {
+    var baseAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var wrapperAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var hostEl = baseEl.host || baseEl;
+    var wrapperEl = baseEl.querySelector('.toast-wrapper');
+    var bottom = "calc(-10px - var(--ion-safe-area-bottom, 0px))";
+    var top = "calc(10px + var(--ion-safe-area-top, 0px))";
+    wrapperAnimation.addElement(wrapperEl);
+    switch (position) {
+        case 'top':
+            wrapperAnimation.fromTo('transform', 'translateY(-100%)', "translateY(" + top + ")");
+            break;
+        case 'middle':
+            var topPosition = Math.floor(hostEl.clientHeight / 2 - wrapperEl.clientHeight / 2);
+            wrapperEl.style.top = topPosition + "px";
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+        default:
+            wrapperAnimation.fromTo('transform', 'translateY(100%)', "translateY(" + bottom + ")");
+            break;
+    }
+    return baseAnimation
+        .addElement(hostEl)
+        .easing('cubic-bezier(.155,1.105,.295,1.12)')
+        .duration(400)
+        .addAnimation(wrapperAnimation);
+};
+/**
+ * iOS Toast Leave Animation
+ */
+var iosLeaveAnimation = function (baseEl, position) {
+    var baseAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var wrapperAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var hostEl = baseEl.host || baseEl;
+    var wrapperEl = baseEl.querySelector('.toast-wrapper');
+    var bottom = "calc(-10px - var(--ion-safe-area-bottom, 0px))";
+    var top = "calc(10px + var(--ion-safe-area-top, 0px))";
+    wrapperAnimation.addElement(wrapperEl);
+    switch (position) {
+        case 'top':
+            wrapperAnimation.fromTo('transform', "translateY(" + top + ")", 'translateY(-100%)');
+            break;
+        case 'middle':
+            wrapperAnimation.fromTo('opacity', 0.99, 0);
+            break;
+        default:
+            wrapperAnimation.fromTo('transform', "translateY(" + bottom + ")", 'translateY(100%)');
+            break;
+    }
+    return baseAnimation
+        .addElement(hostEl)
+        .easing('cubic-bezier(.36,.66,.04,1)')
+        .duration(300)
+        .addAnimation(wrapperAnimation);
+};
+/**
+ * MD Toast Enter Animation
+ */
+var mdEnterAnimation = function (baseEl, position) {
+    var baseAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var wrapperAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var hostEl = baseEl.host || baseEl;
+    var wrapperEl = baseEl.querySelector('.toast-wrapper');
+    var bottom = "calc(8px + var(--ion-safe-area-bottom, 0px))";
+    var top = "calc(8px + var(--ion-safe-area-top, 0px))";
+    wrapperAnimation.addElement(wrapperEl);
+    switch (position) {
+        case 'top':
+            wrapperEl.style.top = top;
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+        case 'middle':
+            var topPosition = Math.floor(hostEl.clientHeight / 2 - wrapperEl.clientHeight / 2);
+            wrapperEl.style.top = topPosition + "px";
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+        default:
+            wrapperEl.style.bottom = bottom;
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+    }
+    return baseAnimation
+        .addElement(hostEl)
+        .easing('cubic-bezier(.36,.66,.04,1)')
+        .duration(400)
+        .addAnimation(wrapperAnimation);
+};
+/**
+ * md Toast Leave Animation
+ */
+var mdLeaveAnimation = function (baseEl) {
+    var baseAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var wrapperAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])();
+    var hostEl = baseEl.host || baseEl;
+    var wrapperEl = baseEl.querySelector('.toast-wrapper');
+    wrapperAnimation
+        .addElement(wrapperEl)
+        .fromTo('opacity', 0.99, 0);
+    return baseAnimation
+        .addElement(hostEl)
+        .easing('cubic-bezier(.36,.66,.04,1)')
+        .duration(300)
+        .addAnimation(wrapperAnimation);
+};
+var toastIosCss = ":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:pre-wrap;left:0;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host-context([dir=rtl]){left:unset;right:unset;right:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);left:var(--start);right:var(--end);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow)}[dir=rtl] .toast-wrapper,:host-context([dir=rtl]) .toast-wrapper{left:unset;right:unset;left:var(--end);right:var(--start)}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;pointer-events:auto;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-50, #f2f2f2);--border-radius:14px;--button-color:var(--ion-color-primary, #3880ff);--color:var(--ion-color-step-850, #262626);--max-width:700px;--start:10px;--end:10px;font-size:14px}.toast-wrapper{margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;z-index:10}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-wrapper{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.toast-translucent) .toast-wrapper{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}.toast-wrapper.toast-top{-webkit-transform:translate3d(0,  -100%,  0);transform:translate3d(0,  -100%,  0);top:0}.toast-wrapper.toast-middle{opacity:0.01}.toast-wrapper.toast-bottom{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);bottom:0}.toast-content{padding-left:15px;padding-right:15px;padding-top:15px;padding-bottom:15px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-content{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-header{margin-bottom:2px;font-weight:500}.toast-button{padding-left:15px;padding-right:15px;padding-top:10px;padding-bottom:10px;height:44px;-webkit-transition:background-color, opacity 100ms linear;transition:background-color, opacity 100ms linear;border:0;background-color:transparent;font-family:var(--ion-font-family);font-size:17px;font-weight:500;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-button.ion-activated{opacity:0.4}@media (any-hover: hover){.toast-button:hover{opacity:0.6}}";
+var toastMdCss = ":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:pre-wrap;left:0;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host-context([dir=rtl]){left:unset;right:unset;right:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);left:var(--start);right:var(--end);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow)}[dir=rtl] .toast-wrapper,:host-context([dir=rtl]) .toast-wrapper{left:unset;right:unset;left:var(--end);right:var(--start)}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;pointer-events:auto;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-800, #333333);--border-radius:4px;--box-shadow:0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);--button-color:var(--ion-color-primary, #3880ff);--color:var(--ion-color-step-50, #f2f2f2);--max-width:700px;--start:8px;--end:8px;font-size:14px}.toast-wrapper{margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;opacity:0.01;z-index:10}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-wrapper{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}.toast-content{padding-left:16px;padding-right:16px;padding-top:14px;padding-bottom:14px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-content{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.toast-header{margin-bottom:2px;font-weight:500;line-height:20px}.toast-message{line-height:20px}.toast-button-group-start{margin-left:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-group-start{margin-left:unset;-webkit-margin-start:8px;margin-inline-start:8px}}.toast-button-group-end{margin-right:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-group-end{margin-right:unset;-webkit-margin-end:8px;margin-inline-end:8px}}.toast-button{padding-left:15px;padding-right:15px;padding-top:10px;padding-bottom:10px;position:relative;background-color:transparent;font-family:var(--ion-font-family);font-size:14px;font-weight:500;letter-spacing:0.84px;text-transform:uppercase;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button{padding-left:unset;padding-right:unset;-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px}}.toast-button-cancel{color:var(--ion-color-step-100, #e6e6e6)}.toast-button-icon-only{border-radius:50%;padding-left:9px;padding-right:9px;padding-top:9px;padding-bottom:9px;width:36px;height:36px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toast-button-icon-only{padding-left:unset;padding-right:unset;-webkit-padding-start:9px;padding-inline-start:9px;-webkit-padding-end:9px;padding-inline-end:9px}}@media (any-hover: hover){.toast-button:hover{background-color:rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.08)}.toast-button-cancel:hover{background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.08)}}";
+var Toast = /** @class */ (function () {
+    function class_1(hostRef) {
+        var _this = this;
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.didPresent = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionToastDidPresent", 7);
+        this.willPresent = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionToastWillPresent", 7);
+        this.willDismiss = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionToastWillDismiss", 7);
+        this.didDismiss = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionToastDidDismiss", 7);
+        this.presented = false;
+        /**
+         * How many milliseconds to wait before hiding the toast. By default, it will show
+         * until `dismiss()` is called.
+         */
+        this.duration = 0;
+        /**
+         * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
+         */
+        this.keyboardClose = false;
+        /**
+         * The position of the toast on the screen.
+         */
+        this.position = 'bottom';
+        /**
+         * If `true`, the toast will be translucent.
+         * Only applies when the mode is `"ios"` and the device supports
+         * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
+         */
+        this.translucent = false;
+        /**
+         * If `true`, the toast will animate.
+         */
+        this.animated = true;
+        this.dispatchCancelHandler = function (ev) {
+            var role = ev.detail.role;
+            if (Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["i"])(role)) {
+                var cancelButton = _this.getButtons().find(function (b) { return b.role === 'cancel'; });
+                _this.callButtonHandler(cancelButton);
+            }
+        };
+    }
+    class_1.prototype.connectedCallback = function () {
+        Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["e"])(this.el);
+    };
+    /**
+     * Present the toast overlay after it has been created.
+     */
+    class_1.prototype.present = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, 'toastEnter', iosEnterAnimation, mdEnterAnimation, this.position)];
+                    case 1:
+                        _a.sent();
+                        if (this.duration > 0) {
+                            this.durationTimeout = setTimeout(function () { return _this.dismiss(undefined, 'timeout'); }, this.duration);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Dismiss the toast overlay after it has been presented.
+     *
+     * @param data Any data to emit in the dismiss events.
+     * @param role The role of the element that is dismissing the toast.
+     * This can be useful in a button handler for determining which button was
+     * clicked to dismiss the toast.
+     * Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.
+     */
+    class_1.prototype.dismiss = function (data, role) {
+        if (this.durationTimeout) {
+            clearTimeout(this.durationTimeout);
+        }
+        return Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["f"])(this, data, role, 'toastLeave', iosLeaveAnimation, mdLeaveAnimation, this.position);
+    };
+    /**
+     * Returns a promise that resolves when the toast did dismiss.
+     */
+    class_1.prototype.onDidDismiss = function () {
+        return Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionToastDidDismiss');
+    };
+    /**
+     * Returns a promise that resolves when the toast will dismiss.
+     */
+    class_1.prototype.onWillDismiss = function () {
+        return Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionToastWillDismiss');
+    };
+    class_1.prototype.getButtons = function () {
+        var buttons = this.buttons
+            ? this.buttons.map(function (b) {
+                return (typeof b === 'string')
+                    ? { text: b }
+                    : b;
+            })
+            : [];
+        return buttons;
+    };
+    class_1.prototype.buttonClick = function (button) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var role, shouldDismiss;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        role = button.role;
+                        if (Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["i"])(role)) {
+                            return [2 /*return*/, this.dismiss(undefined, role)];
+                        }
+                        return [4 /*yield*/, this.callButtonHandler(button)];
+                    case 1:
+                        shouldDismiss = _a.sent();
+                        if (shouldDismiss) {
+                            return [2 /*return*/, this.dismiss(undefined, role)];
+                        }
+                        return [2 /*return*/, Promise.resolve()];
+                }
+            });
+        });
+    };
+    class_1.prototype.callButtonHandler = function (button) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var rtn, e_1;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(button && button.handler)) return [3 /*break*/, 4];
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, Object(_overlays_63b08852_js__WEBPACK_IMPORTED_MODULE_7__["s"])(button.handler)];
+                    case 2:
+                        rtn = _a.sent();
+                        if (rtn === false) {
+                            // if the return value of the handler is false then do not dismiss
+                            return [2 /*return*/, false];
+                        }
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_1 = _a.sent();
+                        console.error(e_1);
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    class_1.prototype.renderButtons = function (buttons, side) {
+        var _a;
+        var _this = this;
+        if (buttons.length === 0) {
+            return;
+        }
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var buttonGroupsClasses = (_a = {
+                'toast-button-group': true
+            },
+            _a["toast-button-group-" + side] = true,
+            _a);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: buttonGroupsClasses }, buttons.map(function (b) { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: "button", class: buttonClass(b), tabIndex: 0, onClick: function () { return _this.buttonClick(b); }, part: "button" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toast-button-inner" }, b.icon &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "toast-icon" }), b.text), mode === 'md' && Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })); })));
+    };
+    class_1.prototype.render = function () {
+        var _a, _b;
+        var allButtons = this.getButtons();
+        var startButtons = allButtons.filter(function (b) { return b.side === 'start'; });
+        var endButtons = allButtons.filter(function (b) { return b.side !== 'start'; });
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var wrapperClass = (_a = {
+                'toast-wrapper': true
+            },
+            _a["toast-" + this.position] = true,
+            _a);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { style: {
+                zIndex: "" + (60000 + this.overlayIndex),
+            }, class: Object.assign(Object.assign(Object.assign((_b = {}, _b[mode] = true, _b), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__["c"])(this.color)), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__["g"])(this.cssClass)), { 'toast-translucent': this.translucent }), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: wrapperClass }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toast-content" }, this.header !== undefined &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toast-header", part: "header" }, this.header), this.message !== undefined &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toast-message", part: "message", innerHTML: Object(_index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_5__["s"])(this.message) })), this.renderButtons(endButtons, 'end')))));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+var buttonClass = function (button) {
+    var _a;
+    return Object.assign((_a = { 'toast-button': true, 'toast-button-icon-only': button.icon !== undefined && button.text === undefined }, _a["toast-button-" + button.role] = button.role !== undefined, _a['ion-focusable'] = true, _a['ion-activatable'] = true, _a), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__["g"])(button.cssClass));
+};
+Toast.style = {
+    ios: toastIosCss,
+    md: toastMdCss
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction, animation) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction, animation)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
+
+/***/ })
+
+}]);

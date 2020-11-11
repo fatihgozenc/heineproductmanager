@@ -1,1 +1,1163 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{11:function(t,e,i){"use strict";i.d(e,"a",(function(){return n})),i.d(e,"b",(function(){return a})),i.d(e,"c",(function(){return o})),i.d(e,"d",(function(){return s}));var r=i(0),o=function(t,e){return null!==e.closest(t)},n=function(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0},a=function(t){var e={};return function(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter((function(t){return null!=t})).map((function(t){return t.trim()})).filter((function(t){return""!==t})):[]}(t).forEach((function(t){return e[t]=!0})),e},l=/^[a-z][a-z0-9+\-.]*:/,s=function(t,e,i,o){return Object(r.__awaiter)(void 0,void 0,void 0,(function(){var n;return Object(r.__generator)(this,(function(r){return null!=t&&"#"!==t[0]&&!l.test(t)&&(n=document.querySelector("ion-router"))?(null!=e&&e.preventDefault(),[2,n.push(t,i,o)]):[2,!1]}))}))}},226:function(t,e,i){"use strict";i.r(e),i.d(e,"ion_alert",(function(){return g}));var r=i(1),o=i(6),n=(i(10),i(8)),a=(i(42),i(30),i(45)),l=(i(37),i(16)),s=(i(32),i(79)),d=i(11),c=function(t){var e=Object(n.a)(),i=Object(n.a)(),r=Object(n.a)();return i.addElement(t.querySelector("ion-backdrop")).fromTo("opacity",.01,"var(--backdrop-opacity)").beforeStyles({"pointer-events":"none"}).afterClearStyles(["pointer-events"]),r.addElement(t.querySelector(".alert-wrapper")).keyframes([{offset:0,opacity:"0.01",transform:"scale(1.1)"},{offset:1,opacity:"1",transform:"scale(1)"}]),e.addElement(t).easing("ease-in-out").duration(200).addAnimation([i,r])},p=function(t){var e=Object(n.a)(),i=Object(n.a)(),r=Object(n.a)();return i.addElement(t.querySelector("ion-backdrop")).fromTo("opacity","var(--backdrop-opacity)",0),r.addElement(t.querySelector(".alert-wrapper")).keyframes([{offset:0,opacity:.99,transform:"scale(1)"},{offset:1,opacity:0,transform:"scale(0.9)"}]),e.addElement(t).easing("ease-in-out").duration(200).addAnimation([i,r])},b=function(t){var e=Object(n.a)(),i=Object(n.a)(),r=Object(n.a)();return i.addElement(t.querySelector("ion-backdrop")).fromTo("opacity",.01,"var(--backdrop-opacity)").beforeStyles({"pointer-events":"none"}).afterClearStyles(["pointer-events"]),r.addElement(t.querySelector(".alert-wrapper")).keyframes([{offset:0,opacity:"0.01",transform:"scale(0.9)"},{offset:1,opacity:"1",transform:"scale(1)"}]),e.addElement(t).easing("ease-in-out").duration(150).addAnimation([i,r])},u=function(t){var e=Object(n.a)(),i=Object(n.a)(),r=Object(n.a)();return i.addElement(t.querySelector("ion-backdrop")).fromTo("opacity","var(--backdrop-opacity)",0),r.addElement(t.querySelector(".alert-wrapper")).fromTo("opacity",.99,0),e.addElement(t).easing("ease-in-out").duration(150).addAnimation([i,r])},g=function(){function t(t){var e=this;Object(r.q)(this,t),this.didPresent=Object(r.i)(this,"ionAlertDidPresent",7),this.willPresent=Object(r.i)(this,"ionAlertWillPresent",7),this.willDismiss=Object(r.i)(this,"ionAlertWillDismiss",7),this.didDismiss=Object(r.i)(this,"ionAlertDidDismiss",7),this.processedInputs=[],this.processedButtons=[],this.presented=!1,this.keyboardClose=!0,this.buttons=[],this.inputs=[],this.backdropDismiss=!0,this.translucent=!1,this.animated=!0,this.onBackdropTap=function(){e.dismiss(void 0,l.a)},this.dispatchCancelHandler=function(t){var i=t.detail.role;if(Object(l.j)(i)){var r=e.processedButtons.find((function(t){return"cancel"===t.role}));e.callButtonHandler(r)}}}return t.prototype.buttonsChanged=function(){var t=this.buttons;this.processedButtons=t.map((function(t){return"string"==typeof t?{text:t,role:"cancel"===t.toLowerCase()?"cancel":void 0}:t}))},t.prototype.inputsChanged=function(){var t=this,e=this.inputs,i=new Set(e.map((function(t){return t.type})));i.has("checkbox")&&i.has("radio")&&console.warn("Alert cannot mix input types: "+Array.from(i.values()).join("/")+". Please see alert docs for more info."),this.inputType=i.values().next().value,this.processedInputs=e.map((function(e,i){return{type:e.type||"text",name:e.name||""+i,placeholder:e.placeholder||"",value:e.value,label:e.label,checked:!!e.checked,disabled:!!e.disabled,id:e.id||"alert-input-"+t.overlayIndex+"-"+i,handler:e.handler,min:e.min,max:e.max,cssClass:e.cssClass||"",attributes:e.attributes||{}}}))},t.prototype.connectedCallback=function(){Object(l.f)(this.el)},t.prototype.componentWillLoad=function(){this.inputsChanged(),this.buttonsChanged()},t.prototype.componentDidUnload=function(){this.gesture&&(this.gesture.destroy(),this.gesture=void 0)},t.prototype.componentDidLoad=function(){!this.gesture&&"md"!==Object(o.b)(this)&&this.wrapperEl&&(this.gesture=Object(s.a)(this.wrapperEl,(function(t){return t.classList.contains("alert-button")})),this.gesture.enable(!0))},t.prototype.present=function(){return Object(l.e)(this,"alertEnter",c,b)},t.prototype.dismiss=function(t,e){return Object(l.g)(this,t,e,"alertLeave",p,u)},t.prototype.onDidDismiss=function(){return Object(l.h)(this.el,"ionAlertDidDismiss")},t.prototype.onWillDismiss=function(){return Object(l.h)(this.el,"ionAlertWillDismiss")},t.prototype.rbClick=function(t){for(var e=0,i=this.processedInputs;e<i.length;e++){var o=i[e];o.checked=o===t}this.activeId=t.id,Object(l.n)(t.handler,t),Object(r.n)(this)},t.prototype.cbClick=function(t){t.checked=!t.checked,Object(l.n)(t.handler,t),Object(r.n)(this)},t.prototype.buttonClick=function(t){var e=t.role,i=this.getValues();if(Object(l.j)(e))return this.dismiss({values:i},e);var r=this.callButtonHandler(t,i);return!1!==r?this.dismiss(Object.assign({values:i},r),t.role):Promise.resolve(!1)},t.prototype.callButtonHandler=function(t,e){if(t&&t.handler){var i=Object(l.n)(t.handler,e);if(!1===i)return!1;if("object"==typeof i)return i}return{}},t.prototype.getValues=function(){if(0!==this.processedInputs.length){if("radio"===this.inputType){var t=this.processedInputs.find((function(t){return!!t.checked}));return t?t.value:void 0}if("checkbox"===this.inputType)return this.processedInputs.filter((function(t){return t.checked})).map((function(t){return t.value}));var e={};return this.processedInputs.forEach((function(t){e[t.name]=t.value||""})),e}},t.prototype.renderAlertInputs=function(t){switch(this.inputType){case"checkbox":return this.renderCheckbox(t);case"radio":return this.renderRadio(t);default:return this.renderInput(t)}},t.prototype.renderCheckbox=function(t){var e=this,i=this.processedInputs,n=Object(o.b)(this);return 0===i.length?null:Object(r.l)("div",{class:"alert-checkbox-group","aria-labelledby":t},i.map((function(t){return Object(r.l)("button",{type:"button",onClick:function(){return e.cbClick(t)},"aria-checked":""+t.checked,id:t.id,disabled:t.disabled,tabIndex:0,role:"checkbox",class:Object.assign(Object.assign({},Object(d.b)(t.cssClass)),{"alert-tappable":!0,"alert-checkbox":!0,"alert-checkbox-button":!0,"ion-focusable":!0,"alert-checkbox-button-disabled":t.disabled||!1})},Object(r.l)("div",{class:"alert-button-inner"},Object(r.l)("div",{class:"alert-checkbox-icon"},Object(r.l)("div",{class:"alert-checkbox-inner"})),Object(r.l)("div",{class:"alert-checkbox-label"},t.label)),"md"===n&&Object(r.l)("ion-ripple-effect",null))})))},t.prototype.renderRadio=function(t){var e=this,i=this.processedInputs;return 0===i.length?null:Object(r.l)("div",{class:"alert-radio-group",role:"radiogroup","aria-labelledby":t,"aria-activedescendant":this.activeId},i.map((function(t){return Object(r.l)("button",{type:"button",onClick:function(){return e.rbClick(t)},"aria-checked":""+t.checked,disabled:t.disabled,id:t.id,tabIndex:0,class:Object.assign(Object.assign({},Object(d.b)(t.cssClass)),{"alert-radio-button":!0,"alert-tappable":!0,"alert-radio":!0,"ion-focusable":!0,"alert-radio-button-disabled":t.disabled||!1}),role:"radio"},Object(r.l)("div",{class:"alert-button-inner"},Object(r.l)("div",{class:"alert-radio-icon"},Object(r.l)("div",{class:"alert-radio-inner"})),Object(r.l)("div",{class:"alert-radio-label"},t.label)))})))},t.prototype.renderInput=function(t){var e=this.processedInputs;return 0===e.length?null:Object(r.l)("div",{class:"alert-input-group","aria-labelledby":t},e.map((function(t){var e,i,o,n;return"textarea"===t.type?Object(r.l)("div",{class:"alert-input-wrapper"},Object(r.l)("textarea",Object.assign({placeholder:t.placeholder,value:t.value,id:t.id,tabIndex:0},t.attributes,{disabled:null!==(i=null===(e=t.attributes)||void 0===e?void 0:e.disabled)&&void 0!==i?i:t.disabled,class:h(t),onInput:function(e){var i;t.value=e.target.value,(null===(i=t.attributes)||void 0===i?void 0:i.onInput)&&t.attributes.onInput(e)}}))):Object(r.l)("div",{class:"alert-input-wrapper"},Object(r.l)("input",Object.assign({placeholder:t.placeholder,type:t.type,min:t.min,max:t.max,value:t.value,id:t.id,tabIndex:0},t.attributes,{disabled:null!==(n=null===(o=t.attributes)||void 0===o?void 0:o.disabled)&&void 0!==n?n:t.disabled,class:h(t),onInput:function(e){var i;t.value=e.target.value,(null===(i=t.attributes)||void 0===i?void 0:i.onInput)&&t.attributes.onInput(e)}})))})))},t.prototype.renderAlertButtons=function(){var t=this,e=this.processedButtons,i=Object(o.b)(this),n={"alert-button-group":!0,"alert-button-group-vertical":e.length>2};return Object(r.l)("div",{class:n},e.map((function(e){return Object(r.l)("button",{type:"button",class:m(e),tabIndex:0,onClick:function(){return t.buttonClick(e)}},Object(r.l)("span",{class:"alert-button-inner"},e.text),"md"===i&&Object(r.l)("ion-ripple-effect",null))})))},t.prototype.render=function(){var t,e,i=this,n=this.overlayIndex,l=this.header,s=this.subHeader,c=Object(o.b)(this),p="alert-"+n+"-hdr",b="alert-"+n+"-sub-hdr",u="alert-"+n+"-msg";return void 0!==l?e=p:void 0!==s&&(e=b),Object(r.l)(r.c,{role:"dialog","aria-modal":"true",tabindex:"-1",style:{zIndex:""+(2e4+n)},class:Object.assign(Object.assign({},Object(d.b)(this.cssClass)),(t={},t[c]=!0,t["alert-translucent"]=this.translucent,t)),onIonAlertWillDismiss:this.dispatchCancelHandler,onIonBackdropTap:this.onBackdropTap},Object(r.l)("ion-backdrop",{tappable:this.backdropDismiss}),Object(r.l)("div",{tabindex:"0"}),Object(r.l)("div",{class:"alert-wrapper ion-overlay-wrapper",ref:function(t){return i.wrapperEl=t}},Object(r.l)("div",{class:"alert-head"},l&&Object(r.l)("h2",{id:p,class:"alert-title"},l),s&&Object(r.l)("h2",{id:b,class:"alert-sub-title"},s)),Object(r.l)("div",{id:u,class:"alert-message",innerHTML:Object(a.a)(this.message)}),this.renderAlertInputs(e),this.renderAlertButtons()),Object(r.l)("div",{tabindex:"0"}))},Object.defineProperty(t.prototype,"el",{get:function(){return Object(r.m)(this)},enumerable:!1,configurable:!0}),Object.defineProperty(t,"watchers",{get:function(){return{buttons:["buttonsChanged"],inputs:["inputsChanged"]}},enumerable:!1,configurable:!0}),t}(),h=function(t){var e,i,r;return Object.assign(Object.assign({"alert-input":!0,"alert-input-disabled":(null!==(i=null===(e=t.attributes)||void 0===e?void 0:e.disabled)&&void 0!==i?i:t.disabled)||!1},Object(d.b)(t.cssClass)),Object(d.b)(t.attributes?null===(r=t.attributes.class)||void 0===r?void 0:r.toString():""))},m=function(t){var e;return Object.assign(((e={"alert-button":!0,"ion-focusable":!0,"ion-activatable":!0})["alert-button-role-"+t.role]=void 0!==t.role,e),Object(d.b)(t.cssClass))};g.style={ios:".sc-ion-alert-ios-h{--min-width:250px;--width:auto;--min-height:auto;--height:auto;--max-height:90%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-alert-ios-h{display:none}.alert-top.sc-ion-alert-ios-h{padding-top:50px;-ms-flex-align:start;align-items:flex-start}.alert-wrapper.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:content;opacity:0;z-index:10}.alert-title.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-sub-title.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-weight:normal}.alert-message.sc-ion-alert-ios{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-overflow-scrolling:touch;overflow-y:auto;overscroll-behavior-y:contain}.alert-checkbox-group.sc-ion-alert-ios::-webkit-scrollbar,.alert-radio-group.sc-ion-alert-ios::-webkit-scrollbar,.alert-message.sc-ion-alert-ios::-webkit-scrollbar{display:none}.alert-input.sc-ion-alert-ios{padding-left:0;padding-right:0;padding-top:10px;padding-bottom:10px;width:100%;border:0;background:inherit;font:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.alert-button-group.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;width:100%}.alert-button-group-vertical.sc-ion-alert-ios{-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.alert-button.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;border:0;font-size:14px;line-height:20px;z-index:0}.alert-button.ion-focused.sc-ion-alert-ios,.alert-tappable.ion-focused.sc-ion-alert-ios{background:var(--ion-color-step-100, #e6e6e6)}.alert-button-inner.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.alert-input-disabled.sc-ion-alert-ios,.alert-checkbox-button-disabled.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios,.alert-radio-button-disabled.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios{cursor:default;opacity:0.5;pointer-events:none}.alert-tappable.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;width:100%;border:0;background:transparent;font-size:inherit;line-height:initial;text-align:start;-webkit-appearance:none;-moz-appearance:none;appearance:none;contain:strict}.alert-button.sc-ion-alert-ios,.alert-checkbox.sc-ion-alert-ios,.alert-input.sc-ion-alert-ios,.alert-radio.sc-ion-alert-ios{outline:none}.alert-radio-icon.sc-ion-alert-ios,.alert-checkbox-icon.sc-ion-alert-ios,.alert-checkbox-inner.sc-ion-alert-ios{-webkit-box-sizing:border-box;box-sizing:border-box}textarea.alert-input.sc-ion-alert-ios{min-height:37px;resize:none}.sc-ion-alert-ios-h{--background:var(--ion-overlay-background-color, var(--ion-color-step-100, #f9f9f9));--max-width:270px;--backdrop-opacity:var(--ion-backdrop-opacity, 0.3);font-size:14px}.alert-wrapper.sc-ion-alert-ios{border-radius:13px;-webkit-box-shadow:none;box-shadow:none;overflow:hidden}.alert-button.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios{pointer-events:none}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.alert-translucent.sc-ion-alert-ios-h .alert-wrapper.sc-ion-alert-ios{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.9);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}.alert-head.sc-ion-alert-ios{padding-left:16px;padding-right:16px;padding-top:12px;padding-bottom:7px;text-align:center}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-head.sc-ion-alert-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.alert-title.sc-ion-alert-ios{margin-top:8px;color:var(--ion-text-color, #000);font-size:17px;font-weight:600}.alert-sub-title.sc-ion-alert-ios{color:var(--ion-color-step-600, #666666);font-size:14px}.alert-message.sc-ion-alert-ios,.alert-input-group.sc-ion-alert-ios{padding-left:16px;padding-right:16px;padding-top:0;padding-bottom:21px;color:var(--ion-text-color, #000);font-size:13px;text-align:center}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-message.sc-ion-alert-ios,.alert-input-group.sc-ion-alert-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.alert-message.sc-ion-alert-ios{max-height:240px}.alert-message.sc-ion-alert-ios:empty{padding-left:0;padding-right:0;padding-top:0;padding-bottom:12px}.alert-input.sc-ion-alert-ios{border-radius:4px;margin-top:10px;padding-left:6px;padding-right:6px;padding-top:6px;padding-bottom:6px;border:0.55px solid var(--ion-color-step-250, #bfbfbf);background-color:var(--ion-background-color, #fff);-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-input.sc-ion-alert-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:6px;padding-inline-start:6px;-webkit-padding-end:6px;padding-inline-end:6px}}.alert-input.sc-ion-alert-ios::-webkit-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-moz-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios:-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-ms-clear{display:none}.alert-radio-group.sc-ion-alert-ios,.alert-checkbox-group.sc-ion-alert-ios{-ms-scroll-chaining:none;overscroll-behavior:contain;max-height:240px;border-top:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);overflow-y:auto;-webkit-overflow-scrolling:touch}.alert-tappable.sc-ion-alert-ios{height:44px}.alert-radio-label.sc-ion-alert-ios{padding-left:13px;padding-right:13px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;-ms-flex-order:0;order:0;color:var(--ion-text-color, #000);text-overflow:ellipsis;white-space:nowrap;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-radio-label.sc-ion-alert-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:13px;padding-inline-start:13px;-webkit-padding-end:13px;padding-inline-end:13px}}[aria-checked=true].sc-ion-alert-ios .alert-radio-label.sc-ion-alert-ios{color:var(--ion-color-primary, #3880ff)}.alert-radio-icon.sc-ion-alert-ios{position:relative;-ms-flex-order:1;order:1;min-width:30px}[aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios{left:7px;top:-7px;position:absolute;width:6px;height:12px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:2px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-color-primary, #3880ff)}[dir=rtl].sc-ion-alert-ios [aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios,[dir=rtl].sc-ion-alert-ios-h [aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios,[dir=rtl] .sc-ion-alert-ios-h [aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios{left:unset;right:unset;right:7px}.alert-checkbox-label.sc-ion-alert-ios{padding-left:13px;padding-right:13px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;color:var(--ion-text-color, #000);text-overflow:ellipsis;white-space:nowrap;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-checkbox-label.sc-ion-alert-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:13px;padding-inline-start:13px;-webkit-padding-end:13px;padding-inline-end:13px}}.alert-checkbox-icon.sc-ion-alert-ios{border-radius:50%;margin-left:16px;margin-right:6px;margin-top:10px;margin-bottom:10px;position:relative;width:24px;height:24px;border-width:1px;border-style:solid;border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, #c8c7cc)));background-color:var(--ion-item-background, var(--ion-background-color, #fff));contain:strict}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-checkbox-icon.sc-ion-alert-ios{margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:6px;margin-inline-end:6px}}[aria-checked=true].sc-ion-alert-ios .alert-checkbox-icon.sc-ion-alert-ios{border-color:var(--ion-color-primary, #3880ff);background-color:var(--ion-color-primary, #3880ff)}[aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios{left:9px;top:4px;position:absolute;width:5px;height:12px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:1px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-background-color, #fff)}[dir=rtl].sc-ion-alert-ios [aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios,[dir=rtl].sc-ion-alert-ios-h [aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios,[dir=rtl] .sc-ion-alert-ios-h [aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios{left:unset;right:unset;right:9px}.alert-button-group.sc-ion-alert-ios{margin-right:-0.55px;-ms-flex-wrap:wrap;flex-wrap:wrap}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-button-group.sc-ion-alert-ios{margin-right:unset;-webkit-margin-end:-0.55px;margin-inline-end:-0.55px}}.alert-button.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:0;-ms-flex:1 1 auto;flex:1 1 auto;min-width:50%;height:44px;border-top:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);background-color:transparent;color:var(--ion-color-primary, #3880ff);font-size:17px;overflow:hidden}[dir=rtl].sc-ion-alert-ios .alert-button.sc-ion-alert-ios:first-child,[dir=rtl].sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:first-child,[dir=rtl] .sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:first-child{border-right:0}.alert-button.sc-ion-alert-ios:last-child{border-right:0;font-weight:bold}[dir=rtl].sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child,[dir=rtl].sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:last-child,[dir=rtl] .sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:last-child{border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}.alert-button.ion-activated.sc-ion-alert-ios{background-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1)}.alert-button-role-destructive.sc-ion-alert-ios,.alert-button-role-destructive.ion-activated.sc-ion-alert-ios,.alert-button-role-destructive.ion-focused.sc-ion-alert-ios{color:var(--ion-color-danger, #eb445a)}",md:".sc-ion-alert-md-h{--min-width:250px;--width:auto;--min-height:auto;--height:auto;--max-height:90%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-alert-md-h{display:none}.alert-top.sc-ion-alert-md-h{padding-top:50px;-ms-flex-align:start;align-items:flex-start}.alert-wrapper.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:content;opacity:0;z-index:10}.alert-title.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-sub-title.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-weight:normal}.alert-message.sc-ion-alert-md{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-overflow-scrolling:touch;overflow-y:auto;overscroll-behavior-y:contain}.alert-checkbox-group.sc-ion-alert-md::-webkit-scrollbar,.alert-radio-group.sc-ion-alert-md::-webkit-scrollbar,.alert-message.sc-ion-alert-md::-webkit-scrollbar{display:none}.alert-input.sc-ion-alert-md{padding-left:0;padding-right:0;padding-top:10px;padding-bottom:10px;width:100%;border:0;background:inherit;font:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.alert-button-group.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;width:100%}.alert-button-group-vertical.sc-ion-alert-md{-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.alert-button.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;border:0;font-size:14px;line-height:20px;z-index:0}.alert-button.ion-focused.sc-ion-alert-md,.alert-tappable.ion-focused.sc-ion-alert-md{background:var(--ion-color-step-100, #e6e6e6)}.alert-button-inner.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.alert-input-disabled.sc-ion-alert-md,.alert-checkbox-button-disabled.sc-ion-alert-md .alert-button-inner.sc-ion-alert-md,.alert-radio-button-disabled.sc-ion-alert-md .alert-button-inner.sc-ion-alert-md{cursor:default;opacity:0.5;pointer-events:none}.alert-tappable.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;width:100%;border:0;background:transparent;font-size:inherit;line-height:initial;text-align:start;-webkit-appearance:none;-moz-appearance:none;appearance:none;contain:strict}.alert-button.sc-ion-alert-md,.alert-checkbox.sc-ion-alert-md,.alert-input.sc-ion-alert-md,.alert-radio.sc-ion-alert-md{outline:none}.alert-radio-icon.sc-ion-alert-md,.alert-checkbox-icon.sc-ion-alert-md,.alert-checkbox-inner.sc-ion-alert-md{-webkit-box-sizing:border-box;box-sizing:border-box}textarea.alert-input.sc-ion-alert-md{min-height:37px;resize:none}.sc-ion-alert-md-h{--background:var(--ion-overlay-background-color, var(--ion-background-color, #fff));--max-width:280px;--backdrop-opacity:var(--ion-backdrop-opacity, 0.32);font-size:14px}.alert-wrapper.sc-ion-alert-md{border-radius:4px;-webkit-box-shadow:0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);box-shadow:0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12)}.alert-head.sc-ion-alert-md{padding-left:23px;padding-right:23px;padding-top:20px;padding-bottom:15px;text-align:start}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-head.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:23px;padding-inline-start:23px;-webkit-padding-end:23px;padding-inline-end:23px}}.alert-title.sc-ion-alert-md{color:var(--ion-text-color, #000);font-size:20px;font-weight:500}.alert-sub-title.sc-ion-alert-md{color:var(--ion-text-color, #000);font-size:16px}.alert-message.sc-ion-alert-md,.alert-input-group.sc-ion-alert-md{padding-left:24px;padding-right:24px;padding-top:20px;padding-bottom:20px;color:var(--ion-color-step-550, #737373)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-message.sc-ion-alert-md,.alert-input-group.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:24px;padding-inline-start:24px;-webkit-padding-end:24px;padding-inline-end:24px}}.alert-message.sc-ion-alert-md{max-height:240px;font-size:16px}.alert-message.sc-ion-alert-md:empty{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-head.sc-ion-alert-md+.alert-message.sc-ion-alert-md{padding-top:0}.alert-input.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:5px;border-bottom:1px solid var(--ion-color-step-150, #d9d9d9);color:var(--ion-text-color, #000)}.alert-input.sc-ion-alert-md::-webkit-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-moz-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md:-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-ms-clear{display:none}.alert-input.sc-ion-alert-md:focus{margin-bottom:4px;border-bottom:2px solid var(--ion-color-primary, #3880ff)}.alert-radio-group.sc-ion-alert-md,.alert-checkbox-group.sc-ion-alert-md{position:relative;max-height:240px;border-top:1px solid var(--ion-color-step-150, #d9d9d9);border-bottom:1px solid var(--ion-color-step-150, #d9d9d9);overflow:auto}.alert-tappable.sc-ion-alert-md{position:relative;height:48px;overflow:hidden}.alert-radio-label.sc-ion-alert-md{padding-left:52px;padding-right:26px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;color:var(--ion-color-step-850, #262626);font-size:16px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-radio-label.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:52px;padding-inline-start:52px;-webkit-padding-end:26px;padding-inline-end:26px}}.alert-radio-icon.sc-ion-alert-md{left:26px;top:0;border-radius:50%;display:block;position:relative;width:20px;height:20px;border-width:2px;border-style:solid;border-color:var(--ion-color-step-550, #737373)}[dir=rtl].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md,[dir=rtl].sc-ion-alert-md-h .alert-radio-icon.sc-ion-alert-md,[dir=rtl] .sc-ion-alert-md-h .alert-radio-icon.sc-ion-alert-md{left:unset;right:unset;right:26px}.alert-radio-inner.sc-ion-alert-md{left:3px;top:3px;border-radius:50%;position:absolute;width:10px;height:10px;-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background-color:var(--ion-color-primary, #3880ff)}[dir=rtl].sc-ion-alert-md .alert-radio-inner.sc-ion-alert-md,[dir=rtl].sc-ion-alert-md-h .alert-radio-inner.sc-ion-alert-md,[dir=rtl] .sc-ion-alert-md-h .alert-radio-inner.sc-ion-alert-md{left:unset;right:unset;right:3px}[aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md{color:var(--ion-color-step-850, #262626)}[aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md{border-color:var(--ion-color-primary, #3880ff)}[aria-checked=true].sc-ion-alert-md .alert-radio-inner.sc-ion-alert-md{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}.alert-checkbox-label.sc-ion-alert-md{padding-left:53px;padding-right:26px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;color:var(--ion-color-step-850, #262626);font-size:16px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-checkbox-label.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:53px;padding-inline-start:53px;-webkit-padding-end:26px;padding-inline-end:26px}}.alert-checkbox-icon.sc-ion-alert-md{left:26px;top:0;border-radius:2px;position:relative;width:16px;height:16px;border-width:2px;border-style:solid;border-color:var(--ion-color-step-550, #737373);contain:strict}[dir=rtl].sc-ion-alert-md .alert-checkbox-icon.sc-ion-alert-md,[dir=rtl].sc-ion-alert-md-h .alert-checkbox-icon.sc-ion-alert-md,[dir=rtl] .sc-ion-alert-md-h .alert-checkbox-icon.sc-ion-alert-md{left:unset;right:unset;right:26px}[aria-checked=true].sc-ion-alert-md .alert-checkbox-icon.sc-ion-alert-md{border-color:var(--ion-color-primary, #3880ff);background-color:var(--ion-color-primary, #3880ff)}[aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md{left:3px;top:0;position:absolute;width:6px;height:10px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:2px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-color-primary-contrast, #fff)}[dir=rtl].sc-ion-alert-md [aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md,[dir=rtl].sc-ion-alert-md-h [aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md,[dir=rtl] .sc-ion-alert-md-h [aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md{left:unset;right:unset;right:3px}.alert-button-group.sc-ion-alert-md{padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;-ms-flex-pack:end;justify-content:flex-end}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-button-group.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px}}.alert-button.sc-ion-alert-md{border-radius:2px;margin-left:0;margin-right:8px;margin-top:0;margin-bottom:0;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;position:relative;background-color:transparent;color:var(--ion-color-primary, #3880ff);font-weight:500;text-align:end;text-transform:uppercase;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-button.sc-ion-alert-md{margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.alert-button.sc-ion-alert-md{padding-left:unset;padding-right:unset;-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px}}.alert-button-inner.sc-ion-alert-md{-ms-flex-pack:end;justify-content:flex-end}"}},32:function(t,e,i){"use strict";i.d(e,"a",(function(){return n})),i.d(e,"b",(function(){return a})),i.d(e,"c",(function(){return o})),i.d(e,"d",(function(){return s})),i.d(e,"e",(function(){return l}));var r={getEngine:function(){var t=window;return t.TapticEngine||t.Capacitor&&t.Capacitor.isPluginAvailable("Haptics")&&t.Capacitor.Plugins.Haptics},available:function(){return!!this.getEngine()},isCordova:function(){return!!window.TapticEngine},isCapacitor:function(){return!!window.Capacitor},impact:function(t){var e=this.getEngine();if(e){var i=this.isCapacitor()?t.style.toUpperCase():t.style;e.impact({style:i})}},notification:function(t){var e=this.getEngine();if(e){var i=this.isCapacitor()?t.style.toUpperCase():t.style;e.notification({style:i})}},selection:function(){this.impact({style:"light"})},selectionStart:function(){var t=this.getEngine();t&&(this.isCapacitor()?t.selectionStart():t.gestureSelectionStart())},selectionChanged:function(){var t=this.getEngine();t&&(this.isCapacitor()?t.selectionChanged():t.gestureSelectionChanged())},selectionEnd:function(){var t=this.getEngine();t&&(this.isCapacitor()?t.selectionEnd():t.gestureSelectionEnd())}},o=function(){r.selection()},n=function(){r.selectionStart()},a=function(){r.selectionChanged()},l=function(){r.selectionEnd()},s=function(t){r.impact(t)}},79:function(t,e,i){"use strict";i.d(e,"a",(function(){return a}));var r=i(1),o=i(30),n=i(32),a=function(t,e){var i,a,l=function(t,r,o){if("undefined"!=typeof document){var n=document.elementFromPoint(t,r);n&&e(n)?n!==i&&(d(),s(n,o)):d()}},s=function(t,e){i=t,a||(a=i);var o=i;Object(r.g)((function(){return o.classList.add("ion-activated")})),e()},d=function(t){if(void 0===t&&(t=!1),i){var e=i;Object(r.g)((function(){return e.classList.remove("ion-activated")})),t&&a!==i&&i.click(),i=void 0}};return Object(o.createGesture)({el:t,gestureName:"buttonActiveDrag",threshold:0,onStart:function(t){return l(t.currentX,t.currentY,n.a)},onMove:function(t){return l(t.currentX,t.currentY,n.b)},onEnd:function(){d(!0),Object(n.e)(),a=void 0}})}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js ***!
+  \******************************************************************/
+/*! exports provided: a, b, c, d, h */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hapticSelectionChanged; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticImpact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hapticSelectionEnd; });
+var HapticEngine = {
+    getEngine: function () {
+        var win = window;
+        return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
+    },
+    available: function () {
+        return !!this.getEngine();
+    },
+    isCordova: function () {
+        return !!window.TapticEngine;
+    },
+    isCapacitor: function () {
+        var win = window;
+        return !!win.Capacitor;
+    },
+    impact: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.impact({ style: style });
+    },
+    notification: function (options) {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        var style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+        engine.notification({ style: style });
+    },
+    selection: function () {
+        this.impact({ style: 'light' });
+    },
+    selectionStart: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionStart();
+        }
+        else {
+            engine.gestureSelectionStart();
+        }
+    },
+    selectionChanged: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionChanged();
+        }
+        else {
+            engine.gestureSelectionChanged();
+        }
+    },
+    selectionEnd: function () {
+        var engine = this.getEngine();
+        if (!engine) {
+            return;
+        }
+        if (this.isCapacitor()) {
+            engine.selectionEnd();
+        }
+        else {
+            engine.gestureSelectionEnd();
+        }
+    }
+};
+/**
+ * Trigger a selection changed haptic event. Good for one-time events
+ * (not for gestures)
+ */
+var hapticSelection = function () {
+    HapticEngine.selection();
+};
+/**
+ * Tell the haptic engine that a gesture for a selection change is starting.
+ */
+var hapticSelectionStart = function () {
+    HapticEngine.selectionStart();
+};
+/**
+ * Tell the haptic engine that a selection changed during a gesture.
+ */
+var hapticSelectionChanged = function () {
+    HapticEngine.selectionChanged();
+};
+/**
+ * Tell the haptic engine we are done with a gesture. This needs to be
+ * called lest resources are not properly recycled.
+ */
+var hapticSelectionEnd = function () {
+    HapticEngine.selectionEnd();
+};
+/**
+ * Use this to indicate success/failure/warning to the user.
+ * options should be of the type `{ style: 'light' }` (or `medium`/`heavy`)
+ */
+var hapticImpact = function (options) {
+    HapticEngine.impact(options);
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-refresher_2.entry.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-refresher_2.entry.js ***!
+  \************************************************************************/
+/*! exports provided: ion_refresher, ion_refresher_content */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_refresher", function() { return Refresher; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_refresher_content", function() { return RefresherContent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-821f9ab1.js */ "./node_modules/@ionic/core/dist/esm-es5/index-821f9ab1.js");
+/* harmony import */ var _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-f538b4cf.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-f538b4cf.js");
+/* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
+/* harmony import */ var _animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animation-a635a2fc.js */ "./node_modules/@ionic/core/dist/esm-es5/animation-a635a2fc.js");
+/* harmony import */ var _cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cubic-bezier-685f606a.js */ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-685f606a.js");
+/* harmony import */ var _index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-79d74e0b.js */ "./node_modules/@ionic/core/dist/esm-es5/index-79d74e0b.js");
+/* harmony import */ var _haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./haptic-7b8ba70a.js */ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js");
+/* harmony import */ var _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./spinner-configs-c78e170e.js */ "./node_modules/@ionic/core/dist/esm-es5/spinner-configs-c78e170e.js");
+
+
+
+
+
+
+
+
+
+var getRefresherAnimationType = function (contentEl) {
+    var previousSibling = contentEl.previousElementSibling;
+    var hasHeader = previousSibling !== null && previousSibling.tagName === 'ION-HEADER';
+    return hasHeader ? 'translate' : 'scale';
+};
+var createPullingAnimation = function (type, pullingSpinner) {
+    return type === 'scale' ? createScaleAnimation(pullingSpinner) : createTranslateAnimation(pullingSpinner);
+};
+var createBaseAnimation = function (pullingRefresherIcon) {
+    var spinner = pullingRefresherIcon.querySelector('ion-spinner');
+    var circle = spinner.shadowRoot.querySelector('circle');
+    var spinnerArrowContainer = pullingRefresherIcon.querySelector('.spinner-arrow-container');
+    var arrowContainer = pullingRefresherIcon.querySelector('.arrow-container');
+    var arrow = (arrowContainer) ? arrowContainer.querySelector('ion-icon') : null;
+    var baseAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .duration(1000)
+        .easing('ease-out');
+    var spinnerArrowContainerAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .addElement(spinnerArrowContainer)
+        .keyframes([
+        { offset: 0, opacity: '0.3' },
+        { offset: 0.45, opacity: '0.3' },
+        { offset: 0.55, opacity: '1' },
+        { offset: 1, opacity: '1' }
+    ]);
+    var circleInnerAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .addElement(circle)
+        .keyframes([
+        { offset: 0, strokeDasharray: '1px, 200px' },
+        { offset: 0.20, strokeDasharray: '1px, 200px' },
+        { offset: 0.55, strokeDasharray: '100px, 200px' },
+        { offset: 1, strokeDasharray: '100px, 200px' }
+    ]);
+    var circleOuterAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .addElement(spinner)
+        .keyframes([
+        { offset: 0, transform: 'rotate(-90deg)' },
+        { offset: 1, transform: 'rotate(210deg)' }
+    ]);
+    /**
+     * Only add arrow animation if present
+     * this allows users to customize the spinners
+     * without errors being thrown
+     */
+    if (arrowContainer && arrow) {
+        var arrowContainerAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+            .addElement(arrowContainer)
+            .keyframes([
+            { offset: 0, transform: 'rotate(0deg)' },
+            { offset: 0.30, transform: 'rotate(0deg)' },
+            { offset: 0.55, transform: 'rotate(280deg)' },
+            { offset: 1, transform: 'rotate(400deg)' }
+        ]);
+        var arrowAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+            .addElement(arrow)
+            .keyframes([
+            { offset: 0, transform: 'translateX(2px) scale(0)' },
+            { offset: 0.30, transform: 'translateX(2px) scale(0)' },
+            { offset: 0.55, transform: 'translateX(-1.5px) scale(1)' },
+            { offset: 1, transform: 'translateX(-1.5px) scale(1)' }
+        ]);
+        baseAnimation.addAnimation([arrowContainerAnimation, arrowAnimation]);
+    }
+    return baseAnimation.addAnimation([spinnerArrowContainerAnimation, circleInnerAnimation, circleOuterAnimation]);
+};
+var createScaleAnimation = function (pullingRefresherIcon) {
+    var height = pullingRefresherIcon.clientHeight;
+    var spinnerAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .addElement(pullingRefresherIcon)
+        .keyframes([
+        { offset: 0, transform: "scale(0) translateY(-" + (height + 20) + "px)" },
+        { offset: 1, transform: 'scale(1) translateY(100px)' }
+    ]);
+    return createBaseAnimation(pullingRefresherIcon).addAnimation([spinnerAnimation]);
+};
+var createTranslateAnimation = function (pullingRefresherIcon) {
+    var height = pullingRefresherIcon.clientHeight;
+    var spinnerAnimation = Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .addElement(pullingRefresherIcon)
+        .keyframes([
+        { offset: 0, transform: "translateY(-" + (height + 20) + "px)" },
+        { offset: 1, transform: 'translateY(100px)' }
+    ]);
+    return createBaseAnimation(pullingRefresherIcon).addAnimation([spinnerAnimation]);
+};
+var createSnapBackAnimation = function (pullingRefresherIcon) {
+    return Object(_animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__["c"])()
+        .duration(125)
+        .addElement(pullingRefresherIcon)
+        .fromTo('transform', 'translateY(var(--ion-pulling-refresher-translate, 100px))', 'translateY(0px)');
+};
+// iOS Native Refresher
+// -----------------------------
+var setSpinnerOpacity = function (spinner, opacity) {
+    spinner.style.setProperty('opacity', opacity.toString());
+};
+var handleScrollWhilePulling = function (spinner, ticks, opacity, currentTickToShow) {
+    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+        setSpinnerOpacity(spinner, opacity);
+        ticks.forEach(function (el, i) { return el.style.setProperty('opacity', (i <= currentTickToShow) ? '0.99' : '0'); });
+    });
+};
+var handleScrollWhileRefreshing = function (spinner, lastVelocityY) {
+    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+        // If user pulls down quickly, the spinner should spin faster
+        spinner.style.setProperty('--refreshing-rotation-duration', (lastVelocityY >= 1.0) ? '0.5s' : '2s');
+        spinner.style.setProperty('opacity', '1');
+    });
+};
+var translateElement = function (el, value) {
+    if (!el) {
+        return Promise.resolve();
+    }
+    var trans = transitionEndAsync(el, 200);
+    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+        el.style.setProperty('transition', '0.2s all ease-out');
+        if (value === undefined) {
+            el.style.removeProperty('transform');
+        }
+        else {
+            el.style.setProperty('transform', "translate3d(0px, " + value + ", 0px)");
+        }
+    });
+    return trans;
+};
+// Utils
+// -----------------------------
+var shouldUseNativeRefresher = function (referenceEl, mode) {
+    var pullingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-pulling ion-spinner');
+    var refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
+    return (pullingSpinner !== null &&
+        refreshingSpinner !== null &&
+        ((mode === 'ios' && Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["i"])('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
+            mode === 'md'));
+};
+var transitionEndAsync = function (el, expectedDuration) {
+    if (expectedDuration === void 0) { expectedDuration = 0; }
+    return new Promise(function (resolve) {
+        transitionEnd(el, expectedDuration, resolve);
+    });
+};
+var transitionEnd = function (el, expectedDuration, callback) {
+    if (expectedDuration === void 0) { expectedDuration = 0; }
+    var unRegTrans;
+    var animationTimeout;
+    var opts = { passive: true };
+    var ANIMATION_FALLBACK_TIMEOUT = 500;
+    var unregister = function () {
+        if (unRegTrans) {
+            unRegTrans();
+        }
+    };
+    var onTransitionEnd = function (ev) {
+        if (ev === undefined || el === ev.target) {
+            unregister();
+            callback(ev);
+        }
+    };
+    if (el) {
+        el.addEventListener('webkitTransitionEnd', onTransitionEnd, opts);
+        el.addEventListener('transitionend', onTransitionEnd, opts);
+        animationTimeout = setTimeout(onTransitionEnd, expectedDuration + ANIMATION_FALLBACK_TIMEOUT);
+        unRegTrans = function () {
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+                animationTimeout = undefined;
+            }
+            el.removeEventListener('webkitTransitionEnd', onTransitionEnd, opts);
+            el.removeEventListener('transitionend', onTransitionEnd, opts);
+        };
+    }
+    return unregister;
+};
+var refresherIosCss = "ion-refresher{left:0;top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}[dir=rtl] ion-refresher,:host-context([dir=rtl]) ion-refresher{left:unset;right:unset;right:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}[dir=rtl] .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-ios .refresher-pulling-icon,.refresher-ios .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-ios .refresher-pulling-text,.refresher-ios .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-lines-ios line,.refresher-ios .refresher-refreshing .spinner-lines-small-ios line,.refresher-ios .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-bubbles circle,.refresher-ios .refresher-refreshing .spinner-circles circle,.refresher-ios .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native ion-spinner{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}.refresher-native .refresher-refreshing ion-spinner{--refreshing-rotation-duration:2s;display:none;-webkit-animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards;animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards}.refresher-native .refresher-refreshing{display:none;-webkit-animation:250ms linear refresher-pop forwards;animation:250ms linear refresher-pop forwards}.refresher-native.refresher-refreshing .refresher-pulling ion-spinner,.refresher-native.refresher-completing .refresher-pulling ion-spinner{display:none}.refresher-native.refresher-refreshing .refresher-refreshing ion-spinner,.refresher-native.refresher-completing .refresher-refreshing ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-pulling ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-refreshing ion-spinner{display:none}@-webkit-keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}@keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}";
+var refresherMdCss = "ion-refresher{left:0;top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}[dir=rtl] ion-refresher,:host-context([dir=rtl]) ion-refresher{left:unset;right:unset;right:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}[dir=rtl] .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-md .refresher-pulling-icon,.refresher-md .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-md .refresher-pulling-text,.refresher-md .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-lines-md line,.refresher-md .refresher-refreshing .spinner-lines-small-md line,.refresher-md .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-bubbles circle,.refresher-md .refresher-refreshing .spinner-circles circle,.refresher-md .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;width:24px;height:24px;color:var(--ion-color-primary, #3880ff)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native ion-spinner{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native .spinner-arrow-container{display:inherit}ion-refresher.refresher-native .arrow-container{display:block;position:absolute;width:24px;height:24px}ion-refresher.refresher-native .arrow-container ion-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;left:0;right:0;bottom:-4px;position:absolute;color:var(--ion-color-primary, #3880ff);font-size:12px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .arrow-container ion-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native.refresher-pulling ion-refresher-content .refresher-pulling,ion-refresher.refresher-native.refresher-ready ion-refresher-content .refresher-pulling{display:-ms-flexbox;display:flex}ion-refresher.refresher-native.refresher-refreshing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-completing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-cancelling ion-refresher-content .refresher-refreshing{display:-ms-flexbox;display:flex}ion-refresher.refresher-native .refresher-pulling-icon{-webkit-transform:translateY(calc(-100% - 10px));transform:translateY(calc(-100% - 10px))}ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;border-radius:100%;padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;display:-ms-flexbox;display:flex;border:1px solid #ececec;background:white;-webkit-box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{padding-left:unset;padding-right:unset;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px}}";
+var Refresher = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRefresh = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRefresh", 7);
+        this.ionPull = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPull", 7);
+        this.ionStart = Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStart", 7);
+        this.appliedStyles = false;
+        this.didStart = false;
+        this.progress = 0;
+        this.pointerDown = false;
+        this.needsCompletion = false;
+        this.didRefresh = false;
+        this.lastVelocityY = 0;
+        this.animations = [];
+        this.nativeRefresher = false;
+        /**
+         * The current state which the refresher is in. The refresher's states include:
+         *
+         * - `inactive` - The refresher is not being pulled down or refreshing and is currently hidden.
+         * - `pulling` - The user is actively pulling down the refresher, but has not reached the point yet that if the user lets go, it'll refresh.
+         * - `cancelling` - The user pulled down the refresher and let go, but did not pull down far enough to kick off the `refreshing` state. After letting go, the refresher is in the `cancelling` state while it is closing, and will go back to the `inactive` state once closed.
+         * - `ready` - The user has pulled down the refresher far enough that if they let go, it'll begin the `refreshing` state.
+         * - `refreshing` - The refresher is actively waiting on the async operation to end. Once the refresh handler calls `complete()` it will begin the `completing` state.
+         * - `completing` - The `refreshing` state has finished and the refresher is in the way of closing itself. Once closed, the refresher will go back to the `inactive` state.
+         */
+        this.state = 1 /* Inactive */;
+        /**
+         * The minimum distance the user must pull down until the
+         * refresher will go into the `refreshing` state.
+         * Does not apply when the refresher content uses a spinner,
+         * enabling the native refresher.
+         */
+        this.pullMin = 60;
+        /**
+         * The maximum distance of the pull until the refresher
+         * will automatically go into the `refreshing` state.
+         * Defaults to the result of `pullMin + 60`.
+         * Does not apply when  the refresher content uses a spinner,
+         * enabling the native refresher.
+         */
+        this.pullMax = this.pullMin + 60;
+        /**
+         * Time it takes to close the refresher.
+         * Does not apply when the refresher content uses a spinner,
+         * enabling the native refresher.
+         */
+        this.closeDuration = '280ms';
+        /**
+         * Time it takes the refresher to to snap back to the `refreshing` state.
+         * Does not apply when the refresher content uses a spinner,
+         * enabling the native refresher.
+         */
+        this.snapbackDuration = '280ms';
+        /**
+         * How much to multiply the pull speed by. To slow the pull animation down,
+         * pass a number less than `1`. To speed up the pull, pass a number greater
+         * than `1`. The default value is `1` which is equal to the speed of the cursor.
+         * If a negative value is passed in, the factor will be `1` instead.
+         *
+         * For example: If the value passed is `1.2` and the content is dragged by
+         * `10` pixels, instead of `10` pixels the content will be pulled by `12` pixels
+         * (an increase of 20 percent). If the value passed is `0.8`, the dragged amount
+         * will be `8` pixels, less than the amount the cursor has moved.
+         *
+         * Does not apply when the refresher content uses a spinner,
+         * enabling the native refresher.
+         */
+        this.pullFactor = 1;
+        /**
+         * If `true`, the refresher will be hidden.
+         */
+        this.disabled = false;
+    }
+    class_1.prototype.disabledChanged = function () {
+        if (this.gesture) {
+            this.gesture.enable(!this.disabled);
+        }
+    };
+    class_1.prototype.checkNativeRefresher = function () {
+        var useNativeRefresher = shouldUseNativeRefresher(this.el, Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this));
+        if (useNativeRefresher && !this.nativeRefresher) {
+            var contentEl = this.el.closest('ion-content');
+            this.setupNativeRefresher(contentEl);
+        }
+        else if (!useNativeRefresher) {
+            this.destroyNativeRefresher();
+        }
+    };
+    class_1.prototype.destroyNativeRefresher = function () {
+        if (this.scrollEl && this.scrollListenerCallback) {
+            this.scrollEl.removeEventListener('scroll', this.scrollListenerCallback);
+            this.scrollListenerCallback = undefined;
+        }
+        this.nativeRefresher = false;
+    };
+    class_1.prototype.resetNativeRefresher = function (el, state) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.state = state;
+                        if (!(Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, translateElement(el, undefined)];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 2: return [4 /*yield*/, transitionEndAsync(this.el.querySelector('.refresher-refreshing-icon'), 200)];
+                    case 3:
+                        _a.sent();
+                        _a.label = 4;
+                    case 4:
+                        this.didRefresh = false;
+                        this.needsCompletion = false;
+                        this.pointerDown = false;
+                        this.animations.forEach(function (ani) { return ani.destroy(); });
+                        this.animations = [];
+                        this.progress = 0;
+                        this.state = 1 /* Inactive */;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.setupiOSNativeRefresher = function (pullingSpinner, refreshingSpinner) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var ticks, MAX_PULL, NUM_TICKS, _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.elementToTransform = this.scrollEl;
+                        ticks = pullingSpinner.shadowRoot.querySelectorAll('svg');
+                        MAX_PULL = this.scrollEl.clientHeight * 0.16;
+                        NUM_TICKS = ticks.length;
+                        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () { return ticks.forEach(function (el) { return el.style.setProperty('animation', 'none'); }); });
+                        this.scrollListenerCallback = function () {
+                            // If pointer is not on screen or refresher is not active, ignore scroll
+                            if (!_this.pointerDown && _this.state === 1 /* Inactive */) {
+                                return;
+                            }
+                            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () {
+                                // PTR should only be active when overflow scrolling at the top
+                                var scrollTop = _this.scrollEl.scrollTop;
+                                var refresherHeight = _this.el.clientHeight;
+                                if (scrollTop > 0) {
+                                    /**
+                                     * If refresher is refreshing and user tries to scroll
+                                     * progressively fade refresher out/in
+                                     */
+                                    if (_this.state === 8 /* Refreshing */) {
+                                        var ratio_1 = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, scrollTop / (refresherHeight * 0.5), 1);
+                                        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () { return setSpinnerOpacity(refreshingSpinner, 1 - ratio_1); });
+                                        return;
+                                    }
+                                    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () { return setSpinnerOpacity(pullingSpinner, 0); });
+                                    return;
+                                }
+                                if (_this.pointerDown) {
+                                    if (!_this.didStart) {
+                                        _this.didStart = true;
+                                        _this.ionStart.emit();
+                                    }
+                                    // emit "pulling" on every move
+                                    if (_this.pointerDown) {
+                                        _this.ionPull.emit();
+                                    }
+                                }
+                                // delay showing the next tick marks until user has pulled 30px
+                                var opacity = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, Math.abs(scrollTop) / refresherHeight, 0.99);
+                                var pullAmount = _this.progress = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, (Math.abs(scrollTop) - 30) / MAX_PULL, 1);
+                                var currentTickToShow = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, Math.floor(pullAmount * NUM_TICKS), NUM_TICKS - 1);
+                                var shouldShowRefreshingSpinner = _this.state === 8 /* Refreshing */ || currentTickToShow === NUM_TICKS - 1;
+                                if (shouldShowRefreshingSpinner) {
+                                    if (_this.pointerDown) {
+                                        handleScrollWhileRefreshing(refreshingSpinner, _this.lastVelocityY);
+                                    }
+                                    if (!_this.didRefresh) {
+                                        _this.beginRefresh();
+                                        _this.didRefresh = true;
+                                        Object(_haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_7__["d"])({ style: 'light' });
+                                        /**
+                                         * Translate the content element otherwise when pointer is removed
+                                         * from screen the scroll content will bounce back over the refresher
+                                         */
+                                        if (!_this.pointerDown) {
+                                            translateElement(_this.elementToTransform, refresherHeight + "px");
+                                        }
+                                    }
+                                }
+                                else {
+                                    _this.state = 2 /* Pulling */;
+                                    handleScrollWhilePulling(pullingSpinner, ticks, opacity, currentTickToShow);
+                                }
+                            });
+                        };
+                        this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
+                        _a = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 1:
+                        _a.gesture = (_b.sent()).createGesture({
+                            el: this.scrollEl,
+                            gestureName: 'refresher',
+                            gesturePriority: 10,
+                            direction: 'y',
+                            threshold: 5,
+                            onStart: function () {
+                                _this.pointerDown = true;
+                                if (!_this.didRefresh) {
+                                    translateElement(_this.elementToTransform, '0px');
+                                }
+                            },
+                            onMove: function (ev) {
+                                _this.lastVelocityY = ev.velocityY;
+                            },
+                            onEnd: function () {
+                                _this.pointerDown = false;
+                                _this.didStart = false;
+                                if (_this.needsCompletion) {
+                                    _this.resetNativeRefresher(_this.elementToTransform, 32 /* Completing */);
+                                    _this.needsCompletion = false;
+                                }
+                                else if (_this.didRefresh) {
+                                    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () { return translateElement(_this.elementToTransform, _this.el.clientHeight + "px"); });
+                                }
+                            },
+                        });
+                        this.disabledChanged();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.setupMDNativeRefresher = function (contentEl, pullingSpinner, refreshingSpinner) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var circle, pullingRefresherIcon, refreshingCircle, _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        circle = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["g"])(pullingSpinner).querySelector('circle');
+                        pullingRefresherIcon = this.el.querySelector('ion-refresher-content .refresher-pulling-icon');
+                        refreshingCircle = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["g"])(refreshingSpinner).querySelector('circle');
+                        if (circle !== null && refreshingCircle !== null) {
+                            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+                                circle.style.setProperty('animation', 'none');
+                                // This lines up the animation on the refreshing spinner with the pulling spinner
+                                refreshingSpinner.style.setProperty('animation-delay', '-655ms');
+                                refreshingCircle.style.setProperty('animation-delay', '-655ms');
+                            });
+                        }
+                        _a = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 1:
+                        _a.gesture = (_b.sent()).createGesture({
+                            el: this.scrollEl,
+                            gestureName: 'refresher',
+                            gesturePriority: 10,
+                            direction: 'y',
+                            threshold: 5,
+                            canStart: function () { return _this.state !== 8 /* Refreshing */ && _this.state !== 32 /* Completing */ && _this.scrollEl.scrollTop === 0; },
+                            onStart: function (ev) {
+                                ev.data = { animation: undefined, didStart: false, cancelled: false };
+                            },
+                            onMove: function (ev) {
+                                if ((ev.velocityY < 0 && _this.progress === 0 && !ev.data.didStart) || ev.data.cancelled) {
+                                    ev.data.cancelled = true;
+                                    return;
+                                }
+                                if (!ev.data.didStart) {
+                                    ev.data.didStart = true;
+                                    _this.state = 2 /* Pulling */;
+                                    Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+                                        var animationType = getRefresherAnimationType(contentEl);
+                                        var animation = createPullingAnimation(animationType, pullingRefresherIcon);
+                                        ev.data.animation = animation;
+                                        _this.scrollEl.style.setProperty('--overflow', 'hidden');
+                                        animation.progressStart(false, 0);
+                                        _this.ionStart.emit();
+                                        _this.animations.push(animation);
+                                    });
+                                    return;
+                                }
+                                // Since we are using an easing curve, slow the gesture tracking down a bit
+                                _this.progress = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, (ev.deltaY / 180) * 0.5, 1);
+                                ev.data.animation.progressStep(_this.progress);
+                                _this.ionPull.emit();
+                            },
+                            onEnd: function (ev) {
+                                if (!ev.data.didStart) {
+                                    return;
+                                }
+                                Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () { return _this.scrollEl.style.removeProperty('--overflow'); });
+                                if (_this.progress <= 0.4) {
+                                    _this.gesture.enable(false);
+                                    ev.data.animation
+                                        .progressEnd(0, _this.progress, 500)
+                                        .onFinish(function () {
+                                        _this.animations.forEach(function (ani) { return ani.destroy(); });
+                                        _this.animations = [];
+                                        _this.gesture.enable(true);
+                                        _this.state = 1 /* Inactive */;
+                                    });
+                                    return;
+                                }
+                                var progress = Object(_cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_5__["g"])([0, 0], [0, 0], [1, 1], [1, 1], _this.progress)[0];
+                                var snapBackAnimation = createSnapBackAnimation(pullingRefresherIcon);
+                                _this.animations.push(snapBackAnimation);
+                                Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, function () {
+                                    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                                        switch (_a.label) {
+                                            case 0:
+                                                pullingRefresherIcon.style.setProperty('--ion-pulling-refresher-translate', (progress * 100) + "px");
+                                                ev.data.animation.progressEnd();
+                                                return [4 /*yield*/, snapBackAnimation.play()];
+                                            case 1:
+                                                _a.sent();
+                                                this.beginRefresh();
+                                                ev.data.animation.destroy();
+                                                return [2 /*return*/];
+                                        }
+                                    });
+                                }); });
+                            }
+                        });
+                        this.disabledChanged();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.setupNativeRefresher = function (contentEl) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var pullingSpinner, refreshingSpinner;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.scrollListenerCallback || !contentEl || this.nativeRefresher || !this.scrollEl) {
+                            return [2 /*return*/];
+                        }
+                        this.nativeRefresher = true;
+                        pullingSpinner = this.el.querySelector('ion-refresher-content .refresher-pulling ion-spinner');
+                        refreshingSpinner = this.el.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
+                        return [4 /*yield*/, contentEl.componentOnReady()];
+                    case 1:
+                        _a.sent();
+                        if (Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios') {
+                            this.setupiOSNativeRefresher(pullingSpinner, refreshingSpinner);
+                        }
+                        else {
+                            this.setupMDNativeRefresher(contentEl, pullingSpinner, refreshingSpinner);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.componentDidUpdate = function () {
+        this.checkNativeRefresher();
+    };
+    class_1.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var contentEl, _a, _b;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (this.el.getAttribute('slot') !== 'fixed') {
+                            console.error('Make sure you use: <ion-refresher slot="fixed">');
+                            return [2 /*return*/];
+                        }
+                        contentEl = this.el.closest('ion-content');
+                        if (!contentEl) {
+                            console.error('<ion-refresher> must be used inside an <ion-content>');
+                            return [2 /*return*/];
+                        }
+                        _a = this;
+                        return [4 /*yield*/, contentEl.getScrollElement()];
+                    case 1:
+                        _a.scrollEl = _c.sent();
+                        this.backgroundContentEl = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["g"])(contentEl).querySelector('#background-content');
+                        if (!shouldUseNativeRefresher(this.el, Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this))) return [3 /*break*/, 2];
+                        this.setupNativeRefresher(contentEl);
+                        return [3 /*break*/, 4];
+                    case 2:
+                        _b = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-eea61379.js */ "./node_modules/@ionic/core/dist/esm-es5/index-eea61379.js"))];
+                    case 3:
+                        _b.gesture = (_c.sent()).createGesture({
+                            el: contentEl,
+                            gestureName: 'refresher',
+                            gesturePriority: 10,
+                            direction: 'y',
+                            threshold: 20,
+                            passive: false,
+                            canStart: function () { return _this.canStart(); },
+                            onStart: function () { return _this.onStart(); },
+                            onMove: function (ev) { return _this.onMove(ev); },
+                            onEnd: function () { return _this.onEnd(); },
+                        });
+                        this.disabledChanged();
+                        _c.label = 4;
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.disconnectedCallback = function () {
+        this.destroyNativeRefresher();
+        this.scrollEl = undefined;
+        if (this.gesture) {
+            this.gesture.destroy();
+            this.gesture = undefined;
+        }
+    };
+    /**
+     * Call `complete()` when your async operation has completed.
+     * For example, the `refreshing` state is while the app is performing
+     * an asynchronous operation, such as receiving more data from an
+     * AJAX request. Once the data has been received, you then call this
+     * method to signify that the refreshing has completed and to close
+     * the refresher. This method also changes the refresher's state from
+     * `refreshing` to `completing`.
+     */
+    class_1.prototype.complete = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                if (this.nativeRefresher) {
+                    this.needsCompletion = true;
+                    // Do not reset scroll el until user removes pointer from screen
+                    if (!this.pointerDown) {
+                        Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["r"])(function () { return Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["r"])(function () { return _this.resetNativeRefresher(_this.elementToTransform, 32 /* Completing */); }); });
+                    }
+                }
+                else {
+                    this.close(32 /* Completing */, '120ms');
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Changes the refresher's state from `refreshing` to `cancelling`.
+     */
+    class_1.prototype.cancel = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                if (this.nativeRefresher) {
+                    // Do not reset scroll el until user removes pointer from screen
+                    if (!this.pointerDown) {
+                        Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["r"])(function () { return Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["r"])(function () { return _this.resetNativeRefresher(_this.elementToTransform, 16 /* Cancelling */); }); });
+                    }
+                }
+                else {
+                    this.close(16 /* Cancelling */, '');
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * A number representing how far down the user has pulled.
+     * The number `0` represents the user hasn't pulled down at all. The
+     * number `1`, and anything greater than `1`, represents that the user
+     * has pulled far enough down that when they let go then the refresh will
+     * happen. If they let go and the number is less than `1`, then the
+     * refresh will not happen, and the content will return to it's original
+     * position.
+     */
+    class_1.prototype.getProgress = function () {
+        return Promise.resolve(this.progress);
+    };
+    class_1.prototype.canStart = function () {
+        if (!this.scrollEl) {
+            return false;
+        }
+        if (this.state !== 1 /* Inactive */) {
+            return false;
+        }
+        // if the scrollTop is greater than zero then it's
+        // not possible to pull the content down yet
+        if (this.scrollEl.scrollTop > 0) {
+            return false;
+        }
+        return true;
+    };
+    class_1.prototype.onStart = function () {
+        this.progress = 0;
+        this.state = 1 /* Inactive */;
+    };
+    class_1.prototype.onMove = function (detail) {
+        if (!this.scrollEl) {
+            return;
+        }
+        // this method can get called like a bazillion times per second,
+        // so it's built to be as efficient as possible, and does its
+        // best to do any DOM read/writes only when absolutely necessary
+        // if multi-touch then get out immediately
+        var ev = detail.event;
+        if (ev.touches && ev.touches.length > 1) {
+            return;
+        }
+        // do nothing if it's actively refreshing
+        // or it's in the way of closing
+        // or this was never a startY
+        if ((this.state & 56 /* _BUSY_ */) !== 0) {
+            return;
+        }
+        var pullFactor = (Number.isNaN(this.pullFactor) || this.pullFactor < 0) ? 1 : this.pullFactor;
+        var deltaY = detail.deltaY * pullFactor;
+        // don't bother if they're scrolling up
+        // and have not already started dragging
+        if (deltaY <= 0) {
+            // the current Y is higher than the starting Y
+            // so they scrolled up enough to be ignored
+            this.progress = 0;
+            this.state = 1 /* Inactive */;
+            if (this.appliedStyles) {
+                // reset the styles only if they were applied
+                this.setCss(0, '', false, '');
+                return;
+            }
+            return;
+        }
+        if (this.state === 1 /* Inactive */) {
+            // this refresh is not already actively pulling down
+            // get the content's scrollTop
+            var scrollHostScrollTop = this.scrollEl.scrollTop;
+            // if the scrollTop is greater than zero then it's
+            // not possible to pull the content down yet
+            if (scrollHostScrollTop > 0) {
+                this.progress = 0;
+                return;
+            }
+            // content scrolled all the way to the top, and dragging down
+            this.state = 2 /* Pulling */;
+        }
+        // prevent native scroll events
+        if (ev.cancelable) {
+            ev.preventDefault();
+        }
+        // the refresher is actively pulling at this point
+        // move the scroll element within the content element
+        this.setCss(deltaY, '0ms', true, '');
+        if (deltaY === 0) {
+            // don't continue if there's no delta yet
+            this.progress = 0;
+            return;
+        }
+        var pullMin = this.pullMin;
+        // set pull progress
+        this.progress = deltaY / pullMin;
+        // emit "start" if it hasn't started yet
+        if (!this.didStart) {
+            this.didStart = true;
+            this.ionStart.emit();
+        }
+        // emit "pulling" on every move
+        this.ionPull.emit();
+        // do nothing if the delta is less than the pull threshold
+        if (deltaY < pullMin) {
+            // ensure it stays in the pulling state, cuz its not ready yet
+            this.state = 2 /* Pulling */;
+            return;
+        }
+        if (deltaY > this.pullMax) {
+            // they pulled farther than the max, so kick off the refresh
+            this.beginRefresh();
+            return;
+        }
+        // pulled farther than the pull min!!
+        // it is now in the `ready` state!!
+        // if they let go then it'll refresh, kerpow!!
+        this.state = 4 /* Ready */;
+        return;
+    };
+    class_1.prototype.onEnd = function () {
+        // only run in a zone when absolutely necessary
+        if (this.state === 4 /* Ready */) {
+            // they pulled down far enough, so it's ready to refresh
+            this.beginRefresh();
+        }
+        else if (this.state === 2 /* Pulling */) {
+            // they were pulling down, but didn't pull down far enough
+            // set the content back to it's original location
+            // and close the refresher
+            // set that the refresh is actively cancelling
+            this.cancel();
+        }
+    };
+    class_1.prototype.beginRefresh = function () {
+        // assumes we're already back in a zone
+        // they pulled down far enough, so it's ready to refresh
+        this.state = 8 /* Refreshing */;
+        // place the content in a hangout position while it thinks
+        this.setCss(this.pullMin, this.snapbackDuration, true, '');
+        // emit "refresh" because it was pulled down far enough
+        // and they let go to begin refreshing
+        this.ionRefresh.emit({
+            complete: this.complete.bind(this)
+        });
+    };
+    class_1.prototype.close = function (state, delay) {
+        var _this = this;
+        // create fallback timer incase something goes wrong with transitionEnd event
+        setTimeout(function () {
+            _this.state = 1 /* Inactive */;
+            _this.progress = 0;
+            _this.didStart = false;
+            _this.setCss(0, '0ms', false, '');
+        }, 600);
+        // reset set the styles on the scroll element
+        // set that the refresh is actively cancelling/completing
+        this.state = state;
+        this.setCss(0, this.closeDuration, true, delay);
+        // TODO: stop gesture
+    };
+    class_1.prototype.setCss = function (y, duration, overflowVisible, delay) {
+        var _this = this;
+        if (this.nativeRefresher) {
+            return;
+        }
+        this.appliedStyles = (y > 0);
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+            if (_this.scrollEl && _this.backgroundContentEl) {
+                var scrollStyle = _this.scrollEl.style;
+                var backgroundStyle = _this.backgroundContentEl.style;
+                scrollStyle.transform = backgroundStyle.transform = ((y > 0) ? "translateY(" + y + "px) translateZ(0px)" : '');
+                scrollStyle.transitionDuration = backgroundStyle.transitionDuration = duration;
+                scrollStyle.transitionDelay = backgroundStyle.transitionDelay = delay;
+                scrollStyle.overflow = (overflowVisible ? 'hidden' : '');
+            }
+        });
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { slot: "fixed", class: (_a = {},
+                _a[mode] = true,
+                // Used internally for styling
+                _a["refresher-" + mode] = true,
+                _a['refresher-native'] = this.nativeRefresher,
+                _a['refresher-active'] = this.state !== 1 /* Inactive */,
+                _a['refresher-pulling'] = this.state === 2 /* Pulling */,
+                _a['refresher-ready'] = this.state === 4 /* Ready */,
+                _a['refresher-refreshing'] = this.state === 8 /* Refreshing */,
+                _a['refresher-cancelling'] = this.state === 16 /* Cancelling */,
+                _a['refresher-completing'] = this.state === 32 /* Completing */,
+                _a) }));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "watchers", {
+        get: function () {
+            return {
+                "disabled": ["disabledChanged"]
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return class_1;
+}());
+Refresher.style = {
+    ios: refresherIosCss,
+    md: refresherMdCss
+};
+var RefresherContent = /** @class */ (function () {
+    function RefresherContent(hostRef) {
+        Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+    }
+    RefresherContent.prototype.componentWillLoad = function () {
+        if (this.pullingIcon === undefined) {
+            var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+            var overflowRefresher = this.el.style.webkitOverflowScrolling !== undefined ? 'lines' : 'arrow-down';
+            this.pullingIcon = _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('refreshingIcon', mode === 'ios' && Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["i"])('mobile') ? _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('spinner', overflowRefresher) : 'circular');
+        }
+        if (this.refreshingSpinner === undefined) {
+            var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+            this.refreshingSpinner = _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('refreshingSpinner', _ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('spinner', mode === 'ios' ? 'lines' : 'circular'));
+        }
+    };
+    RefresherContent.prototype.render = function () {
+        var pullingIcon = this.pullingIcon;
+        var hasSpinner = pullingIcon != null && _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_8__["S"][pullingIcon] !== undefined;
+        var mode = Object(_ionic_global_f538b4cf_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: mode }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-pulling-icon" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "spinner-arrow-container" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
+                Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "arrow-container" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-pulling-icon" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-pulling-text", innerHTML: Object(_index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_6__["s"])(this.pullingText) })), Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-refreshing-icon" }, Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
+            Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "refresher-refreshing-text", innerHTML: Object(_index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_6__["s"])(this.refreshingText) }))));
+    };
+    Object.defineProperty(RefresherContent.prototype, "el", {
+        get: function () { return Object(_index_821f9ab1_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        enumerable: false,
+        configurable: true
+    });
+    return RefresherContent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/spinner-configs-c78e170e.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/spinner-configs-c78e170e.js ***!
+  \***************************************************************************/
+/*! exports provided: S */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return SPINNERS; });
+var spinners = {
+    'bubbles': {
+        dur: 1000,
+        circles: 9,
+        fn: function (dur, index, total) {
+            var animationDelay = (dur * index / total) - dur + "ms";
+            var angle = 2 * Math.PI * index / total;
+            return {
+                r: 5,
+                style: {
+                    'top': 9 * Math.sin(angle) + "px",
+                    'left': 9 * Math.cos(angle) + "px",
+                    'animation-delay': animationDelay,
+                }
+            };
+        }
+    },
+    'circles': {
+        dur: 1000,
+        circles: 8,
+        fn: function (dur, index, total) {
+            var step = index / total;
+            var animationDelay = (dur * step) - dur + "ms";
+            var angle = 2 * Math.PI * step;
+            return {
+                r: 5,
+                style: {
+                    'top': 9 * Math.sin(angle) + "px",
+                    'left': 9 * Math.cos(angle) + "px",
+                    'animation-delay': animationDelay,
+                }
+            };
+        }
+    },
+    'circular': {
+        dur: 1400,
+        elmDuration: true,
+        circles: 1,
+        fn: function () {
+            return {
+                r: 20,
+                cx: 48,
+                cy: 48,
+                fill: 'none',
+                viewBox: '24 24 48 48',
+                transform: 'translate(0,0)',
+                style: {}
+            };
+        }
+    },
+    'crescent': {
+        dur: 750,
+        circles: 1,
+        fn: function () {
+            return {
+                r: 26,
+                style: {}
+            };
+        }
+    },
+    'dots': {
+        dur: 750,
+        circles: 3,
+        fn: function (_, index) {
+            var animationDelay = -(110 * index) + 'ms';
+            return {
+                r: 6,
+                style: {
+                    'left': 9 - (9 * index) + "px",
+                    'animation-delay': animationDelay,
+                }
+            };
+        }
+    },
+    'lines': {
+        dur: 1000,
+        lines: 12,
+        fn: function (dur, index, total) {
+            var transform = "rotate(" + (30 * index + (index < 6 ? 180 : -180)) + "deg)";
+            var animationDelay = (dur * index / total) - dur + "ms";
+            return {
+                y1: 17,
+                y2: 29,
+                style: {
+                    'transform': transform,
+                    'animation-delay': animationDelay,
+                }
+            };
+        }
+    },
+    'lines-small': {
+        dur: 1000,
+        lines: 12,
+        fn: function (dur, index, total) {
+            var transform = "rotate(" + (30 * index + (index < 6 ? 180 : -180)) + "deg)";
+            var animationDelay = (dur * index / total) - dur + "ms";
+            return {
+                y1: 12,
+                y2: 20,
+                style: {
+                    'transform': transform,
+                    'animation-delay': animationDelay,
+                }
+            };
+        }
+    }
+};
+var SPINNERS = spinners;
+
+
+
+/***/ })
+
+}]);

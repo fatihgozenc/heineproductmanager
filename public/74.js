@@ -1,1 +1,151 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[74],{253:function(t,n,i){"use strict";i.r(n),i.d(n,"ion_ripple_effect",(function(){return r}));var e=i(0),a=i(1),o=i(6),r=function(){function t(t){Object(a.q)(this,t),this.type="bounded"}return t.prototype.addRipple=function(t,n){return Object(e.__awaiter)(this,void 0,void 0,(function(){var i=this;return Object(e.__generator)(this,(function(e){return[2,new Promise((function(e){Object(a.j)((function(){var o=i.el.getBoundingClientRect(),r=o.width,l=o.height,m=Math.sqrt(r*r+l*l),u=Math.max(l,r),d=i.unbounded?u:m+c,p=Math.floor(u*f),b=d/p,w=t-o.left,y=n-o.top;i.unbounded&&(w=.5*r,y=.5*l);var h=w-.5*p,g=y-.5*p,k=.5*r-w,v=.5*l-y;Object(a.g)((function(){var t=document.createElement("div");t.classList.add("ripple-effect");var n=t.style;n.top=g+"px",n.left=h+"px",n.width=n.height=p+"px",n.setProperty("--final-scale",""+b),n.setProperty("--translate-end",k+"px, "+v+"px"),(i.el.shadowRoot||i.el).appendChild(t),setTimeout((function(){e((function(){s(t)}))}),325)}))}))}))]}))}))},Object.defineProperty(t.prototype,"unbounded",{get:function(){return"unbounded"===this.type},enumerable:!1,configurable:!0}),t.prototype.render=function(){var t,n=Object(o.b)(this);return Object(a.l)(a.c,{role:"presentation",class:(t={},t[n]=!0,t.unbounded=this.unbounded,t)})},Object.defineProperty(t.prototype,"el",{get:function(){return Object(a.m)(this)},enumerable:!1,configurable:!0}),t}(),s=function(t){t.classList.add("fade-out"),setTimeout((function(){t.remove()}),200)},c=10,f=.5;r.style=":host{left:0;right:0;top:0;bottom:0;position:absolute;contain:strict;pointer-events:none}:host(.unbounded){contain:layout size style}.ripple-effect{border-radius:50%;position:absolute;background-color:currentColor;color:inherit;contain:strict;opacity:0;-webkit-animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;will-change:transform, opacity;pointer-events:none}.fade-out{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1));-webkit-animation:150ms fadeOutAnimation forwards;animation:150ms fadeOutAnimation forwards}@-webkit-keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@-webkit-keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:0.16}}@keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:0.16}}@-webkit-keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0.16}to{opacity:0}}@keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0.16}to{opacity:0}}"}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[74],{
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/keyboard-dd970efc.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/keyboard-dd970efc.js ***!
+  \********************************************************************/
+/*! exports provided: KEYBOARD_DID_CLOSE, KEYBOARD_DID_OPEN, copyVisualViewport, keyboardDidClose, keyboardDidOpen, keyboardDidResize, resetKeyboardAssist, setKeyboardClose, setKeyboardOpen, startKeyboardAssist, trackViewportChanges */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KEYBOARD_DID_CLOSE", function() { return KEYBOARD_DID_CLOSE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KEYBOARD_DID_OPEN", function() { return KEYBOARD_DID_OPEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "copyVisualViewport", function() { return copyVisualViewport; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidClose", function() { return keyboardDidClose; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidOpen", function() { return keyboardDidOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyboardDidResize", function() { return keyboardDidResize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetKeyboardAssist", function() { return resetKeyboardAssist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setKeyboardClose", function() { return setKeyboardClose; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setKeyboardOpen", function() { return setKeyboardOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startKeyboardAssist", function() { return startKeyboardAssist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trackViewportChanges", function() { return trackViewportChanges; });
+var KEYBOARD_DID_OPEN = 'ionKeyboardDidShow';
+var KEYBOARD_DID_CLOSE = 'ionKeyboardDidHide';
+var KEYBOARD_THRESHOLD = 150;
+var previousVisualViewport = {};
+var currentVisualViewport = {};
+var keyboardOpen = false;
+/**
+ * This is only used for tests
+ */
+var resetKeyboardAssist = function () {
+    previousVisualViewport = {};
+    currentVisualViewport = {};
+    keyboardOpen = false;
+};
+var startKeyboardAssist = function (win) {
+    startNativeListeners(win);
+    if (!win.visualViewport) {
+        return;
+    }
+    currentVisualViewport = copyVisualViewport(win.visualViewport);
+    win.visualViewport.onresize = function () {
+        trackViewportChanges(win);
+        if (keyboardDidOpen() || keyboardDidResize(win)) {
+            setKeyboardOpen(win);
+        }
+        else if (keyboardDidClose(win)) {
+            setKeyboardClose(win);
+        }
+    };
+};
+/**
+ * Listen for events fired by native keyboard plugin
+ * in Capacitor/Cordova so devs only need to listen
+ * in one place.
+ */
+var startNativeListeners = function (win) {
+    win.addEventListener('keyboardDidShow', function (ev) { return setKeyboardOpen(win, ev); });
+    win.addEventListener('keyboardDidHide', function () { return setKeyboardClose(win); });
+};
+var setKeyboardOpen = function (win, ev) {
+    fireKeyboardOpenEvent(win, ev);
+    keyboardOpen = true;
+};
+var setKeyboardClose = function (win) {
+    fireKeyboardCloseEvent(win);
+    keyboardOpen = false;
+};
+/**
+ * Returns `true` if the `keyboardOpen` flag is not
+ * set, the previous visual viewport width equal the current
+ * visual viewport width, and if the scaled difference
+ * of the previous visual viewport height minus the current
+ * visual viewport height is greater than KEYBOARD_THRESHOLD
+ *
+ * We need to be able to accommodate users who have zooming
+ * enabled in their browser (or have zoomed in manually) which
+ * is why we take into account the current visual viewport's
+ * scale value.
+ */
+var keyboardDidOpen = function () {
+    var scaledHeightDifference = (previousVisualViewport.height - currentVisualViewport.height) * currentVisualViewport.scale;
+    return (!keyboardOpen &&
+        previousVisualViewport.width === currentVisualViewport.width &&
+        scaledHeightDifference > KEYBOARD_THRESHOLD);
+};
+/**
+ * Returns `true` if the keyboard is open,
+ * but the keyboard did not close
+ */
+var keyboardDidResize = function (win) {
+    return keyboardOpen && !keyboardDidClose(win);
+};
+/**
+ * Determine if the keyboard was closed
+ * Returns `true` if the `keyboardOpen` flag is set and
+ * the current visual viewport height equals the
+ * layout viewport height.
+ */
+var keyboardDidClose = function (win) {
+    return keyboardOpen && currentVisualViewport.height === win.innerHeight;
+};
+/**
+ * Dispatch a keyboard open event
+ */
+var fireKeyboardOpenEvent = function (win, nativeEv) {
+    var keyboardHeight = nativeEv ? nativeEv.keyboardHeight : win.innerHeight - currentVisualViewport.height;
+    var ev = new CustomEvent(KEYBOARD_DID_OPEN, {
+        detail: { keyboardHeight: keyboardHeight }
+    });
+    win.dispatchEvent(ev);
+};
+/**
+ * Dispatch a keyboard close event
+ */
+var fireKeyboardCloseEvent = function (win) {
+    var ev = new CustomEvent(KEYBOARD_DID_CLOSE);
+    win.dispatchEvent(ev);
+};
+/**
+ * Given a window object, create a copy of
+ * the current visual and layout viewport states
+ * while also preserving the previous visual and
+ * layout viewport states
+ */
+var trackViewportChanges = function (win) {
+    previousVisualViewport = Object.assign({}, currentVisualViewport);
+    currentVisualViewport = copyVisualViewport(win.visualViewport);
+};
+/**
+ * Creates a deep copy of the visual viewport
+ * at a given state
+ */
+var copyVisualViewport = function (visualViewport) {
+    return {
+        width: Math.round(visualViewport.width),
+        height: Math.round(visualViewport.height),
+        offsetTop: visualViewport.offsetTop,
+        offsetLeft: visualViewport.offsetLeft,
+        pageTop: visualViewport.pageTop,
+        pageLeft: visualViewport.pageLeft,
+        scale: visualViewport.scale
+    };
+};
+
+
+
+/***/ })
+
+}]);
